@@ -24,14 +24,14 @@
     <meta name="author" content="Muhammad Usman">
 
     <!-- The styles -->
-    <link id="bs-css" href="${pageContext.request.contextPath}/css/bootstrap-cerulean.min.css" rel="stylesheet">
+    <link id="bs-css" href="${pageContext.request.contextPath}/css/bootstrap-slate.min.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/charisma-app.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/bower_components/fullcalendar/dist/fullcalendar.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/bower_components/fullcalendar/dist/fullcalendar.print.css" rel="stylesheet" media="print">
     <link href="${pageContext.request.contextPath}/bower_components/chosen/chosen.min.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/bower_components/colorbox/example3/colorbox.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/bower_components/responsive-tables/responsive-tables.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/bower_components/bootstrap-tour/build/css/bootstrap-tour.min.css" rel="stylesheet">
+   	<link href="${pageContext.request.contextPath}/css/bootstrap-cerulean.min.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/jquery.noty.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/noty_theme_default.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/css/elfinder.min.css" rel="stylesheet">
@@ -41,7 +41,7 @@
     <link href="${pageContext.request.contextPath}/css/animate.min.css" rel="stylesheet">
 
     <!-- jQuery -->
-    <script src="${pageContext.request.contextPath}/bower_components/jquery/jquery.min.js"></script>
+    <script src="${pageContext.request.contextPath}/bower_components/jquery/jquery.js"></script>
 
     <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -59,176 +59,178 @@
        
     </div>
     <!-- topbar ends -->
-<div class="ch-container">
-    <div class="row">
-        
-        <!-- left menu starts -->
-        <div class="col-sm-2 col-lg-2">
-            <div class="sidebar-nav">
-                <div class="nav-canvas">
-                    <div class="nav-sm nav nav-stacked">
-
-                    </div>
-                    <ul class="nav nav-pills nav-stacked main-menu">
-                        <li class="nav-header">订单</li>
-                        <li><a class="ajax-link" href="form.html"><i class="glyphicon glyphicon-arrow-down"></i><span>&nbsp;&nbsp;&nbsp;快速下单</span></a>
-                        </li>
-						<li><a class="ajax-link" href="form.html"><i class="glyphicon glyphicon-search"></i><span>&nbsp;&nbsp;&nbsp;订单状态</span></a>
-                        </li>
-						<li class="accordion">
-                            <a href="form.html"><i class="glyphicon glyphicon-align-justify"></i><span>&nbsp;&nbsp;&nbsp;订单管理</span></a>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="form.html">查询订单</a></li>
-                                <li><a href="form.html">修改订单</a></li>
-								<li><a href="form.html">删除订单</a></li>
-                            </ul>
-                        </li>
-						<li><a class="ajax-link" href="form.html"><i class="glyphicon glyphicon-list-alt"></i><span>&nbsp;&nbsp;&nbsp;分配计划</span></a>
-						</li>
-						<li class="nav-header">员工</li>
-						<li class="accordion">
-                            <a href="form.html"><i class="glyphicon glyphicon-user"></i><span>&nbsp;&nbsp;&nbsp;员工管理</span></a>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="form.html">新增员工</a></li>
-                                <li><a href="form.html">修改信息</a></li>
-								<li><a href="form.html">员工状态</a></li>
-                            </ul>
-                        </li>
-                        <li><a class="ajax-link" href="form.html"><i class="glyphicon glyphicon-edit"></i><span>&nbsp;&nbsp;&nbsp;工作安排</span></a>
-						</li>
-						<li><a class="ajax-link" href="form.html"><i class="glyphicon glyphicon-credit-card"></i><span>&nbsp;&nbsp;&nbsp;工资结算</span></a>
-						</li>
-						<li class="nav-header">客户</li>
-                        <li><a class="ajax-link" href="chart.html"><i class="glyphicon glyphicon-search"></i><span>&nbsp;&nbsp;&nbsp;客户查询</span></a>
-                        </li>
-						<li class="accordion">
-                            <a href="form.html"><i class="glyphicon glyphicon-wrench"></i><span>&nbsp;&nbsp;&nbsp;客户维护</span></a>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="form.html">新增客户</a></li>
-                                <li><a href="form.html">修改信息</a></li>
-								<li><a href="form.html">删除客户</a></li>
-                            </ul>
-                        </li>
-						<li class="nav-header">其他</li>
-                        <li><a class="ajax-link" href="typography.html"><i class="glyphicon glyphicon-globe"></i><span>&nbsp;&nbsp;&nbsp;地区地址</span></a>
-                        </li>
-                        <li><a class="ajax-link" href="gallery.html"><i class="glyphicon glyphicon-th-list"></i><span>&nbsp;&nbsp;&nbsp;耗材统计</span></a>
-                        </li>
-						<li><a class="ajax-link" href="gallery.html"><i class="glyphicon glyphicon-stats"></i><span>&nbsp;&nbsp;&nbsp;历史数据</span></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!--/span-->
-        <!-- left menu ends -->
-
-        <noscript>
-            <div class="alert alert-block col-md-12">
-                <h4 class="alert-heading">Warning!</h4>
-
-                <p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a>
-                    enabled to use this site.</p>
-            </div>
-        </noscript>
-
-        <div id="content" class="col-lg-10 col-sm-10">
-            <!-- content starts -->
-            
-
-
-
-				<div class="row">
-				        <div class="col-md-6">
-							<div class="panel panel-success">
-				            <div class="panel-heading">
-				              <h3 class="panel-title">今日工作安排</h3>
-				            </div>
-				            
-				              <table class="table table-bordered">
-				            <thead>
-				              <tr>
-				                <th>订单种类</th>
-				                <th>地址</th>
-				                <th>员工</th>
-				                <th>完成情况</th>
-				              </tr>
-				            </thead>
-				            <tbody>
-				              <tr>
-				                <td rowspan="2">保洁</td>
-				                <td>盛世华城13#209</td>
-				                <td>小张&nbsp;&nbsp;&nbsp;小杨</td>
-				                <td><span class="label label-success">已收工</span></td>
-				              </tr>
-				              <tr>
-				                <td>钱江方舟45#2021</td>
-				                <td>小王</td>
-				                <td><span class="label label-success">已收工</span></td>
-				              </tr>
-				              <tr>
-				                <td>美缝</td>
-				                <td>钱江方舟12#1207</td>
-				                <td>小徐</td>
-				                <td><span class="label label-warning">未完工</span></td>
-				              </tr>
-				              
-				            </tbody>
-				          </table>
-				            
-				          </div>
-				          
-				        </div>
-		
-        
-      </div>
-	  
-
-
-    <!-- content ends -->
-    	</div><!--/#content.col-md-0-->
-
-
-<!-- external javascript -->
-
-<script src="${pageContext.request.contextPath}/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
-<!-- library for cookie management -->
-<script src="${pageContext.request.contextPath}/js/jquery.cookie.js"></script>
-<!-- calender plugin -->
-<script src="${pageContext.request.contextPath}/bower_components/moment/min/moment.min.js"></script>
-<script src="${pageContext.request.contextPath}/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
-<!-- data table plugin -->
-<script src="${pageContext.request.contextPath}/js/jquery.dataTables.min.js"></script>
-
-<!-- select or dropdown enhancer -->
-<script src="${pageContext.request.contextPath}/bower_components/chosen/chosen.jquery.min.js"></script>
-<!-- plugin for gallery image view -->
-<script src="${pageContext.request.contextPath}/bower_components/colorbox/jquery.colorbox-min.js"></script>
-<!-- notification plugin -->
-<script src="${pageContext.request.contextPath}/js/jquery.noty.js"></script>
-<!-- library for making tables responsive -->
-<script src="${pageContext.request.contextPath}/bower_components/responsive-tables/responsive-tables.js"></script>
-<!-- tour plugin -->
-<script src="${pageContext.request.contextPath}/bower_components/bootstrap-tour/build/js/bootstrap-tour.min.js"></script>
-<!-- star rating plugin -->
-<script src="${pageContext.request.contextPath}/js/jquery.raty.min.js"></script>
-<!-- for iOS style toggle switch -->
-<script src="${pageContext.request.contextPath}/js/jquery.iphone.toggle.js"></script>
-<!-- autogrowing textarea plugin -->
-<script src="${pageContext.request.contextPath}/js/jquery.autogrow-textarea.js"></script>
-<!-- multiple file upload plugin -->
-<script src="${pageContext.request.contextPath}/js/jquery.uploadify-3.1.min.js"></script>
-<!-- history.js for cross-browser state change on ajax -->
-<script src="${pageContext.request.contextPath}/js/jquery.history.js"></script>
-<!-- application script for Charisma demo -->
-<script src="${pageContext.request.contextPath}/js/charisma.js"></script>
-
-
-
-
-</div></div><div style="display: none;" id="cboxOverlay"></div><div style="display: none;" tabindex="-1" role="dialog" class="" id="colorbox"><div id="cboxWrapper"><div><div style="float: left;" id="cboxTopLeft"></div><div style="float: left;" id="cboxTopCenter"></div><div style="float: left;" id="cboxTopRight"></div></div><div style="clear: left;"><div style="float: left;" id="cboxMiddleLeft"></div><div style="float: left;" id="cboxContent"><div style="float: left;" id="cboxTitle"></div><div style="float: left;" id="cboxCurrent"></div><button id="cboxPrevious" type="button"></button><button id="cboxNext" type="button"></button><button id="cboxSlideshow"></button><div style="float: left;" id="cboxLoadingOverlay"></div><div style="float: left;" id="cboxLoadingGraphic"></div></div><div style="float: left;" id="cboxMiddleRight"></div></div><div style="clear: left;"><div style="float: left;" id="cboxBottomLeft"></div><div style="float: left;" id="cboxBottomCenter"></div><div style="float: left;" id="cboxBottomRight"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div>
-    
-  
+	<div class="ch-container">
+	    <div class="row">
+	        
+	        <!-- left menu starts -->
+	        <div class="col-sm-2 col-lg-2">
+	            <div class="sidebar-nav">
+	                <div class="nav-canvas">
+	                    <div class="nav-sm nav nav-stacked">
+	
+	                    </div>
+	                    <ul class="nav nav-pills nav-stacked main-menu">
+							<li class="accordion">
+	                            <a href="form.html"><i class="glyphicon glyphicon-list-alt"></i><span>&nbsp;&nbsp;&nbsp;业务管理</span></a>
+	                            <ul class="nav nav-pills nav-stacked">
+	                                <li><a href="../orders/order.jsp" target="right">订单管理</a></li>
+	                                <li><a href="../orders/order.jsp" target="right">调度配送</a></li>
+									<li><a href="../orders/order.jsp" target="right">出车登记</a></li>
+									<li><a href="../orders/order.jsp" target="right">回车报账</a></li>
+	                            </ul>
+	                        </li>
+	                        <li class="accordion">
+	                            <a href="form.html"><i class="glyphicon glyphicon-header"></i><span>&nbsp;&nbsp;&nbsp;车辆管理</span></a>
+	                            <ul class="nav nav-pills nav-stacked">
+	                                <li><a href="../orders/order.jsp" target="right">维修登记</a></li>
+	                                <li><a href="../orders/order.jsp" target="right">保养登记</a></li>
+									<li><a href="../orders/order.jsp" target="right">违章登记</a></li>
+									<li><a href="../orders/order.jsp" target="right">事故登记</a></li>
+									<li><a href="../orders/order.jsp" target="right">规费登记</a></li>
+									<li><a href="../orders/order.jsp" target="right">配件相关</a></li>
+	                            </ul>
+	                        </li>
+	                        <li class="accordion">
+	                            <a href="form.html"><i class="glyphicon glyphicon-tower"></i><span>&nbsp;&nbsp;&nbsp;油料管理</span></a>
+	                            <ul class="nav nav-pills nav-stacked">
+	                                <li><a href="../orders/order.jsp" target="right">油料管理</a></li>
+	                                <li><a href="../orders/order.jsp" target="right">油卡管理</a></li>
+									<li><a href="../orders/order.jsp" target="right">加油登记</a></li>
+	                            </ul>
+	                        </li>
+	                        <li class="accordion">
+	                            <a href="form.html"><i class="glyphicon glyphicon-credit-card"></i><span>&nbsp;&nbsp;&nbsp;现金银行</span></a>
+	                            <ul class="nav nav-pills nav-stacked">
+	                                <li><a href="../orders/order.jsp" target="right">路卡充值登记</a></li>
+	                                <li><a href="../orders/order.jsp" target="right">办公用品管理</a></li>
+	                                <li><a href="../orders/order.jsp" target="right">银行存取款</a></li>
+									<li><a href="../orders/order.jsp" target="right">借还款登记</a></li>
+									<li><a href="../orders/order.jsp" target="right">其他支出</a></li>
+									<li><a href="../orders/order.jsp" target="right">其他收入</a></li>
+	                            </ul>
+	                        </li>
+	                        <li class="accordion">
+	                            <a href="form.html"><i class="glyphicon glyphicon-list-alt"></i><span>&nbsp;&nbsp;&nbsp;应收应付</span></a>
+	                            <ul class="nav nav-pills nav-stacked">
+	                                <li><a href="../orders/order.jsp" target="right">应付结算</a></li>
+	                                <li><a href="../orders/order.jsp" target="right">应收结算</a></li>
+									<li><a href="../orders/order.jsp" target="right">预收预付管理</a></li>
+									<li><a href="../orders/order.jsp" target="right">应收应付账簿</a></li>
+	                            </ul>
+	                        </li>
+	                        <li class="accordion">
+	                            <a href="form.html"><i class="glyphicon glyphicon-calendar"></i><span>&nbsp;&nbsp;&nbsp;工资管理</span></a>
+	                            <ul class="nav nav-pills nav-stacked">
+	                                <li><a href="../orders/order.jsp" target="right">缺勤登记</a></li>
+	                                <li><a href="../orders/order.jsp" target="right">工资结算</a></li>
+									<li><a href="../orders/order.jsp" target="right">工资设置</a></li>
+	                            </ul>
+	                        </li>
+	                        <li class="accordion">
+	                            <a href="form.html"><i class="glyphicon glyphicon-stats"></i><span>&nbsp;&nbsp;&nbsp;经营分析</span></a>
+	                            <ul class="nav nav-pills nav-stacked">
+	                                <li><a href="../orders/order.jsp" target="right">订单管理</a></li>
+	                                <li><a href="../orders/order.jsp" target="right">调度配送</a></li>
+									<li><a href="../orders/order.jsp" target="right">出车登记</a></li>
+									<li><a href="../orders/order.jsp" target="right">回车报账</a></li>
+	                            </ul>
+	                        </li>
+	                        <li class="accordion">
+	                            <a href="form.html"><i class="glyphicon glyphicon-asterisk"></i><span>&nbsp;&nbsp;&nbsp;系统维护</span></a>
+	                            <ul class="nav nav-pills nav-stacked">
+	                                <li><a href="../orders/order.jsp" target="right">企业资料</a></li>
+	                                <li><a href="../orders/order.jsp" target="right">客户资料</a></li>
+	                                <li><a href="../orders/order.jsp" target="right">常用资料</a></li>
+									<li><a href="../orders/order.jsp" target="right">供应商资料</a></li>
+	                            </ul>
+	                        </li>
+	                        <li class="accordion">
+	                            <a href="form.html"><i class="glyphicon glyphicon-inbox"></i><span>&nbsp;&nbsp;&nbsp;仓储管理</span></a>
+	                            <ul class="nav nav-pills nav-stacked">
+	                                <li><a href="../orders/order.jsp" target="right">入库管理</a></li>
+	                                <li><a href="../orders/order.jsp" target="right">出库管理</a></li>
+									<li><a href="../orders/order.jsp" target="right">库存明细</a></li>
+									<li><a href="../orders/order.jsp" target="right">出入库查询</a></li>
+	                            </ul>
+	                        </li>
+							<li class="accordion">
+	                            <a href="form.html"><i class="glyphicon glyphicon-wrench"></i><span>&nbsp;&nbsp;&nbsp;辅助工具</span></a>
+	                            <ul class="nav nav-pills nav-stacked">
+	                                <li><a href="form.html">新增员工</a></li>
+	                                <li><a href="form.html">修改信息</a></li>
+									<li><a href="form.html">员工状态</a></li>
+	                            </ul>
+	                        </li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	        <!--/span-->
+	        <!-- left menu ends -->
+	
+	        <noscript>
+	            <div class="alert alert-block col-md-12">
+	                <h4 class="alert-heading">Warning!</h4>
+	
+	                <p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a>
+	                    enabled to use this site.</p>
+	            </div>
+	        </noscript>
+	
+	        <div id="content" class="col-lg-10 col-sm-10">
+	            <!-- content starts -->
+	            <iframe name="right" scrolling="no" frameborder="0" style="width: 100%;" onload="this.height=this.contentWindow.document.documentElement.scrollHeight*2">
+	           
+	            </iframe>
+	
+	
+	
+					
+	
+	    <!-- content ends -->
+	    	</div><!--/#content.col-md-0-->
+	
+	
+	
+	
+	
+	</div></div>
+	<div style="display: none;" id="cboxOverlay"></div><div style="display: none;" tabindex="-1" role="dialog" class="" id="colorbox"><div id="cboxWrapper"><div><div style="float: left;" id="cboxTopLeft"></div><div style="float: left;" id="cboxTopCenter"></div><div style="float: left;" id="cboxTopRight"></div></div><div style="clear: left;"><div style="float: left;" id="cboxMiddleLeft"></div><div style="float: left;" id="cboxContent"><div style="float: left;" id="cboxTitle"></div><div style="float: left;" id="cboxCurrent"></div><button id="cboxPrevious" type="button"></button><button id="cboxNext" type="button"></button><button id="cboxSlideshow"></button><div style="float: left;" id="cboxLoadingOverlay"></div><div style="float: left;" id="cboxLoadingGraphic"></div></div><div style="float: left;" id="cboxMiddleRight"></div></div><div style="clear: left;"><div style="float: left;" id="cboxBottomLeft"></div><div style="float: left;" id="cboxBottomCenter"></div><div style="float: left;" id="cboxBottomRight"></div></div></div><div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none;"></div></div>
+	    
+  	</div>
   </body>
+  <!-- external javascript -->
+	
+	<script src="${pageContext.request.contextPath}/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	
+	<!-- library for cookie management -->
+	<script src="${pageContext.request.contextPath}/js/jquery.cookie.js"></script>
+	<!-- calender plugin -->
+	<script src="${pageContext.request.contextPath}/bower_components/moment/min/moment.min.js"></script>
+	<script src="${pageContext.request.contextPath}/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
+	<!-- data table plugin -->
+	<script src="${pageContext.request.contextPath}/js/jquery.dataTables.min.js"></script>
+	
+	<!-- select or dropdown enhancer -->
+	<script src="${pageContext.request.contextPath}/bower_components/chosen/chosen.jquery.min.js"></script>
+	<!-- plugin for gallery image view -->
+	<script src="${pageContext.request.contextPath}/bower_components/colorbox/jquery.colorbox-min.js"></script>
+	<!-- notification plugin -->
+	<script src="${pageContext.request.contextPath}/js/jquery.noty.js"></script>
+	<!-- library for making tables responsive -->
+	<script src="${pageContext.request.contextPath}/bower_components/responsive-tables/responsive-tables.js"></script>
+	<!-- tour plugin -->
+	<script src="${pageContext.request.contextPath}/bower_components/bootstrap-tour/build/js/bootstrap-tour.min.js"></script>
+	<!-- star rating plugin -->
+	<script src="${pageContext.request.contextPath}/js/jquery.raty.min.js"></script>
+	<!-- for iOS style toggle switch -->
+	<script src="${pageContext.request.contextPath}/js/jquery.iphone.toggle.js"></script>
+	<!-- autogrowing textarea plugin -->
+	<script src="${pageContext.request.contextPath}/js/jquery.autogrow-textarea.js"></script>
+	<!-- multiple file upload plugin -->
+	<script src="${pageContext.request.contextPath}/js/jquery.uploadify-3.1.min.js"></script>
+	<!-- history.js for cross-browser state change on ajax -->
+	<script src="${pageContext.request.contextPath}/js/jquery.history.js"></script>
+	<!-- application script for Charisma demo -->
+	<script src="${pageContext.request.contextPath}/js/charisma.js"></script>
 </html>
