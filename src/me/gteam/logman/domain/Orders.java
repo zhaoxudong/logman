@@ -42,21 +42,15 @@ public class Orders implements java.io.Serializable {
 	public Orders() {
 	}
 
-	/** minimal constructor */
-	public Orders(Integer orderId) {
-		this.orderId = orderId;
-	}
-
 	/** full constructor */
-	public Orders(Integer orderId, Date orderTime, Date requireTime,
-			Integer templateNo, String shipperContact, String shipperTel,
-			String consigneeContact, String consigneeTel,
-			String contractNumber, Integer loadAddr, Integer unloadAddr,
-			Integer goods, String measurementUnit, Double advanceAmount,
-			String iswhole, Integer routeId, Double heavykm, Double emptykm,
-			String ladingNo, String priceFormula, Double unitPrice,
-			Double amount, String settlementWay, String operator, String remark) {
-		this.orderId = orderId;
+	public Orders(Date orderTime, Date requireTime, Integer templateNo,
+			String shipperContact, String shipperTel, String consigneeContact,
+			String consigneeTel, String contractNumber, Integer loadAddr,
+			Integer unloadAddr, Integer goods, String measurementUnit,
+			Double advanceAmount, String iswhole, Integer routeId,
+			Double heavykm, Double emptykm, String ladingNo,
+			String priceFormula, Double unitPrice, Double amount,
+			String settlementWay, String operator, String remark) {
 		this.orderTime = orderTime;
 		this.requireTime = requireTime;
 		this.templateNo = templateNo;

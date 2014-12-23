@@ -46,6 +46,8 @@ public class BaseDaoImpl<T> implements BaseDao<T>{
 	public void saveEntry(T t) {
 		// TODO Auto-generated method stub
 		this.hibernateTemplate.save(t);
+		
+		
 	}
 
 	public void updateEntry(T t) {

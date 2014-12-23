@@ -8,7 +8,7 @@
     <class name="me.gteam.logman.domain.Orders" table="orders" catalog="logman">
         <id name="orderId" type="java.lang.Integer">
             <column name="ORDER_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <property name="orderTime" type="java.util.Date">
             <column name="ORDER_TIME" length="10" />
