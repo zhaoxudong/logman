@@ -21,6 +21,11 @@
 	<property name="show_sql">true</property>
 	<property name="connection.autocommit">true</property>
 	<mapping resource="me/gteam/logman/domain/Orders.hbm.xml" />
+	<mapping resource="me/gteam/logman/domain/User.hbm.xml" />
+	<mapping resource="me/gteam/logman/domain/UserAuthority.hbm.xml" />
+	<mapping resource="me/gteam/logman/domain/PrimaryAuthority.hbm.xml" />
+	<mapping resource="me/gteam/logman/domain/SecondAuthority.hbm.xml" />
+	<mapping resource="me/gteam/logman/domain/ThirdAuthority.hbm.xml" />
 	
 </session-factory>
 </hibernate-configuration>

@@ -4,7 +4,7 @@
 	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
 <struts>
   	<package name="orders" namespace="/" extends="struts-default">
-  		<action name="orderAction_*"  method="{1}" class="me.gteam.logman.struts2.action.OrdersAction">
+  		<action name="ordersAction_*"  method="{1}" class="me.gteam.logman.struts2.action.OrdersAction">
   			<result name="success">order.jsp</result>
   		</action>
   	</package>
