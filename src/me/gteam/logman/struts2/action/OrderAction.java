@@ -16,10 +16,16 @@ import com.opensymphony.xwork2.ActionContext;
 
 @Controller("ordersAction")
 @Scope("prototype")
-public class OrdersAction extends BaseAction<Orders>{
+public class OrderAction extends BaseAction<Orders>{
 	@Resource(name="ordersService")
 	private OrdersService ordersService;
 	
+	public String addOrderUI(){
+		return "addOrderUI";
+	}
+	public String listOrderUI(){
+		return "listOrderUI";
+	}
 	public String addOrders(){
 		Orders orders = new Orders();
 		BeanUtils.copyProperties(this.getModel(), orders);

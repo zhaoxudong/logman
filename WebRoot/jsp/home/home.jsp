@@ -86,23 +86,8 @@
 	        
 	        <div id="content" class="col-lg-10 col-sm-10">
 	            
-	            <iframe name="right" scrolling="no" frameborder="0" style="width: 100%;" onload="this.height=this.contentWindow.document.documentElement.scrollHeight*2">
-	           		<ul id="myTab" class="nav nav-tabs">
-				      <s:iterator value="#thirdAuthorities">
-				      	<li><s:a action="url" data-toggle="tab" target="rightBottom"><s:property value="thiAuthority"/></s:a></li>
-					  </s:iterator>
-				    </ul>
-   					<script>
-					   $(function () {
-					      $('#myTab li:eq(0) a').tab('show');
-					   });
-					</script>
-	           		<div class="col-sm-12 col-lg-12">
-	           			<iframe name="rightBottom" scrolling="no" frameborder="0" style="width: 100%;" onload="this.height=this.contentWindow.document.documentElement.scrollHeight*2">
-	           				
-	            		</iframe>
+	            <iframe name="right" scrolling="no" frameborder="0" style="width: 100%;" onload="this.height=this.contentWindow.document.documentElement.scrollHeight*100">
 	           		
-	           		</div>
 	            </iframe>
 	
 	    	</div>
