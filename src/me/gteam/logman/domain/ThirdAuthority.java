@@ -1,6 +1,5 @@
 package me.gteam.logman.domain;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,7 +15,7 @@ public class ThirdAuthority implements java.io.Serializable {
 	private SecondAuthority secondAuthority;
 	private String thiAuthority;
 	private String url;
-	private Set<UserAuthority> userAuthorities = new HashSet<UserAuthority>(0);
+	private Set userAuthorities = new HashSet(0);
 
 	// Constructors
 

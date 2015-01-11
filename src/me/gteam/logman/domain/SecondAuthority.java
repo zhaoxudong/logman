@@ -1,6 +1,5 @@
 package me.gteam.logman.domain;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,7 +14,7 @@ public class SecondAuthority implements java.io.Serializable {
 	private Integer secId;
 	private PrimaryAuthority primaryAuthority;
 	private String secAuthority;
-	private Set<ThirdAuthority> thirdAuthorities = new HashSet<ThirdAuthority>(0);
+	private Set thirdAuthorities = new HashSet(0);
 
 	// Constructors
 
@@ -27,12 +26,11 @@ public class SecondAuthority implements java.io.Serializable {
 	public SecondAuthority(Integer secId) {
 		this.secId = secId;
 	}
-
 	public SecondAuthority(Integer secId,String secAuthority) {
 		this.secId = secId;
 		this.secAuthority = secAuthority;
 	}
-	
+
 	/** full constructor */
 	public SecondAuthority(Integer secId, PrimaryAuthority primaryAuthority,
 			String secAuthority, Set thirdAuthorities) {

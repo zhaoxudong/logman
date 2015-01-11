@@ -1,6 +1,5 @@
 package me.gteam.logman.domain;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,7 +14,7 @@ public class User implements java.io.Serializable {
 	private Integer userId;
 	private String userName;
 	private String passwd;
-	private Set<UserAuthority> userAuthorities = new HashSet<UserAuthority>(0);
+	private Set userAuthorities = new HashSet(0);
 
 	// Constructors
 

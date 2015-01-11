@@ -11,21 +11,23 @@ public class Orders implements java.io.Serializable {
 	// Fields
 
 	private Integer orderId;
+	private RouteTemplate routeTemplate;
+	private UnloadLocation unloadLocation;
+	private Route route;
+	private LoadLocation loadLocation;
+	private Costumer costumerByConsignee;
+	private Costumer costumerByShipper;
+	private Goods goods;
 	private Date orderTime;
 	private Date requireTime;
-	private Integer templateNo;
 	private String shipperContact;
 	private String shipperTel;
 	private String consigneeContact;
 	private String consigneeTel;
 	private String contractNumber;
-	private Integer loadAddr;
-	private Integer unloadAddr;
-	private Integer goods;
 	private String measurementUnit;
 	private Double advanceAmount;
 	private String iswhole;
-	private Integer routeId;
 	private Double heavykm;
 	private Double emptykm;
 	private String ladingNo;
@@ -34,6 +36,7 @@ public class Orders implements java.io.Serializable {
 	private Double amount;
 	private String settlementWay;
 	private String operator;
+	private Integer isFinished;
 	private String remark;
 
 	// Constructors
@@ -42,30 +45,41 @@ public class Orders implements java.io.Serializable {
 	public Orders() {
 	}
 
+	/** minimal constructor */
+	public Orders(Integer orderId) {
+		this.orderId = orderId;
+	}
+
 	/** full constructor */
-	public Orders(Date orderTime, Date requireTime, Integer templateNo,
-			String shipperContact, String shipperTel, String consigneeContact,
-			String consigneeTel, String contractNumber, Integer loadAddr,
-			Integer unloadAddr, Integer goods, String measurementUnit,
-			Double advanceAmount, String iswhole, Integer routeId,
-			Double heavykm, Double emptykm, String ladingNo,
-			String priceFormula, Double unitPrice, Double amount,
-			String settlementWay, String operator, String remark) {
+	public Orders(Integer orderId, RouteTemplate routeTemplate,
+			UnloadLocation unloadLocation, Route route,
+			LoadLocation loadLocation, Costumer costumerByConsignee,
+			Costumer costumerByShipper, Goods goods, Date orderTime,
+			Date requireTime, String shipperContact, String shipperTel,
+			String consigneeContact, String consigneeTel,
+			String contractNumber, String measurementUnit,
+			Double advanceAmount, String iswhole, Double heavykm,
+			Double emptykm, String ladingNo, String priceFormula,
+			Double unitPrice, Double amount, String settlementWay,
+			String operator, Integer isFinished, String remark) {
+		this.orderId = orderId;
+		this.routeTemplate = routeTemplate;
+		this.unloadLocation = unloadLocation;
+		this.route = route;
+		this.loadLocation = loadLocation;
+		this.costumerByConsignee = costumerByConsignee;
+		this.costumerByShipper = costumerByShipper;
+		this.goods = goods;
 		this.orderTime = orderTime;
 		this.requireTime = requireTime;
-		this.templateNo = templateNo;
 		this.shipperContact = shipperContact;
 		this.shipperTel = shipperTel;
 		this.consigneeContact = consigneeContact;
 		this.consigneeTel = consigneeTel;
 		this.contractNumber = contractNumber;
-		this.loadAddr = loadAddr;
-		this.unloadAddr = unloadAddr;
-		this.goods = goods;
 		this.measurementUnit = measurementUnit;
 		this.advanceAmount = advanceAmount;
 		this.iswhole = iswhole;
-		this.routeId = routeId;
 		this.heavykm = heavykm;
 		this.emptykm = emptykm;
 		this.ladingNo = ladingNo;
@@ -74,6 +88,7 @@ public class Orders implements java.io.Serializable {
 		this.amount = amount;
 		this.settlementWay = settlementWay;
 		this.operator = operator;
+		this.isFinished = isFinished;
 		this.remark = remark;
 	}
 
@@ -85,6 +100,62 @@ public class Orders implements java.io.Serializable {
 
 	public void setOrderId(Integer orderId) {
 		this.orderId = orderId;
+	}
+
+	public RouteTemplate getRouteTemplate() {
+		return this.routeTemplate;
+	}
+
+	public void setRouteTemplate(RouteTemplate routeTemplate) {
+		this.routeTemplate = routeTemplate;
+	}
+
+	public UnloadLocation getUnloadLocation() {
+		return this.unloadLocation;
+	}
+
+	public void setUnloadLocation(UnloadLocation unloadLocation) {
+		this.unloadLocation = unloadLocation;
+	}
+
+	public Route getRoute() {
+		return this.route;
+	}
+
+	public void setRoute(Route route) {
+		this.route = route;
+	}
+
+	public LoadLocation getLoadLocation() {
+		return this.loadLocation;
+	}
+
+	public void setLoadLocation(LoadLocation loadLocation) {
+		this.loadLocation = loadLocation;
+	}
+
+	public Costumer getCostumerByConsignee() {
+		return this.costumerByConsignee;
+	}
+
+	public void setCostumerByConsignee(Costumer costumerByConsignee) {
+		this.costumerByConsignee = costumerByConsignee;
+	}
+
+	public Costumer getCostumerByShipper() {
+		return this.costumerByShipper;
+	}
+
+	public void setCostumerByShipper(Costumer costumerByShipper) {
+		this.costumerByShipper = costumerByShipper;
+	}
+
+	public Goods getGoods() {
+		return this.goods;
+	}
+
+	public void setGoods(Goods goods) {
+		this.goods = goods;
 	}
 
 	public Date getOrderTime() {
@@ -101,14 +172,6 @@ public class Orders implements java.io.Serializable {
 
 	public void setRequireTime(Date requireTime) {
 		this.requireTime = requireTime;
-	}
-
-	public Integer getTemplateNo() {
-		return this.templateNo;
-	}
-
-	public void setTemplateNo(Integer templateNo) {
-		this.templateNo = templateNo;
 	}
 
 	public String getShipperContact() {
@@ -151,30 +214,6 @@ public class Orders implements java.io.Serializable {
 		this.contractNumber = contractNumber;
 	}
 
-	public Integer getLoadAddr() {
-		return this.loadAddr;
-	}
-
-	public void setLoadAddr(Integer loadAddr) {
-		this.loadAddr = loadAddr;
-	}
-
-	public Integer getUnloadAddr() {
-		return this.unloadAddr;
-	}
-
-	public void setUnloadAddr(Integer unloadAddr) {
-		this.unloadAddr = unloadAddr;
-	}
-
-	public Integer getGoods() {
-		return this.goods;
-	}
-
-	public void setGoods(Integer goods) {
-		this.goods = goods;
-	}
-
 	public String getMeasurementUnit() {
 		return this.measurementUnit;
 	}
@@ -197,14 +236,6 @@ public class Orders implements java.io.Serializable {
 
 	public void setIswhole(String iswhole) {
 		this.iswhole = iswhole;
-	}
-
-	public Integer getRouteId() {
-		return this.routeId;
-	}
-
-	public void setRouteId(Integer routeId) {
-		this.routeId = routeId;
 	}
 
 	public Double getHeavykm() {
@@ -269,6 +300,14 @@ public class Orders implements java.io.Serializable {
 
 	public void setOperator(String operator) {
 		this.operator = operator;
+	}
+
+	public Integer getIsFinished() {
+		return this.isFinished;
+	}
+
+	public void setIsFinished(Integer isFinished) {
+		this.isFinished = isFinished;
 	}
 
 	public String getRemark() {
