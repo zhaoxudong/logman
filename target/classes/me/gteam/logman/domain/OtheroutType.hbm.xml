@@ -8,19 +8,16 @@
     <class name="me.gteam.logman.domain.OtheroutType" table="otherout_type" catalog="logman">
         <id name="typeid" type="java.lang.Integer">
             <column name="TYPEID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" length="30" />
+        </property>
         <property name="isvehicle" type="java.lang.String">
             <column name="ISVEHICLE" length="6" />
         </property>
         <property name="issplitthecost" type="java.lang.String">
             <column name="ISSPLITTHECOST" length="6" />
         </property>
-        <set name="otherouts" inverse="true">
-            <key>
-                <column name="OUT_TYPE" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.Otherout" />
-        </set>
     </class>
 </hibernate-mapping>

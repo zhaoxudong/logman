@@ -8,19 +8,13 @@
     <class name="me.gteam.logman.domain.UnloadLocation" table="unload_location" catalog="logman">
         <id name="addrId" type="java.lang.Integer">
             <column name="ADDR_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <many-to-one name="costumer" class="me.gteam.logman.domain.Costumer" fetch="select">
-            <column name="COSTUMER_ID" />
+            <column name="COSUMER_ID" />
         </many-to-one>
         <property name="addr" type="java.lang.String">
             <column name="ADDR" length="50" />
         </property>
-        <set name="orderses" inverse="true">
-            <key>
-                <column name="UNLOAD_ADDR" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.Orders" />
-        </set>
     </class>
 </hibernate-mapping>

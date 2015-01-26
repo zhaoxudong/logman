@@ -8,7 +8,7 @@
     <class name="me.gteam.logman.domain.Department" table="department" catalog="logman">
         <id name="departmentId" type="java.lang.Integer">
             <column name="DEPARTMENT_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <property name="departmentName" type="java.lang.String">
             <column name="DEPARTMENT_NAME" length="20" />
@@ -16,29 +16,5 @@
         <property name="remark" type="java.lang.String">
             <column name="REMARK" length="50" />
         </property>
-        <set name="drivers" inverse="true">
-            <key>
-                <column name="DEPARTMENT" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.Driver" />
-        </set>
-        <set name="handlers" inverse="true">
-            <key>
-                <column name="DEPARTMENT_ID" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.Handler" />
-        </set>
-        <set name="maintenances" inverse="true">
-            <key>
-                <column name="DEPARTMENT_ID" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.Maintenance" />
-        </set>
-        <set name="staffs" inverse="true">
-            <key>
-                <column name="DEPARTMENT_ID" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.Staff" />
-        </set>
     </class>
 </hibernate-mapping>

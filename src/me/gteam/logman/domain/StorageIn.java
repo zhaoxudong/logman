@@ -1,6 +1,8 @@
 package me.gteam.logman.domain;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * StorageIn entity. @author MyEclipse Persistence Tools
@@ -11,17 +13,16 @@ public class StorageIn implements java.io.Serializable {
 	// Fields
 
 	private Integer inId;
-	private Vehicle vehicle;
-	private Costumer costumer;
-	private Storehouse storehouse;
-	private Driver driver;
-	private Goods goods;
 	private Date date;
-	private String lotNumber;
-	private String measurement;
-	private Double quantity;
-	private Double weight;
+	private String costumer;
+	private String vehicle;
+	private String driver;
+	private Double loadFee;
+	private Double warehousingFee;
+	private Double transportation;
+	private Double otherCost;
 	private String remark;
+	private Set storageInDetails = new HashSet(0);
 
 	// Constructors
 
@@ -29,28 +30,20 @@ public class StorageIn implements java.io.Serializable {
 	public StorageIn() {
 	}
 
-	/** minimal constructor */
-	public StorageIn(Integer inId) {
-		this.inId = inId;
-	}
-
 	/** full constructor */
-	public StorageIn(Integer inId, Vehicle vehicle, Costumer costumer,
-			Storehouse storehouse, Driver driver, Goods goods, Date date,
-			String lotNumber, String measurement, Double quantity,
-			Double weight, String remark) {
-		this.inId = inId;
-		this.vehicle = vehicle;
-		this.costumer = costumer;
-		this.storehouse = storehouse;
-		this.driver = driver;
-		this.goods = goods;
+	public StorageIn(Date date, String costumer, String vehicle, String driver,
+			Double loadFee, Double warehousingFee, Double transportation,
+			Double otherCost, String remark, Set storageInDetails) {
 		this.date = date;
-		this.lotNumber = lotNumber;
-		this.measurement = measurement;
-		this.quantity = quantity;
-		this.weight = weight;
+		this.costumer = costumer;
+		this.vehicle = vehicle;
+		this.driver = driver;
+		this.loadFee = loadFee;
+		this.warehousingFee = warehousingFee;
+		this.transportation = transportation;
+		this.otherCost = otherCost;
 		this.remark = remark;
+		this.storageInDetails = storageInDetails;
 	}
 
 	// Property accessors
@@ -63,46 +56,6 @@ public class StorageIn implements java.io.Serializable {
 		this.inId = inId;
 	}
 
-	public Vehicle getVehicle() {
-		return this.vehicle;
-	}
-
-	public void setVehicle(Vehicle vehicle) {
-		this.vehicle = vehicle;
-	}
-
-	public Costumer getCostumer() {
-		return this.costumer;
-	}
-
-	public void setCostumer(Costumer costumer) {
-		this.costumer = costumer;
-	}
-
-	public Storehouse getStorehouse() {
-		return this.storehouse;
-	}
-
-	public void setStorehouse(Storehouse storehouse) {
-		this.storehouse = storehouse;
-	}
-
-	public Driver getDriver() {
-		return this.driver;
-	}
-
-	public void setDriver(Driver driver) {
-		this.driver = driver;
-	}
-
-	public Goods getGoods() {
-		return this.goods;
-	}
-
-	public void setGoods(Goods goods) {
-		this.goods = goods;
-	}
-
 	public Date getDate() {
 		return this.date;
 	}
@@ -111,36 +64,60 @@ public class StorageIn implements java.io.Serializable {
 		this.date = date;
 	}
 
-	public String getLotNumber() {
-		return this.lotNumber;
+	public String getCostumer() {
+		return this.costumer;
 	}
 
-	public void setLotNumber(String lotNumber) {
-		this.lotNumber = lotNumber;
+	public void setCostumer(String costumer) {
+		this.costumer = costumer;
 	}
 
-	public String getMeasurement() {
-		return this.measurement;
+	public String getVehicle() {
+		return this.vehicle;
 	}
 
-	public void setMeasurement(String measurement) {
-		this.measurement = measurement;
+	public void setVehicle(String vehicle) {
+		this.vehicle = vehicle;
 	}
 
-	public Double getQuantity() {
-		return this.quantity;
+	public String getDriver() {
+		return this.driver;
 	}
 
-	public void setQuantity(Double quantity) {
-		this.quantity = quantity;
+	public void setDriver(String driver) {
+		this.driver = driver;
 	}
 
-	public Double getWeight() {
-		return this.weight;
+	public Double getLoadFee() {
+		return this.loadFee;
 	}
 
-	public void setWeight(Double weight) {
-		this.weight = weight;
+	public void setLoadFee(Double loadFee) {
+		this.loadFee = loadFee;
+	}
+
+	public Double getWarehousingFee() {
+		return this.warehousingFee;
+	}
+
+	public void setWarehousingFee(Double warehousingFee) {
+		this.warehousingFee = warehousingFee;
+	}
+
+	public Double getTransportation() {
+		return this.transportation;
+	}
+
+	public void setTransportation(Double transportation) {
+		this.transportation = transportation;
+	}
+
+	public Double getOtherCost() {
+		return this.otherCost;
+	}
+
+	public void setOtherCost(Double otherCost) {
+		this.otherCost = otherCost;
 	}
 
 	public String getRemark() {
@@ -149,6 +126,14 @@ public class StorageIn implements java.io.Serializable {
 
 	public void setRemark(String remark) {
 		this.remark = remark;
+	}
+
+	public Set getStorageInDetails() {
+		return this.storageInDetails;
+	}
+
+	public void setStorageInDetails(Set storageInDetails) {
+		this.storageInDetails = storageInDetails;
 	}
 
 }

@@ -10,8 +10,9 @@ public class RepairDetail implements java.io.Serializable {
 
 	private Integer detailId;
 	private Repair repair;
-	private RepairItem repairItem;
-	private Fittingdetail fittingdetail;
+	private String repairProject;
+	private String fittingNo;
+	private String fittingName;
 	private String fittingFormat;
 	private Double stockAmount;
 	private Double number;
@@ -25,20 +26,15 @@ public class RepairDetail implements java.io.Serializable {
 	public RepairDetail() {
 	}
 
-	/** minimal constructor */
-	public RepairDetail(Integer detailId) {
-		this.detailId = detailId;
-	}
-
 	/** full constructor */
-	public RepairDetail(Integer detailId, Repair repair, RepairItem repairItem,
-			Fittingdetail fittingdetail, String fittingFormat,
-			Double stockAmount, Double number, Double unitPrice,
-			Double fittingPrice, Double labourCost) {
-		this.detailId = detailId;
+	public RepairDetail(Repair repair, String repairProject, String fittingNo,
+			String fittingName, String fittingFormat, Double stockAmount,
+			Double number, Double unitPrice, Double fittingPrice,
+			Double labourCost) {
 		this.repair = repair;
-		this.repairItem = repairItem;
-		this.fittingdetail = fittingdetail;
+		this.repairProject = repairProject;
+		this.fittingNo = fittingNo;
+		this.fittingName = fittingName;
 		this.fittingFormat = fittingFormat;
 		this.stockAmount = stockAmount;
 		this.number = number;
@@ -65,20 +61,28 @@ public class RepairDetail implements java.io.Serializable {
 		this.repair = repair;
 	}
 
-	public RepairItem getRepairItem() {
-		return this.repairItem;
+	public String getRepairProject() {
+		return this.repairProject;
 	}
 
-	public void setRepairItem(RepairItem repairItem) {
-		this.repairItem = repairItem;
+	public void setRepairProject(String repairProject) {
+		this.repairProject = repairProject;
 	}
 
-	public Fittingdetail getFittingdetail() {
-		return this.fittingdetail;
+	public String getFittingNo() {
+		return this.fittingNo;
 	}
 
-	public void setFittingdetail(Fittingdetail fittingdetail) {
-		this.fittingdetail = fittingdetail;
+	public void setFittingNo(String fittingNo) {
+		this.fittingNo = fittingNo;
+	}
+
+	public String getFittingName() {
+		return this.fittingName;
+	}
+
+	public void setFittingName(String fittingName) {
+		this.fittingName = fittingName;
 	}
 
 	public String getFittingFormat() {

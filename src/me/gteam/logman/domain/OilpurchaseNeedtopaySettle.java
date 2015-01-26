@@ -13,13 +13,13 @@ public class OilpurchaseNeedtopaySettle implements java.io.Serializable {
 	// Fields
 
 	private Integer settleId;
-	private Account account;
-	private Supplier supplier;
 	private Date settleDate;
+	private String supplier;
 	private Double prepayRemainder;
 	private Double needtopay;
 	private Double prepay;
 	private Double actualPay;
+	private String account;
 	private String operator;
 	private String remark;
 	private Set iolpurchaseSettledetails = new HashSet(0);
@@ -30,24 +30,18 @@ public class OilpurchaseNeedtopaySettle implements java.io.Serializable {
 	public OilpurchaseNeedtopaySettle() {
 	}
 
-	/** minimal constructor */
-	public OilpurchaseNeedtopaySettle(Integer settleId) {
-		this.settleId = settleId;
-	}
-
 	/** full constructor */
-	public OilpurchaseNeedtopaySettle(Integer settleId, Account account,
-			Supplier supplier, Date settleDate, Double prepayRemainder,
-			Double needtopay, Double prepay, Double actualPay, String operator,
-			String remark, Set iolpurchaseSettledetails) {
-		this.settleId = settleId;
-		this.account = account;
-		this.supplier = supplier;
+	public OilpurchaseNeedtopaySettle(Date settleDate, String supplier,
+			Double prepayRemainder, Double needtopay, Double prepay,
+			Double actualPay, String account, String operator, String remark,
+			Set iolpurchaseSettledetails) {
 		this.settleDate = settleDate;
+		this.supplier = supplier;
 		this.prepayRemainder = prepayRemainder;
 		this.needtopay = needtopay;
 		this.prepay = prepay;
 		this.actualPay = actualPay;
+		this.account = account;
 		this.operator = operator;
 		this.remark = remark;
 		this.iolpurchaseSettledetails = iolpurchaseSettledetails;
@@ -63,28 +57,20 @@ public class OilpurchaseNeedtopaySettle implements java.io.Serializable {
 		this.settleId = settleId;
 	}
 
-	public Account getAccount() {
-		return this.account;
-	}
-
-	public void setAccount(Account account) {
-		this.account = account;
-	}
-
-	public Supplier getSupplier() {
-		return this.supplier;
-	}
-
-	public void setSupplier(Supplier supplier) {
-		this.supplier = supplier;
-	}
-
 	public Date getSettleDate() {
 		return this.settleDate;
 	}
 
 	public void setSettleDate(Date settleDate) {
 		this.settleDate = settleDate;
+	}
+
+	public String getSupplier() {
+		return this.supplier;
+	}
+
+	public void setSupplier(String supplier) {
+		this.supplier = supplier;
 	}
 
 	public Double getPrepayRemainder() {
@@ -117,6 +103,14 @@ public class OilpurchaseNeedtopaySettle implements java.io.Serializable {
 
 	public void setActualPay(Double actualPay) {
 		this.actualPay = actualPay;
+	}
+
+	public String getAccount() {
+		return this.account;
+	}
+
+	public void setAccount(String account) {
+		this.account = account;
 	}
 
 	public String getOperator() {

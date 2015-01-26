@@ -8,7 +8,9 @@ public class DrawoutfeeType implements java.io.Serializable {
 
 	// Fields
 
-	private DrawoutfeeTypeId id;
+	private Integer typeId;
+	private String typeName;
+	private String iscash;
 
 	// Constructors
 
@@ -17,18 +19,35 @@ public class DrawoutfeeType implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public DrawoutfeeType(DrawoutfeeTypeId id) {
-		this.id = id;
+	public DrawoutfeeType(String typeName, String iscash) {
+		this.typeName = typeName;
+		this.iscash = iscash;
 	}
 
 	// Property accessors
 
-	public DrawoutfeeTypeId getId() {
-		return this.id;
+	public Integer getTypeId() {
+		return this.typeId;
 	}
 
-	public void setId(DrawoutfeeTypeId id) {
-		this.id = id;
+	public void setTypeId(Integer typeId) {
+		this.typeId = typeId;
+	}
+
+	public String getTypeName() {
+		return this.typeName;
+	}
+
+	public void setTypeName(String typeName) {
+		this.typeName = typeName;
+	}
+
+	public String getIscash() {
+		return this.iscash;
+	}
+
+	public void setIscash(String iscash) {
+		this.iscash = iscash;
 	}
 
 }

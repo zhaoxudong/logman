@@ -11,8 +11,8 @@ public class Accident implements java.io.Serializable {
 	// Fields
 
 	private Integer accidentId;
-	private Vehicle vehicle;
-	private Driver driver;
+	private String vehicle;
+	private String driver;
 	private Date accidentDate;
 	private String location;
 	private String responsibleParty;
@@ -25,16 +25,10 @@ public class Accident implements java.io.Serializable {
 	public Accident() {
 	}
 
-	/** minimal constructor */
-	public Accident(Integer accidentId) {
-		this.accidentId = accidentId;
-	}
-
 	/** full constructor */
-	public Accident(Integer accidentId, Vehicle vehicle, Driver driver,
-			Date accidentDate, String location, String responsibleParty,
-			String operator, String remark) {
-		this.accidentId = accidentId;
+	public Accident(String vehicle, String driver, Date accidentDate,
+			String location, String responsibleParty, String operator,
+			String remark) {
 		this.vehicle = vehicle;
 		this.driver = driver;
 		this.accidentDate = accidentDate;
@@ -54,19 +48,19 @@ public class Accident implements java.io.Serializable {
 		this.accidentId = accidentId;
 	}
 
-	public Vehicle getVehicle() {
+	public String getVehicle() {
 		return this.vehicle;
 	}
 
-	public void setVehicle(Vehicle vehicle) {
+	public void setVehicle(String vehicle) {
 		this.vehicle = vehicle;
 	}
 
-	public Driver getDriver() {
+	public String getDriver() {
 		return this.driver;
 	}
 
-	public void setDriver(Driver driver) {
+	public void setDriver(String driver) {
 		this.driver = driver;
 	}
 

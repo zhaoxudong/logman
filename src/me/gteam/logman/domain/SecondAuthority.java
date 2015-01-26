@@ -22,19 +22,14 @@ public class SecondAuthority implements java.io.Serializable {
 	public SecondAuthority() {
 	}
 
-	/** minimal constructor */
-	public SecondAuthority(Integer secId) {
-		this.secId = secId;
-	}
 	public SecondAuthority(Integer secId,String secAuthority) {
 		this.secId = secId;
 		this.secAuthority = secAuthority;
 	}
-
+	
 	/** full constructor */
-	public SecondAuthority(Integer secId, PrimaryAuthority primaryAuthority,
+	public SecondAuthority(PrimaryAuthority primaryAuthority,
 			String secAuthority, Set thirdAuthorities) {
-		this.secId = secId;
 		this.primaryAuthority = primaryAuthority;
 		this.secAuthority = secAuthority;
 		this.thirdAuthorities = thirdAuthorities;

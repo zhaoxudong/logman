@@ -6,49 +6,33 @@
 -->
 <hibernate-mapping>
     <class name="me.gteam.logman.domain.Enterprise" table="enterprise" catalog="logman">
-        <id name="enterprisename" type="java.lang.String">
-            <column name="enterprisename" length="30" />
+        <id name="enterpriseName" type="java.lang.String">
+            <column name="ENTERPRISE_NAME" length="20" />
             <generator class="assigned" />
         </id>
-        <property name="organizationcode" type="java.lang.String">
-            <column name="organizationcode" length="9">
-                <comment>机构代码</comment>
-            </column>
+        <property name="institutionCode" type="java.lang.String">
+            <column name="INSTITUTION_CODE" length="10" />
         </property>
-        <property name="legalrepresentative" type="java.lang.String">
-            <column name="legalrepresentative" length="10" not-null="true">
-                <comment>法人代表</comment>
-            </column>
+        <property name="corporateRepresentative" type="java.lang.String">
+            <column name="CORPORATE_REPRESENTATIVE" length="10" />
         </property>
-        <property name="bankofdeposit" type="java.lang.String">
-            <column name="bankofdeposit" length="30">
-                <comment>开户银行</comment>
-            </column>
+        <property name="bankOfDeposit" type="java.lang.String">
+            <column name="BANK_OF_DEPOSIT" length="20" />
         </property>
-        <property name="bankaccount" type="java.lang.String">
-            <column name="bankaccount" length="20">
-                <comment>银行账号</comment>
-            </column>
+        <property name="bankAccount" type="java.lang.String">
+            <column name="BANK_ACCOUNT" length="20" />
         </property>
-        <property name="taxaccount" type="java.lang.String">
-            <column name="taxaccount" length="20">
-                <comment>纳税账号</comment>
-            </column>
+        <property name="taxAccount" type="java.lang.String">
+            <column name="TAX_ACCOUNT" length="20" />
         </property>
-        <property name="address" type="java.lang.String">
-            <column name="address" length="70">
-                <comment>通信地址</comment>
-            </column>
+        <property name="mailingAddress" type="java.lang.String">
+            <column name="MAILING_ADDRESS" length="50" />
         </property>
-        <property name="postalcode" type="java.lang.String">
-            <column name="postalcode" length="6">
-                <comment>邮政编码</comment>
-            </column>
+        <property name="postalCode" type="java.lang.String">
+            <column name="POSTAL_CODE" length="6" />
         </property>
-        <property name="tel" type="java.lang.String">
-            <column name="tel" length="15">
-                <comment>联系电话</comment>
-            </column>
+        <property name="contactNumber" type="java.lang.String">
+            <column name="CONTACT_NUMBER" length="11" />
         </property>
     </class>
 </hibernate-mapping>

@@ -1,6 +1,8 @@
 package me.gteam.logman.domain;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * StoreageOut entity. @author MyEclipse Persistence Tools
@@ -11,17 +13,16 @@ public class StoreageOut implements java.io.Serializable {
 	// Fields
 
 	private Integer outId;
-	private Vehicle vehicle;
-	private Costumer costumer;
-	private Storehouse storehouse;
-	private Driver driver;
-	private Goods goods;
 	private Date date;
-	private String lotNumber;
-	private String measurement;
-	private Double quantity;
-	private Double weight;
+	private String costumer;
+	private String vehicle;
+	private String driver;
+	private Double loadFee;
+	private Double storageFee;
+	private Double transportationFee;
+	private Double otherFee;
 	private String remark;
+	private Set storageOutDetails = new HashSet(0);
 
 	// Constructors
 
@@ -29,28 +30,21 @@ public class StoreageOut implements java.io.Serializable {
 	public StoreageOut() {
 	}
 
-	/** minimal constructor */
-	public StoreageOut(Integer outId) {
-		this.outId = outId;
-	}
-
 	/** full constructor */
-	public StoreageOut(Integer outId, Vehicle vehicle, Costumer costumer,
-			Storehouse storehouse, Driver driver, Goods goods, Date date,
-			String lotNumber, String measurement, Double quantity,
-			Double weight, String remark) {
-		this.outId = outId;
-		this.vehicle = vehicle;
-		this.costumer = costumer;
-		this.storehouse = storehouse;
-		this.driver = driver;
-		this.goods = goods;
+	public StoreageOut(Date date, String costumer, String vehicle,
+			String driver, Double loadFee, Double storageFee,
+			Double transportationFee, Double otherFee, String remark,
+			Set storageOutDetails) {
 		this.date = date;
-		this.lotNumber = lotNumber;
-		this.measurement = measurement;
-		this.quantity = quantity;
-		this.weight = weight;
+		this.costumer = costumer;
+		this.vehicle = vehicle;
+		this.driver = driver;
+		this.loadFee = loadFee;
+		this.storageFee = storageFee;
+		this.transportationFee = transportationFee;
+		this.otherFee = otherFee;
 		this.remark = remark;
+		this.storageOutDetails = storageOutDetails;
 	}
 
 	// Property accessors
@@ -63,46 +57,6 @@ public class StoreageOut implements java.io.Serializable {
 		this.outId = outId;
 	}
 
-	public Vehicle getVehicle() {
-		return this.vehicle;
-	}
-
-	public void setVehicle(Vehicle vehicle) {
-		this.vehicle = vehicle;
-	}
-
-	public Costumer getCostumer() {
-		return this.costumer;
-	}
-
-	public void setCostumer(Costumer costumer) {
-		this.costumer = costumer;
-	}
-
-	public Storehouse getStorehouse() {
-		return this.storehouse;
-	}
-
-	public void setStorehouse(Storehouse storehouse) {
-		this.storehouse = storehouse;
-	}
-
-	public Driver getDriver() {
-		return this.driver;
-	}
-
-	public void setDriver(Driver driver) {
-		this.driver = driver;
-	}
-
-	public Goods getGoods() {
-		return this.goods;
-	}
-
-	public void setGoods(Goods goods) {
-		this.goods = goods;
-	}
-
 	public Date getDate() {
 		return this.date;
 	}
@@ -111,36 +65,60 @@ public class StoreageOut implements java.io.Serializable {
 		this.date = date;
 	}
 
-	public String getLotNumber() {
-		return this.lotNumber;
+	public String getCostumer() {
+		return this.costumer;
 	}
 
-	public void setLotNumber(String lotNumber) {
-		this.lotNumber = lotNumber;
+	public void setCostumer(String costumer) {
+		this.costumer = costumer;
 	}
 
-	public String getMeasurement() {
-		return this.measurement;
+	public String getVehicle() {
+		return this.vehicle;
 	}
 
-	public void setMeasurement(String measurement) {
-		this.measurement = measurement;
+	public void setVehicle(String vehicle) {
+		this.vehicle = vehicle;
 	}
 
-	public Double getQuantity() {
-		return this.quantity;
+	public String getDriver() {
+		return this.driver;
 	}
 
-	public void setQuantity(Double quantity) {
-		this.quantity = quantity;
+	public void setDriver(String driver) {
+		this.driver = driver;
 	}
 
-	public Double getWeight() {
-		return this.weight;
+	public Double getLoadFee() {
+		return this.loadFee;
 	}
 
-	public void setWeight(Double weight) {
-		this.weight = weight;
+	public void setLoadFee(Double loadFee) {
+		this.loadFee = loadFee;
+	}
+
+	public Double getStorageFee() {
+		return this.storageFee;
+	}
+
+	public void setStorageFee(Double storageFee) {
+		this.storageFee = storageFee;
+	}
+
+	public Double getTransportationFee() {
+		return this.transportationFee;
+	}
+
+	public void setTransportationFee(Double transportationFee) {
+		this.transportationFee = transportationFee;
+	}
+
+	public Double getOtherFee() {
+		return this.otherFee;
+	}
+
+	public void setOtherFee(Double otherFee) {
+		this.otherFee = otherFee;
 	}
 
 	public String getRemark() {
@@ -149,6 +127,14 @@ public class StoreageOut implements java.io.Serializable {
 
 	public void setRemark(String remark) {
 		this.remark = remark;
+	}
+
+	public Set getStorageOutDetails() {
+		return this.storageOutDetails;
+	}
+
+	public void setStorageOutDetails(Set storageOutDetails) {
+		this.storageOutDetails = storageOutDetails;
 	}
 
 }

@@ -26,14 +26,8 @@ public class Costumer implements java.io.Serializable {
 	private String bank;
 	private String bankAccount;
 	private String remark;
-	private Set loadLocations = new HashSet(0);
 	private Set unloadLocations = new HashSet(0);
-	private Set storeDetails = new HashSet(0);
-	private Set storageIns = new HashSet(0);
-	private Set storeageOuts = new HashSet(0);
-	private Set freightNeedtoreceives = new HashSet(0);
-	private Set ordersesForShipper = new HashSet(0);
-	private Set ordersesForConsignee = new HashSet(0);
+	private Set loadLocations = new HashSet(0);
 
 	// Constructors
 
@@ -41,21 +35,12 @@ public class Costumer implements java.io.Serializable {
 	public Costumer() {
 	}
 
-	/** minimal constructor */
-	public Costumer(Integer cosumerId) {
-		this.cosumerId = cosumerId;
-	}
-
 	/** full constructor */
-	public Costumer(Integer cosumerId, String costumerAbbr, String type,
-			String fullName, String classification, String code,
-			String contact, String tel, String phone, String faxNumber,
-			String addr, String taxNumber, String bank, String bankAccount,
-			String remark, Set loadLocations, Set unloadLocations,
-			Set storeDetails, Set storageIns, Set storeageOuts,
-			Set freightNeedtoreceives, Set ordersesForShipper,
-			Set ordersesForConsignee) {
-		this.cosumerId = cosumerId;
+	public Costumer(String costumerAbbr, String type, String fullName,
+			String classification, String code, String contact, String tel,
+			String phone, String faxNumber, String addr, String taxNumber,
+			String bank, String bankAccount, String remark,
+			Set unloadLocations, Set loadLocations) {
 		this.costumerAbbr = costumerAbbr;
 		this.type = type;
 		this.fullName = fullName;
@@ -70,14 +55,8 @@ public class Costumer implements java.io.Serializable {
 		this.bank = bank;
 		this.bankAccount = bankAccount;
 		this.remark = remark;
-		this.loadLocations = loadLocations;
 		this.unloadLocations = unloadLocations;
-		this.storeDetails = storeDetails;
-		this.storageIns = storageIns;
-		this.storeageOuts = storeageOuts;
-		this.freightNeedtoreceives = freightNeedtoreceives;
-		this.ordersesForShipper = ordersesForShipper;
-		this.ordersesForConsignee = ordersesForConsignee;
+		this.loadLocations = loadLocations;
 	}
 
 	// Property accessors
@@ -202,14 +181,6 @@ public class Costumer implements java.io.Serializable {
 		this.remark = remark;
 	}
 
-	public Set getLoadLocations() {
-		return this.loadLocations;
-	}
-
-	public void setLoadLocations(Set loadLocations) {
-		this.loadLocations = loadLocations;
-	}
-
 	public Set getUnloadLocations() {
 		return this.unloadLocations;
 	}
@@ -218,52 +189,12 @@ public class Costumer implements java.io.Serializable {
 		this.unloadLocations = unloadLocations;
 	}
 
-	public Set getStoreDetails() {
-		return this.storeDetails;
+	public Set getLoadLocations() {
+		return this.loadLocations;
 	}
 
-	public void setStoreDetails(Set storeDetails) {
-		this.storeDetails = storeDetails;
-	}
-
-	public Set getStorageIns() {
-		return this.storageIns;
-	}
-
-	public void setStorageIns(Set storageIns) {
-		this.storageIns = storageIns;
-	}
-
-	public Set getStoreageOuts() {
-		return this.storeageOuts;
-	}
-
-	public void setStoreageOuts(Set storeageOuts) {
-		this.storeageOuts = storeageOuts;
-	}
-
-	public Set getFreightNeedtoreceives() {
-		return this.freightNeedtoreceives;
-	}
-
-	public void setFreightNeedtoreceives(Set freightNeedtoreceives) {
-		this.freightNeedtoreceives = freightNeedtoreceives;
-	}
-
-	public Set getOrdersesForShipper() {
-		return this.ordersesForShipper;
-	}
-
-	public void setOrdersesForShipper(Set ordersesForShipper) {
-		this.ordersesForShipper = ordersesForShipper;
-	}
-
-	public Set getOrdersesForConsignee() {
-		return this.ordersesForConsignee;
-	}
-
-	public void setOrdersesForConsignee(Set ordersesForConsignee) {
-		this.ordersesForConsignee = ordersesForConsignee;
+	public void setLoadLocations(Set loadLocations) {
+		this.loadLocations = loadLocations;
 	}
 
 }

@@ -8,16 +8,13 @@
     <class name="me.gteam.logman.domain.FreightNeedtoreceive" table="freight_needtoreceive" catalog="logman">
         <id name="settleId" type="java.lang.Integer">
             <column name="SETTLE_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
-        <many-to-one name="costumer" class="me.gteam.logman.domain.Costumer" fetch="select">
-            <column name="COSTMER" />
-        </many-to-one>
-        <many-to-one name="account" class="me.gteam.logman.domain.Account" fetch="select">
-            <column name="ACCOUNT" />
-        </many-to-one>
         <property name="settleDate" type="java.util.Date">
             <column name="SETTLE_DATE" length="10" />
+        </property>
+        <property name="unit" type="java.lang.String">
+            <column name="UNIT" length="30" />
         </property>
         <property name="receiveAmount" type="java.lang.Double">
             <column name="RECEIVE_AMOUNT" precision="22" scale="0" />
@@ -34,6 +31,9 @@
         <property name="actualReceive" type="java.lang.Double">
             <column name="ACTUAL_RECEIVE" precision="22" scale="0" />
         </property>
+        <property name="account" type="java.lang.String">
+            <column name="ACCOUNT" length="30" />
+        </property>
         <property name="invoiceNo" type="java.lang.String">
             <column name="INVOICE_NO" length="40" />
         </property>
@@ -48,7 +48,7 @@
         </property>
         <set name="freightReceiveDetails" inverse="true">
             <key>
-                <column name="SETTLE_ID" not-null="true" />
+                <column name="SETTLE_ID" />
             </key>
             <one-to-many class="me.gteam.logman.domain.FreightReceiveDetail" />
         </set>

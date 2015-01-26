@@ -8,13 +8,9 @@ public class Oilinventory implements java.io.Serializable {
 
 	// Fields
 
-	private Integer tank;
-	private Oiltank oiltank;
-	private Fuel fuel;
+	private Integer stockId;
+	private String tank;
 	private Double weight;
-	private Double unitPrice;
-	private Double inventoryAmount;
-	private Double minInventory;
 	private String remark;
 
 	// Constructors
@@ -24,49 +20,33 @@ public class Oilinventory implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public Oilinventory(Integer tank, Oiltank oiltank) {
+	public Oilinventory(String tank) {
 		this.tank = tank;
-		this.oiltank = oiltank;
 	}
 
 	/** full constructor */
-	public Oilinventory(Integer tank, Oiltank oiltank, Fuel fuel,
-			Double weight, Double unitPrice, Double inventoryAmount,
-			Double minInventory, String remark) {
+	public Oilinventory(String tank, Double weight, String remark) {
 		this.tank = tank;
-		this.oiltank = oiltank;
-		this.fuel = fuel;
 		this.weight = weight;
-		this.unitPrice = unitPrice;
-		this.inventoryAmount = inventoryAmount;
-		this.minInventory = minInventory;
 		this.remark = remark;
 	}
 
 	// Property accessors
 
-	public Integer getTank() {
+	public Integer getStockId() {
+		return this.stockId;
+	}
+
+	public void setStockId(Integer stockId) {
+		this.stockId = stockId;
+	}
+
+	public String getTank() {
 		return this.tank;
 	}
 
-	public void setTank(Integer tank) {
+	public void setTank(String tank) {
 		this.tank = tank;
-	}
-
-	public Oiltank getOiltank() {
-		return this.oiltank;
-	}
-
-	public void setOiltank(Oiltank oiltank) {
-		this.oiltank = oiltank;
-	}
-
-	public Fuel getFuel() {
-		return this.fuel;
-	}
-
-	public void setFuel(Fuel fuel) {
-		this.fuel = fuel;
 	}
 
 	public Double getWeight() {
@@ -75,30 +55,6 @@ public class Oilinventory implements java.io.Serializable {
 
 	public void setWeight(Double weight) {
 		this.weight = weight;
-	}
-
-	public Double getUnitPrice() {
-		return this.unitPrice;
-	}
-
-	public void setUnitPrice(Double unitPrice) {
-		this.unitPrice = unitPrice;
-	}
-
-	public Double getInventoryAmount() {
-		return this.inventoryAmount;
-	}
-
-	public void setInventoryAmount(Double inventoryAmount) {
-		this.inventoryAmount = inventoryAmount;
-	}
-
-	public Double getMinInventory() {
-		return this.minInventory;
-	}
-
-	public void setMinInventory(Double minInventory) {
-		this.minInventory = minInventory;
 	}
 
 	public String getRemark() {

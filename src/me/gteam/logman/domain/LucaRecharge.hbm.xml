@@ -8,19 +8,19 @@
     <class name="me.gteam.logman.domain.LucaRecharge" table="luca_recharge" catalog="logman">
         <id name="lucarechargeId" type="java.lang.Integer">
             <column name="LUCARECHARGE_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
-        <many-to-one name="luca" class="me.gteam.logman.domain.Luca" fetch="select">
-            <column name="LUCA_NO" />
-        </many-to-one>
-        <many-to-one name="account" class="me.gteam.logman.domain.Account" fetch="select">
-            <column name="ACCOUNT" />
-        </many-to-one>
         <property name="rechargeDate" type="java.util.Date">
             <column name="RECHARGE_DATE" length="10" />
         </property>
+        <property name="lucaNo" type="java.lang.String">
+            <column name="LUCA_NO" length="30" />
+        </property>
         <property name="amount" type="java.lang.Double">
             <column name="AMOUNT" precision="22" scale="0" />
+        </property>
+        <property name="account" type="java.lang.String">
+            <column name="ACCOUNT" length="30" />
         </property>
         <property name="operator" type="java.lang.String">
             <column name="OPERATOR" length="14" />

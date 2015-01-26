@@ -8,10 +8,13 @@
     <class name="me.gteam.logman.domain.SettleSalary" table="settle_salary" catalog="logman">
         <id name="settleId" type="java.lang.Integer">
             <column name="SETTLE_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
-        <property name="settleNo" type="java.lang.String">
-            <column name="SETTLE_NO" length="30" />
+        <property name="startDate" type="java.util.Date">
+            <column name="START_DATE" length="10" />
+        </property>
+        <property name="endDate" type="java.util.Date">
+            <column name="END_DATE" length="10" />
         </property>
         <property name="settledate" type="java.util.Date">
             <column name="SETTLEDATE" length="10" />
@@ -19,11 +22,17 @@
         <property name="amount" type="java.lang.Double">
             <column name="AMOUNT" precision="22" scale="0" />
         </property>
-        <property name="account" type="java.lang.Integer">
-            <column name="ACCOUNT" />
+        <property name="account" type="java.lang.String">
+            <column name="ACCOUNT" length="30" />
         </property>
         <property name="remark" type="java.lang.String">
             <column name="REMARK" length="50" />
         </property>
+        <set name="payrollDetailses" inverse="true">
+            <key>
+                <column name="SETTLE_ID" />
+            </key>
+            <one-to-many class="me.gteam.logman.domain.PayrollDetails" />
+        </set>
     </class>
 </hibernate-mapping>

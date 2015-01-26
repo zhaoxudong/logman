@@ -34,160 +34,137 @@
   
   <body>
 	   		<br>
-	   		<form class="form-horizontal" role="form" action="orderAction_addOrder.action">
+	   		<form class="form-horizontal" role="form" action="orderAction_addOrders.action">
 			   <div class="form-group">
 			      <br>
 				  <div class="col-sm-12">
 				   	  <label for="firstname" class="col-sm-1 control-label">接单时间</label>
 				   	  <div class="col-sm-2">
 					      <div class="input-group date form_time col-md-12" data-date="" data-date-format="yyyy-mm-dd hh:ii:00" data-link-field="dtp_input1" data-link-format="yyyy-mm-dd">
-			                    <input class="form-control" size="16" type="text" value="" readonly>
+			                    <input class="form-control" size="16" type="text" value="" name="orderTime" readonly>
 								<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
 			              </div>
 					  </div>
 				      <label for="firstname" class="col-sm-1 control-label">要求到货时间</label>
 				   	  <div class="col-sm-2">
 					      <div class="input-group date form_time col-md-12" data-date="" data-date-format="yyyy-mm-dd hh:ii:00" data-link-field="dtp_input1" data-link-format="yyyy-mm-dd">
-			                    <input class="form-control" size="16" type="text" value="" readonly>
+			                    <input class="form-control" size="16" type="text" value="" name="requireTime" readonly>
 								<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
 			              </div>
 					  </div>
 				      <label for="firstname" class="col-sm-1 control-label">模板编号</label>
 				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
+				         <input type="text" class="form-control" id="firstname" name="routeTemplate">
 				      </div>
 				      <label for="firstname" class="col-sm-1 control-label">合同号</label>
 				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" name="contractNumber"
-				            placeholder="接单时间">
+				         <input type="text" class="form-control" id="firstname" name="contractNumber">
 				      </div>
 				     </div>
 			      <div class="col-sm-12"><br></div>
 			      <div class="col-sm-12">
 				      <label for="firstname" class="col-sm-1 control-label">托运方</label>
 				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
+				         <input type="text" class="form-control" id="firstname" name="costumerByShipper">
 				      </div>
 				      <label for="firstname" class="col-sm-1 control-label">托运方联系人</label>
 				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
+				         <input type="text" class="form-control" id="firstname" name="shipperContact">
 				      </div>
 				      <label for="firstname" class="col-sm-1 control-label">托运方联系电话</label>
 				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
+				         <input type="text" class="form-control" id="firstname" name="shipperTel">
 				      </div>
 				      <label for="firstname" class="col-sm-1 control-label">装货地址</label>
 				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
+				         <input type="text" class="form-control" id="firstname" name="loadLocation">
 				      </div>
 				  </div>
 			      <div class="col-sm-12"><br></div>
 				  <div class="col-sm-12">
 				      <label for="firstname" class="col-sm-1 control-label">收货方</label>
 				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
+				         <input type="text" class="form-control" id="firstname" name="costumerByConsignee">
 				      </div>
 				      <label for="firstname" class="col-sm-1 control-label">收货方联系人</label>
 				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
+				         <input type="text" class="form-control" id="firstname" name="consigneeContact">
 				      </div>
 				      <label for="firstname" class="col-sm-1 control-label">收货方联系电话</label>
 				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
+				         <input type="text" class="form-control" id="firstname" name="consigneeTel">
 				      </div>
 				      <label for="firstname" class="col-sm-1 control-label">卸货地址</label>
 				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
+				         <input type="text" class="form-control" id="firstname" name="unloadLocation">
 				      </div>
 			      </div>
 			      <div class="col-sm-12"><br></div>
 			      <div class="col-sm-12">
 				      <label for="firstname" class="col-sm-1 control-label">承运货物</label>
 				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
+				         <input type="text" class="form-control" id="firstname" name="goods">
 				      </div>
 				      <label for="firstname" class="col-sm-1 control-label">计量单位</label>
 				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
+				         <input type="text" class="form-control" id="firstname" name="measurementUnit">
 				      </div>
 				      <label for="firstname" class="col-sm-1 control-label">预发量</label>
 				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
+				         <input type="text" class="form-control" id="firstname" name="advanceAmount">
 				      </div>
 				      <label for="firstname" class="col-sm-1 control-label">是否包车</label>
 				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
+				         <input type="text" class="form-control" id="firstname" name="iswhole">
 				      </div>
 				  </div>
 				  <div class="col-sm-12"><br></div>
 				  <div class="col-sm-12">
 				      <label for="firstname" class="col-sm-1 control-label">运输线路</label>
 				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
+				         <input type="text" class="form-control" id="firstname" name="route">
 				      </div>
 				      <label for="firstname" class="col-sm-1 control-label">载重公里</label>
 				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
+				         <input type="text" class="form-control" id="firstname" name="heavykm">
 				      </div>
 				       <label for="firstname" class="col-sm-1 control-label">空车公里</label>
 				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
+				         <input type="text" class="form-control" id="firstname" name="emptykm">
 				      </div>
 				       <label for="firstname" class="col-sm-1 control-label">提单号</label>
 				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
+				         <input type="text" class="form-control" id="firstname" name="ladingNo">
 				      </div>
 				  </div>
 				  <div class="col-sm-12"><br></div>
 				  <div class="col-sm-12">
 				      <label for="firstname" class="col-sm-1 control-label">计费公式</label>
 				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
+				         <input type="text" class="form-control" id="firstname" name="priceFormula">
 				      </div>
 				      <label for="firstname" class="col-sm-1 control-label">运输单价</label>
 				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
+				         <input type="text" class="form-control" id="firstname" name="unitPrice">
 				      </div>
 				      <label for="firstname" class="col-sm-1 control-label">运费</label>
 				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
+				         <input type="text" class="form-control" id="firstname" name="amount">
 				      </div>
 				      <label for="firstname" class="col-sm-1 control-label">结算方式</label>
 				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
+				         <input type="text" class="form-control" id="firstname" name="settlementWay">
 				      </div>
 				  </div>
 				  <div class="col-sm-12"><br></div>
 				  <div class="col-sm-12">
 				      <label for="firstname" class="col-sm-1 control-label">业务员</label>
 				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
+				         <input type="text" class="form-control" id="firstname" name="operator">
 				      </div>
 				      <label for="firstname" class="col-sm-1 control-label">备注</label>
 				      <div class="col-sm-8">
-				         <input type="text" class="form-control" id="firstname" 
+				         <input type="text" class="form-control" id="firstname" name="remark"
 				            placeholder="请在此写入备注">
 				      </div>
 				  </div>
@@ -197,332 +174,7 @@
 				  <div class="col-sm-12"><div class="col-sm-8"></div><div class="col-sm-2"><button class="btn btn-primary btn-lg">重置</button></div><div class="col-sm-2"><button class="btn btn-warning btn-lg">提交</button></div></div>
 			   </div>
 			</form>
-			<form class="form-horizontal" role="form" action="orderAction_addOrder.action">
-			   <div class="form-group">
-			      <br>
-				  <div class="col-sm-12">
-				   	  <label for="firstname" class="col-sm-1 control-label">接单时间</label>
-				   	  <div class="col-sm-2">
-					      <div class="input-group date form_time col-md-12" data-date="" data-date-format="yyyy-mm-dd hh:ii:00" data-link-field="dtp_input1" data-link-format="yyyy-mm-dd">
-			                    <input class="form-control" size="16" type="text" value="" readonly>
-								<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-			              </div>
-					  </div>
-				      <label for="firstname" class="col-sm-1 control-label">要求到货时间</label>
-				   	  <div class="col-sm-2">
-					      <div class="input-group date form_time col-md-12" data-date="" data-date-format="yyyy-mm-dd hh:ii:00" data-link-field="dtp_input1" data-link-format="yyyy-mm-dd">
-			                    <input class="form-control" size="16" type="text" value="" readonly>
-								<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-			              </div>
-					  </div>
-				      <label for="firstname" class="col-sm-1 control-label">模板编号</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-				      <label for="firstname" class="col-sm-1 control-label">合同号</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" name="contractNumber"
-				            placeholder="接单时间">
-				      </div>
-				     </div>
-			      <div class="col-sm-12"><br></div>
-			      <div class="col-sm-12">
-				      <label for="firstname" class="col-sm-1 control-label">托运方</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-				      <label for="firstname" class="col-sm-1 control-label">托运方联系人</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-				      <label for="firstname" class="col-sm-1 control-label">托运方联系电话</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-				      <label for="firstname" class="col-sm-1 control-label">装货地址</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-				  </div>
-			      <div class="col-sm-12"><br></div>
-				  <div class="col-sm-12">
-				      <label for="firstname" class="col-sm-1 control-label">收货方</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-				      <label for="firstname" class="col-sm-1 control-label">收货方联系人</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-				      <label for="firstname" class="col-sm-1 control-label">收货方联系电话</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-				      <label for="firstname" class="col-sm-1 control-label">卸货地址</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-			      </div>
-			      <div class="col-sm-12"><br></div>
-			      <div class="col-sm-12">
-				      <label for="firstname" class="col-sm-1 control-label">承运货物</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-				      <label for="firstname" class="col-sm-1 control-label">计量单位</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-				      <label for="firstname" class="col-sm-1 control-label">预发量</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-				      <label for="firstname" class="col-sm-1 control-label">是否包车</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-				  </div>
-				  <div class="col-sm-12"><br></div>
-				  <div class="col-sm-12">
-				      <label for="firstname" class="col-sm-1 control-label">运输线路</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-				      <label for="firstname" class="col-sm-1 control-label">载重公里</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-				       <label for="firstname" class="col-sm-1 control-label">空车公里</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-				       <label for="firstname" class="col-sm-1 control-label">提单号</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-				  </div>
-				  <div class="col-sm-12"><br></div>
-				  <div class="col-sm-12">
-				      <label for="firstname" class="col-sm-1 control-label">计费公式</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-				      <label for="firstname" class="col-sm-1 control-label">运输单价</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-				      <label for="firstname" class="col-sm-1 control-label">运费</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-				      <label for="firstname" class="col-sm-1 control-label">结算方式</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-				  </div>
-				  <div class="col-sm-12"><br></div>
-				  <div class="col-sm-12">
-				      <label for="firstname" class="col-sm-1 control-label">业务员</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-				      <label for="firstname" class="col-sm-1 control-label">备注</label>
-				      <div class="col-sm-8">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="请在此写入备注">
-				      </div>
-				  </div>
-				  <div class="col-sm-12"><br></div>
-				  <div class="col-sm-12"><br></div>
-				  <div class="col-sm-12"><br></div>
-				  <div class="col-sm-12"><div class="col-sm-8"></div><div class="col-sm-2"><button class="btn btn-primary btn-lg">重置</button></div><div class="col-sm-2"><button class="btn btn-warning btn-lg">提交</button></div></div>
-			   </div>
-			</form>
-			<form class="form-horizontal" role="form" action="orderAction_addOrder.action">
-			   <div class="form-group">
-			      <br>
-				  <div class="col-sm-12">
-				   	  <label for="firstname" class="col-sm-1 control-label">接单时间</label>
-				   	  <div class="col-sm-2">
-					      <div class="input-group date form_time col-md-12" data-date="" data-date-format="yyyy-mm-dd hh:ii:00" data-link-field="dtp_input1" data-link-format="yyyy-mm-dd">
-			                    <input class="form-control" size="16" type="text" value="" readonly>
-								<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-			              </div>
-					  </div>
-				      <label for="firstname" class="col-sm-1 control-label">要求到货时间</label>
-				   	  <div class="col-sm-2">
-					      <div class="input-group date form_time col-md-12" data-date="" data-date-format="yyyy-mm-dd hh:ii:00" data-link-field="dtp_input1" data-link-format="yyyy-mm-dd">
-			                    <input class="form-control" size="16" type="text" value="" readonly>
-								<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
-			              </div>
-					  </div>
-				      <label for="firstname" class="col-sm-1 control-label">模板编号</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-				      <label for="firstname" class="col-sm-1 control-label">合同号</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" name="contractNumber"
-				            placeholder="接单时间">
-				      </div>
-				     </div>
-			      <div class="col-sm-12"><br></div>
-			      <div class="col-sm-12">
-				      <label for="firstname" class="col-sm-1 control-label">托运方</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-				      <label for="firstname" class="col-sm-1 control-label">托运方联系人</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-				      <label for="firstname" class="col-sm-1 control-label">托运方联系电话</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-				      <label for="firstname" class="col-sm-1 control-label">装货地址</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-				  </div>
-			      <div class="col-sm-12"><br></div>
-				  <div class="col-sm-12">
-				      <label for="firstname" class="col-sm-1 control-label">收货方</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-				      <label for="firstname" class="col-sm-1 control-label">收货方联系人</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-				      <label for="firstname" class="col-sm-1 control-label">收货方联系电话</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-				      <label for="firstname" class="col-sm-1 control-label">卸货地址</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-			      </div>
-			      <div class="col-sm-12"><br></div>
-			      <div class="col-sm-12">
-				      <label for="firstname" class="col-sm-1 control-label">承运货物</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-				      <label for="firstname" class="col-sm-1 control-label">计量单位</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-				      <label for="firstname" class="col-sm-1 control-label">预发量</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-				      <label for="firstname" class="col-sm-1 control-label">是否包车</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-				  </div>
-				  <div class="col-sm-12"><br></div>
-				  <div class="col-sm-12">
-				      <label for="firstname" class="col-sm-1 control-label">运输线路</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-				      <label for="firstname" class="col-sm-1 control-label">载重公里</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-				       <label for="firstname" class="col-sm-1 control-label">空车公里</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-				       <label for="firstname" class="col-sm-1 control-label">提单号</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-				  </div>
-				  <div class="col-sm-12"><br></div>
-				  <div class="col-sm-12">
-				      <label for="firstname" class="col-sm-1 control-label">计费公式</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-				      <label for="firstname" class="col-sm-1 control-label">运输单价</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-				      <label for="firstname" class="col-sm-1 control-label">运费</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-				      <label for="firstname" class="col-sm-1 control-label">结算方式</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-				  </div>
-				  <div class="col-sm-12"><br></div>
-				  <div class="col-sm-12">
-				      <label for="firstname" class="col-sm-1 control-label">业务员</label>
-				      <div class="col-sm-2">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="接单时间">
-				      </div>
-				      <label for="firstname" class="col-sm-1 control-label">备注</label>
-				      <div class="col-sm-8">
-				         <input type="text" class="form-control" id="firstname" 
-				            placeholder="请在此写入备注">
-				      </div>
-				  </div>
-				  <div class="col-sm-12"><br></div>
-				  <div class="col-sm-12"><br></div>
-				  <div class="col-sm-12"><br></div>
-				  <div class="col-sm-12"><div class="col-sm-8"></div><div class="col-sm-2"><button class="btn btn-primary btn-lg">重置</button></div><div class="col-sm-2"><button class="btn btn-warning btn-lg">提交</button></div></div>
-			   </div>
-			</form>
+
 			<input type="hidden" id="dtp_input1" value="" />
 	   
 	   

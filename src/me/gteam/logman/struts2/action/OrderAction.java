@@ -29,7 +29,15 @@ public class OrderAction extends BaseAction<Orders>{
 	public String addOrders(){
 		Orders orders = new Orders();
 		BeanUtils.copyProperties(this.getModel(), orders);
-		this.ordersService.saveOrders(orders);
+		System.out.println(orders.getConsigneeTel());
+		System.out.println(orders.getUnitPrice());
+//		Orders orders = new Orders();
+//		BeanUtils.copyProperties(this.getModel(), orders);
+//		
+//		System.out.println(orders.getRouteTemplate().getTemplateNo());
+//		System.out.println(orders.getRoute());
+//		orders.setOrderId(1);
+//		this.ordersService.saveOrders(orders);
 		return SUCCESS;
 	}
 }

@@ -6,52 +6,30 @@
 -->
 <hibernate-mapping>
     <class name="me.gteam.logman.domain.FreightNeedtopayDetail" table="freight_needtopay_detail" catalog="logman">
-        <composite-id name="id" class="me.gteam.logman.domain.FreightNeedtopayDetailId">
-            <key-many-to-one name="freightNeedtopay" class="me.gteam.logman.domain.FreightNeedtopay">
-                <column name="SETTLE_ID" />
-            </key-many-to-one>
-            <key-many-to-one name="dispatch" class="me.gteam.logman.domain.Dispatch">
-                <column name="DISPATCH_ID" />
-            </key-many-to-one>
-            <key-property name="transportDate" type="java.util.Date">
-                <column name="TRANSPORT_DATE" length="10" />
-            </key-property>
-            <key-property name="vehicle" type="java.lang.Integer">
-                <column name="VEHICLE" />
-            </key-property>
-            <key-property name="needtopay" type="java.lang.Double">
-                <column name="NEEDTOPAY" precision="22" scale="0" />
-            </key-property>
-            <key-property name="alreadySettle" type="java.lang.Double">
-                <column name="ALREADY_SETTLE" precision="22" scale="0" />
-            </key-property>
-            <key-property name="nothasSettle" type="java.lang.Double">
-                <column name="NOTHAS_SETTLE" precision="22" scale="0" />
-            </key-property>
-            <key-property name="thisSettle" type="java.lang.Double">
-                <column name="THIS_SETTLE" precision="22" scale="0" />
-            </key-property>
-            <key-property name="ispay" type="java.lang.String">
-                <column name="ISPAY" length="6" />
-            </key-property>
-            <key-property name="consignee" type="java.lang.Integer">
-                <column name="CONSIGNEE" />
-            </key-property>
-            <key-property name="goods" type="java.lang.Integer">
-                <column name="GOODS" />
-            </key-property>
-            <key-property name="startplace" type="java.lang.Integer">
-                <column name="STARTPLACE" />
-            </key-property>
-            <key-property name="endplace" type="java.lang.Integer">
-                <column name="ENDPLACE" />
-            </key-property>
-        </composite-id>
-        <many-to-one name="dispatch" class="me.gteam.logman.domain.Dispatch" update="false" insert="false" fetch="select">
-            <column name="DISPATCH_ID" />
-        </many-to-one>
-        <many-to-one name="freightNeedtopay" class="me.gteam.logman.domain.FreightNeedtopay" update="false" insert="false" fetch="select">
+        <id name="mxid" type="java.lang.Integer">
+            <column name="MXID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="freightNeedtopay" class="me.gteam.logman.domain.FreightNeedtopay" fetch="select">
             <column name="SETTLE_ID" />
         </many-to-one>
+        <property name="dispatchNo" type="java.lang.String">
+            <column name="DISPATCH_NO" length="30" />
+        </property>
+        <property name="needtopay" type="java.lang.Double">
+            <column name="NEEDTOPAY" precision="22" scale="0" />
+        </property>
+        <property name="alreadySettle" type="java.lang.Double">
+            <column name="ALREADY_SETTLE" precision="22" scale="0" />
+        </property>
+        <property name="nothasSettle" type="java.lang.Double">
+            <column name="NOTHAS_SETTLE" precision="22" scale="0" />
+        </property>
+        <property name="thisSettle" type="java.lang.Double">
+            <column name="THIS_SETTLE" precision="22" scale="0" />
+        </property>
+        <property name="ispay" type="java.lang.String">
+            <column name="ISPAY" length="6" />
+        </property>
     </class>
 </hibernate-mapping>

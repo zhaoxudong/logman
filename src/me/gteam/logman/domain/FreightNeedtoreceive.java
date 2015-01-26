@@ -13,14 +13,14 @@ public class FreightNeedtoreceive implements java.io.Serializable {
 	// Fields
 
 	private Integer settleId;
-	private Costumer costumer;
-	private Account account;
 	private Date settleDate;
+	private String unit;
 	private Double receiveAmount;
 	private Double benifitAmount;
 	private Double prereceive;
 	private Double prereceivePay;
 	private Double actualReceive;
+	private String account;
 	private String invoiceNo;
 	private Double invoiceAmount;
 	private String operator;
@@ -33,26 +33,20 @@ public class FreightNeedtoreceive implements java.io.Serializable {
 	public FreightNeedtoreceive() {
 	}
 
-	/** minimal constructor */
-	public FreightNeedtoreceive(Integer settleId) {
-		this.settleId = settleId;
-	}
-
 	/** full constructor */
-	public FreightNeedtoreceive(Integer settleId, Costumer costumer,
-			Account account, Date settleDate, Double receiveAmount,
-			Double benifitAmount, Double prereceive, Double prereceivePay,
-			Double actualReceive, String invoiceNo, Double invoiceAmount,
-			String operator, String remark, Set freightReceiveDetails) {
-		this.settleId = settleId;
-		this.costumer = costumer;
-		this.account = account;
+	public FreightNeedtoreceive(Date settleDate, String unit,
+			Double receiveAmount, Double benifitAmount, Double prereceive,
+			Double prereceivePay, Double actualReceive, String account,
+			String invoiceNo, Double invoiceAmount, String operator,
+			String remark, Set freightReceiveDetails) {
 		this.settleDate = settleDate;
+		this.unit = unit;
 		this.receiveAmount = receiveAmount;
 		this.benifitAmount = benifitAmount;
 		this.prereceive = prereceive;
 		this.prereceivePay = prereceivePay;
 		this.actualReceive = actualReceive;
+		this.account = account;
 		this.invoiceNo = invoiceNo;
 		this.invoiceAmount = invoiceAmount;
 		this.operator = operator;
@@ -70,28 +64,20 @@ public class FreightNeedtoreceive implements java.io.Serializable {
 		this.settleId = settleId;
 	}
 
-	public Costumer getCostumer() {
-		return this.costumer;
-	}
-
-	public void setCostumer(Costumer costumer) {
-		this.costumer = costumer;
-	}
-
-	public Account getAccount() {
-		return this.account;
-	}
-
-	public void setAccount(Account account) {
-		this.account = account;
-	}
-
 	public Date getSettleDate() {
 		return this.settleDate;
 	}
 
 	public void setSettleDate(Date settleDate) {
 		this.settleDate = settleDate;
+	}
+
+	public String getUnit() {
+		return this.unit;
+	}
+
+	public void setUnit(String unit) {
+		this.unit = unit;
 	}
 
 	public Double getReceiveAmount() {
@@ -132,6 +118,14 @@ public class FreightNeedtoreceive implements java.io.Serializable {
 
 	public void setActualReceive(Double actualReceive) {
 		this.actualReceive = actualReceive;
+	}
+
+	public String getAccount() {
+		return this.account;
+	}
+
+	public void setAccount(String account) {
+		this.account = account;
 	}
 
 	public String getInvoiceNo() {

@@ -13,14 +13,14 @@ public class FreightNeedtopay implements java.io.Serializable {
 	// Fields
 
 	private Integer settleId;
-	private Fleet fleet;
-	private Account account;
 	private Date settleDate;
+	private String settleUnit;
 	private Double prepayRemainder;
 	private Double needtopay;
 	private Double borrow;
 	private Double prepay;
 	private Double actualPay;
+	private String account;
 	private String operator;
 	private String remark;
 	private Set freightNeedtopayDetails = new HashSet(0);
@@ -31,25 +31,19 @@ public class FreightNeedtopay implements java.io.Serializable {
 	public FreightNeedtopay() {
 	}
 
-	/** minimal constructor */
-	public FreightNeedtopay(Integer settleId) {
-		this.settleId = settleId;
-	}
-
 	/** full constructor */
-	public FreightNeedtopay(Integer settleId, Fleet fleet, Account account,
-			Date settleDate, Double prepayRemainder, Double needtopay,
-			Double borrow, Double prepay, Double actualPay, String operator,
+	public FreightNeedtopay(Date settleDate, String settleUnit,
+			Double prepayRemainder, Double needtopay, Double borrow,
+			Double prepay, Double actualPay, String account, String operator,
 			String remark, Set freightNeedtopayDetails) {
-		this.settleId = settleId;
-		this.fleet = fleet;
-		this.account = account;
 		this.settleDate = settleDate;
+		this.settleUnit = settleUnit;
 		this.prepayRemainder = prepayRemainder;
 		this.needtopay = needtopay;
 		this.borrow = borrow;
 		this.prepay = prepay;
 		this.actualPay = actualPay;
+		this.account = account;
 		this.operator = operator;
 		this.remark = remark;
 		this.freightNeedtopayDetails = freightNeedtopayDetails;
@@ -65,28 +59,20 @@ public class FreightNeedtopay implements java.io.Serializable {
 		this.settleId = settleId;
 	}
 
-	public Fleet getFleet() {
-		return this.fleet;
-	}
-
-	public void setFleet(Fleet fleet) {
-		this.fleet = fleet;
-	}
-
-	public Account getAccount() {
-		return this.account;
-	}
-
-	public void setAccount(Account account) {
-		this.account = account;
-	}
-
 	public Date getSettleDate() {
 		return this.settleDate;
 	}
 
 	public void setSettleDate(Date settleDate) {
 		this.settleDate = settleDate;
+	}
+
+	public String getSettleUnit() {
+		return this.settleUnit;
+	}
+
+	public void setSettleUnit(String settleUnit) {
+		this.settleUnit = settleUnit;
 	}
 
 	public Double getPrepayRemainder() {
@@ -127,6 +113,14 @@ public class FreightNeedtopay implements java.io.Serializable {
 
 	public void setActualPay(Double actualPay) {
 		this.actualPay = actualPay;
+	}
+
+	public String getAccount() {
+		return this.account;
+	}
+
+	public void setAccount(String account) {
+		this.account = account;
 	}
 
 	public String getOperator() {

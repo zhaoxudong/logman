@@ -1,8 +1,5 @@
 package me.gteam.logman.domain;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * MaintenanceItem entity. @author MyEclipse Persistence Tools
  */
@@ -16,7 +13,6 @@ public class MaintenanceItem implements java.io.Serializable {
 	private Double intervalkm;
 	private Double beforekm;
 	private String remark;
-	private Set maintenanceRecords = new HashSet(0);
 
 	// Constructors
 
@@ -24,20 +20,13 @@ public class MaintenanceItem implements java.io.Serializable {
 	public MaintenanceItem() {
 	}
 
-	/** minimal constructor */
-	public MaintenanceItem(Integer maintitemId) {
-		this.maintitemId = maintitemId;
-	}
-
 	/** full constructor */
-	public MaintenanceItem(Integer maintitemId, String name, Double intervalkm,
-			Double beforekm, String remark, Set maintenanceRecords) {
-		this.maintitemId = maintitemId;
+	public MaintenanceItem(String name, Double intervalkm, Double beforekm,
+			String remark) {
 		this.name = name;
 		this.intervalkm = intervalkm;
 		this.beforekm = beforekm;
 		this.remark = remark;
-		this.maintenanceRecords = maintenanceRecords;
 	}
 
 	// Property accessors
@@ -80,14 +69,6 @@ public class MaintenanceItem implements java.io.Serializable {
 
 	public void setRemark(String remark) {
 		this.remark = remark;
-	}
-
-	public Set getMaintenanceRecords() {
-		return this.maintenanceRecords;
-	}
-
-	public void setMaintenanceRecords(Set maintenanceRecords) {
-		this.maintenanceRecords = maintenanceRecords;
 	}
 
 }

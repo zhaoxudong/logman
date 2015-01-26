@@ -8,7 +8,7 @@
     <class name="me.gteam.logman.domain.SecondAuthority" table="second_authority" catalog="logman">
         <id name="secId" type="java.lang.Integer">
             <column name="SEC_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <many-to-one name="primaryAuthority" class="me.gteam.logman.domain.PrimaryAuthority" fetch="select">
             <column name="BELONG_PRI_ID" />

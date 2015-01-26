@@ -21,20 +21,13 @@ public class PrimaryAuthority implements java.io.Serializable {
 	public PrimaryAuthority() {
 	}
 
-	/** minimal constructor */
-	public PrimaryAuthority(Integer priId) {
-		this.priId = priId;
-	}
-	
 	public PrimaryAuthority(Integer priId, String priAuthority) {
 		this.priId = priId;
 		this.priAuthority = priAuthority;
 	}
 	
 	/** full constructor */
-	public PrimaryAuthority(Integer priId, String priAuthority,
-			Set secondAuthorities) {
-		this.priId = priId;
+	public PrimaryAuthority(String priAuthority, Set secondAuthorities) {
 		this.priAuthority = priAuthority;
 		this.secondAuthorities = secondAuthorities;
 	}

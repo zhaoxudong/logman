@@ -8,22 +8,22 @@
     <class name="me.gteam.logman.domain.FixpointRefueling" table="fixpoint_refueling" catalog="logman">
         <id name="refuelingId" type="java.lang.Integer">
             <column name="REFUELING_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
-        <many-to-one name="fuel" class="me.gteam.logman.domain.Fuel" fetch="select">
-            <column name="OIL_TYPE" />
-        </many-to-one>
-        <many-to-one name="driver" class="me.gteam.logman.domain.Driver" fetch="select">
-            <column name="DRIVER_ID" />
-        </many-to-one>
-        <many-to-one name="vehicle" class="me.gteam.logman.domain.Vehicle" fetch="select">
-            <column name="VEHICLE_ID" />
-        </many-to-one>
-        <many-to-one name="supplier" class="me.gteam.logman.domain.Supplier" fetch="select">
-            <column name="SUPPLIER_ID" />
-        </many-to-one>
         <property name="refuelingDate" type="java.util.Date">
             <column name="REFUELING_DATE" length="10" />
+        </property>
+        <property name="vehicle" type="java.lang.String">
+            <column name="VEHICLE" length="30" />
+        </property>
+        <property name="driver" type="java.lang.String">
+            <column name="DRIVER" length="30" />
+        </property>
+        <property name="oilStation" type="java.lang.String">
+            <column name="OIL_STATION" length="30" />
+        </property>
+        <property name="oilType" type="java.lang.String">
+            <column name="OIL_TYPE" length="30" />
         </property>
         <property name="unitPrice" type="java.lang.Double">
             <column name="UNIT_PRICE" precision="22" scale="0" />
@@ -40,11 +40,5 @@
         <property name="remark" type="java.lang.String">
             <column name="REMARK" length="50" />
         </property>
-        <set name="addoilPayDetails" inverse="true">
-            <key>
-                <column name="FIXPOINT_ADDOIL_ID" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.AddoilPayDetail" />
-        </set>
     </class>
 </hibernate-mapping>

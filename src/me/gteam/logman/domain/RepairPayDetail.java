@@ -8,8 +8,14 @@ public class RepairPayDetail implements java.io.Serializable {
 
 	// Fields
 
-	private RepairPayDetailId id;
+	private Integer mxid;
 	private RepairNeedtopay repairNeedtopay;
+	private String number;
+	private Double needtopay;
+	private Double aldeayPay;
+	private Double nothasPay;
+	private Double thisPay;
+	private String ispay;
 
 	// Constructors
 
@@ -18,24 +24,31 @@ public class RepairPayDetail implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public RepairPayDetail(RepairPayDetailId id) {
-		this.id = id;
+	public RepairPayDetail(RepairNeedtopay repairNeedtopay) {
+		this.repairNeedtopay = repairNeedtopay;
 	}
 
 	/** full constructor */
-	public RepairPayDetail(RepairPayDetailId id, RepairNeedtopay repairNeedtopay) {
-		this.id = id;
+	public RepairPayDetail(RepairNeedtopay repairNeedtopay, String number,
+			Double needtopay, Double aldeayPay, Double nothasPay,
+			Double thisPay, String ispay) {
 		this.repairNeedtopay = repairNeedtopay;
+		this.number = number;
+		this.needtopay = needtopay;
+		this.aldeayPay = aldeayPay;
+		this.nothasPay = nothasPay;
+		this.thisPay = thisPay;
+		this.ispay = ispay;
 	}
 
 	// Property accessors
 
-	public RepairPayDetailId getId() {
-		return this.id;
+	public Integer getMxid() {
+		return this.mxid;
 	}
 
-	public void setId(RepairPayDetailId id) {
-		this.id = id;
+	public void setMxid(Integer mxid) {
+		this.mxid = mxid;
 	}
 
 	public RepairNeedtopay getRepairNeedtopay() {
@@ -44,6 +57,54 @@ public class RepairPayDetail implements java.io.Serializable {
 
 	public void setRepairNeedtopay(RepairNeedtopay repairNeedtopay) {
 		this.repairNeedtopay = repairNeedtopay;
+	}
+
+	public String getNumber() {
+		return this.number;
+	}
+
+	public void setNumber(String number) {
+		this.number = number;
+	}
+
+	public Double getNeedtopay() {
+		return this.needtopay;
+	}
+
+	public void setNeedtopay(Double needtopay) {
+		this.needtopay = needtopay;
+	}
+
+	public Double getAldeayPay() {
+		return this.aldeayPay;
+	}
+
+	public void setAldeayPay(Double aldeayPay) {
+		this.aldeayPay = aldeayPay;
+	}
+
+	public Double getNothasPay() {
+		return this.nothasPay;
+	}
+
+	public void setNothasPay(Double nothasPay) {
+		this.nothasPay = nothasPay;
+	}
+
+	public Double getThisPay() {
+		return this.thisPay;
+	}
+
+	public void setThisPay(Double thisPay) {
+		this.thisPay = thisPay;
+	}
+
+	public String getIspay() {
+		return this.ispay;
+	}
+
+	public void setIspay(String ispay) {
+		this.ispay = ispay;
 	}
 
 }

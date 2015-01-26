@@ -7,13 +7,14 @@ import java.util.List;
 import me.gteam.logman.domain.ThirdAuthority;
 
 public interface ThirdAuthorityService {
+
 	public void saveThirdAuthority(ThirdAuthority thirdAuthority);
 
 	public void updateThirdAuthority(ThirdAuthority thirdAuthority);
 
 	public void deleteThirdAuthorityByID(Serializable id,String deleteMode);
 
-	public Collection<ThirdAuthority> getAllThirdAuthorities();
+	public Collection<ThirdAuthority> getAllThirdAuthority();
 
 	public ThirdAuthority getThirdAuthorityById(Serializable id);
 	

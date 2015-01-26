@@ -6,16 +6,13 @@
 -->
 <hibernate-mapping>
     <class name="me.gteam.logman.domain.TireDate" table="tire_date" catalog="logman">
-        <id name="tireNo" type="java.lang.Integer">
-            <column name="TIRE_NO" />
-            <generator class="assigned" />
+        <id name="tireId" type="java.lang.Integer">
+            <column name="TIRE_ID" />
+            <generator class="identity" />
         </id>
-        <many-to-one name="vehicle" class="me.gteam.logman.domain.Vehicle" fetch="select">
-            <column name="VEHICLE" />
-        </many-to-one>
-        <many-to-one name="supplier" class="me.gteam.logman.domain.Supplier" fetch="select">
-            <column name="SUPPLIER" />
-        </many-to-one>
+        <property name="tireNo" type="java.lang.String">
+            <column name="TIRE_NO" length="50" not-null="true" />
+        </property>
         <property name="km" type="java.lang.Double">
             <column name="KM" precision="22" scale="0" />
         </property>
@@ -36,6 +33,9 @@
         </property>
         <property name="producingArea" type="java.lang.String">
             <column name="PRODUCING_AREA" length="14" />
+        </property>
+        <property name="supplier" type="java.lang.String">
+            <column name="SUPPLIER" length="10" />
         </property>
         <property name="buyDate" type="java.util.Date">
             <column name="BUY_DATE" length="10" />

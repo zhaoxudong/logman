@@ -8,14 +8,17 @@
     <class name="me.gteam.logman.domain.FittingpurchaseDetail" table="fittingpurchase_detail" catalog="logman">
         <id name="detailId" type="java.lang.Integer">
             <column name="DETAIL_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
-        <many-to-one name="fittingdetail" class="me.gteam.logman.domain.Fittingdetail" fetch="select">
-            <column name="FITTING_ID" />
-        </many-to-one>
         <many-to-one name="fittingPurchase" class="me.gteam.logman.domain.FittingPurchase" fetch="select">
             <column name="PURCHASE_ID" />
         </many-to-one>
+        <property name="fittingNo" type="java.lang.String">
+            <column name="FITTING_NO" length="30" />
+        </property>
+        <property name="fittingName" type="java.lang.String">
+            <column name="FITTING_NAME" length="30" />
+        </property>
         <property name="standard" type="java.lang.String">
             <column name="STANDARD" length="20" />
         </property>

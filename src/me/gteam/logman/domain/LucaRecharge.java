@@ -11,10 +11,10 @@ public class LucaRecharge implements java.io.Serializable {
 	// Fields
 
 	private Integer lucarechargeId;
-	private Luca luca;
-	private Account account;
 	private Date rechargeDate;
+	private String lucaNo;
 	private Double amount;
+	private String account;
 	private String operator;
 	private String remark;
 
@@ -24,19 +24,13 @@ public class LucaRecharge implements java.io.Serializable {
 	public LucaRecharge() {
 	}
 
-	/** minimal constructor */
-	public LucaRecharge(Integer lucarechargeId) {
-		this.lucarechargeId = lucarechargeId;
-	}
-
 	/** full constructor */
-	public LucaRecharge(Integer lucarechargeId, Luca luca, Account account,
-			Date rechargeDate, Double amount, String operator, String remark) {
-		this.lucarechargeId = lucarechargeId;
-		this.luca = luca;
-		this.account = account;
+	public LucaRecharge(Date rechargeDate, String lucaNo, Double amount,
+			String account, String operator, String remark) {
 		this.rechargeDate = rechargeDate;
+		this.lucaNo = lucaNo;
 		this.amount = amount;
+		this.account = account;
 		this.operator = operator;
 		this.remark = remark;
 	}
@@ -51,22 +45,6 @@ public class LucaRecharge implements java.io.Serializable {
 		this.lucarechargeId = lucarechargeId;
 	}
 
-	public Luca getLuca() {
-		return this.luca;
-	}
-
-	public void setLuca(Luca luca) {
-		this.luca = luca;
-	}
-
-	public Account getAccount() {
-		return this.account;
-	}
-
-	public void setAccount(Account account) {
-		this.account = account;
-	}
-
 	public Date getRechargeDate() {
 		return this.rechargeDate;
 	}
@@ -75,12 +53,28 @@ public class LucaRecharge implements java.io.Serializable {
 		this.rechargeDate = rechargeDate;
 	}
 
+	public String getLucaNo() {
+		return this.lucaNo;
+	}
+
+	public void setLucaNo(String lucaNo) {
+		this.lucaNo = lucaNo;
+	}
+
 	public Double getAmount() {
 		return this.amount;
 	}
 
 	public void setAmount(Double amount) {
 		this.amount = amount;
+	}
+
+	public String getAccount() {
+		return this.account;
+	}
+
+	public void setAccount(String account) {
+		this.account = account;
 	}
 
 	public String getOperator() {

@@ -8,16 +8,13 @@
     <class name="me.gteam.logman.domain.FreightNeedtopay" table="freight_needtopay" catalog="logman">
         <id name="settleId" type="java.lang.Integer">
             <column name="SETTLE_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
-        <many-to-one name="fleet" class="me.gteam.logman.domain.Fleet" fetch="select">
-            <column name="CARRIER_UNIT" />
-        </many-to-one>
-        <many-to-one name="account" class="me.gteam.logman.domain.Account" fetch="select">
-            <column name="ACCOUNT" />
-        </many-to-one>
         <property name="settleDate" type="java.util.Date">
             <column name="SETTLE_DATE" length="10" />
+        </property>
+        <property name="settleUnit" type="java.lang.String">
+            <column name="SETTLE_UNIT" length="30" />
         </property>
         <property name="prepayRemainder" type="java.lang.Double">
             <column name="PREPAY_REMAINDER" precision="22" scale="0" />
@@ -33,6 +30,9 @@
         </property>
         <property name="actualPay" type="java.lang.Double">
             <column name="ACTUAL_PAY" precision="22" scale="0" />
+        </property>
+        <property name="account" type="java.lang.String">
+            <column name="ACCOUNT" length="30" />
         </property>
         <property name="operator" type="java.lang.String">
             <column name="OPERATOR" length="14" />

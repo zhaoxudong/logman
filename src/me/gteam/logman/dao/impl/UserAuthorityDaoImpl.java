@@ -8,7 +8,6 @@ import me.gteam.logman.domain.UserAuthority;
 
 @Repository("userAuthorityDao")
 public class UserAuthorityDaoImpl extends BaseDaoImpl<UserAuthority> implements UserAuthorityDao<UserAuthority>{
-
 	@Override
 	public ThirdAuthority getThirdAuthorityByUserIdAndThiId(int userId, int ThiId) {
 		// TODO Auto-generated method stub
@@ -19,5 +18,4 @@ public class UserAuthorityDaoImpl extends BaseDaoImpl<UserAuthority> implements 
 			return null;
 		}
 	}
-
 }

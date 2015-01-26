@@ -8,25 +8,31 @@
     <class name="me.gteam.logman.domain.BorrowReturn" table="borrow_return" catalog="logman">
         <id name="recordId" type="java.lang.Integer">
             <column name="RECORD_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
-        <many-to-one name="borrowPurpose" class="me.gteam.logman.domain.BorrowPurpose" fetch="select">
-            <column name="PURPOSE" />
-        </many-to-one>
         <property name="date" type="java.util.Date">
             <column name="DATE" length="10" />
         </property>
-        <property name="staffFleet" type="java.lang.String">
-            <column name="STAFF_FLEET" length="30" />
+        <property name="type" type="java.lang.String">
+            <column name="TYPE" length="30" />
         </property>
-        <property name="borrowReturn" type="java.lang.String">
-            <column name="BORROW_RETURN" length="10" />
+        <property name="name" type="java.lang.String">
+            <column name="NAME" length="30" />
+        </property>
+        <property name="usePurpose" type="java.lang.String">
+            <column name="USE_PURPOSE" length="30" />
         </property>
         <property name="amount" type="java.lang.Double">
             <column name="AMOUNT" precision="22" scale="0" />
         </property>
-        <property name="account" type="java.lang.Integer">
-            <column name="ACCOUNT" />
+        <property name="account" type="java.lang.String">
+            <column name="ACCOUNT" length="30" />
+        </property>
+        <property name="reback" type="java.lang.String">
+            <column name="REBACK" length="30" />
+        </property>
+        <property name="isfinished" type="java.lang.String">
+            <column name="ISFINISHED" length="30" />
         </property>
         <property name="operator" type="java.lang.String">
             <column name="OPERATOR" length="14" />

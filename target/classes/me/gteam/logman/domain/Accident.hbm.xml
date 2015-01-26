@@ -8,14 +8,14 @@
     <class name="me.gteam.logman.domain.Accident" table="accident" catalog="logman">
         <id name="accidentId" type="java.lang.Integer">
             <column name="ACCIDENT_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
-        <many-to-one name="vehicle" class="me.gteam.logman.domain.Vehicle" fetch="select">
-            <column name="VEHICAL" />
-        </many-to-one>
-        <many-to-one name="driver" class="me.gteam.logman.domain.Driver" fetch="select">
-            <column name="DRIVER" />
-        </many-to-one>
+        <property name="vehicle" type="java.lang.String">
+            <column name="VEHICLE" length="30" />
+        </property>
+        <property name="driver" type="java.lang.String">
+            <column name="DRIVER" length="30" />
+        </property>
         <property name="accidentDate" type="java.util.Date">
             <column name="ACCIDENT_DATE" length="10" />
         </property>

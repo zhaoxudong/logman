@@ -1,8 +1,5 @@
 package me.gteam.logman.domain;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * Department entity. @author MyEclipse Persistence Tools
  */
@@ -14,10 +11,6 @@ public class Department implements java.io.Serializable {
 	private Integer departmentId;
 	private String departmentName;
 	private String remark;
-	private Set drivers = new HashSet(0);
-	private Set handlers = new HashSet(0);
-	private Set maintenances = new HashSet(0);
-	private Set staffs = new HashSet(0);
 
 	// Constructors
 
@@ -25,22 +18,10 @@ public class Department implements java.io.Serializable {
 	public Department() {
 	}
 
-	/** minimal constructor */
-	public Department(Integer departmentId) {
-		this.departmentId = departmentId;
-	}
-
 	/** full constructor */
-	public Department(Integer departmentId, String departmentName,
-			String remark, Set drivers, Set handlers, Set maintenances,
-			Set staffs) {
-		this.departmentId = departmentId;
+	public Department(String departmentName, String remark) {
 		this.departmentName = departmentName;
 		this.remark = remark;
-		this.drivers = drivers;
-		this.handlers = handlers;
-		this.maintenances = maintenances;
-		this.staffs = staffs;
 	}
 
 	// Property accessors
@@ -67,38 +48,6 @@ public class Department implements java.io.Serializable {
 
 	public void setRemark(String remark) {
 		this.remark = remark;
-	}
-
-	public Set getDrivers() {
-		return this.drivers;
-	}
-
-	public void setDrivers(Set drivers) {
-		this.drivers = drivers;
-	}
-
-	public Set getHandlers() {
-		return this.handlers;
-	}
-
-	public void setHandlers(Set handlers) {
-		this.handlers = handlers;
-	}
-
-	public Set getMaintenances() {
-		return this.maintenances;
-	}
-
-	public void setMaintenances(Set maintenances) {
-		this.maintenances = maintenances;
-	}
-
-	public Set getStaffs() {
-		return this.staffs;
-	}
-
-	public void setStaffs(Set staffs) {
-		this.staffs = staffs;
 	}
 
 }

@@ -11,13 +11,13 @@ public class VehicleFees implements java.io.Serializable {
 	// Fields
 
 	private Integer vehicleFeesId;
-	private Vehicle vehicle;
-	private Account account;
-	private VehiclefeesType vehiclefeesType;
 	private Date feesDate;
+	private String vehicle;
+	private String feeType;
 	private Double amount;
 	private Date expireDate;
 	private Double cashpay;
+	private String account;
 	private String operator;
 	private String remark;
 
@@ -27,23 +27,17 @@ public class VehicleFees implements java.io.Serializable {
 	public VehicleFees() {
 	}
 
-	/** minimal constructor */
-	public VehicleFees(Integer vehicleFeesId) {
-		this.vehicleFeesId = vehicleFeesId;
-	}
-
 	/** full constructor */
-	public VehicleFees(Integer vehicleFeesId, Vehicle vehicle, Account account,
-			VehiclefeesType vehiclefeesType, Date feesDate, Double amount,
-			Date expireDate, Double cashpay, String operator, String remark) {
-		this.vehicleFeesId = vehicleFeesId;
-		this.vehicle = vehicle;
-		this.account = account;
-		this.vehiclefeesType = vehiclefeesType;
+	public VehicleFees(Date feesDate, String vehicle, String feeType,
+			Double amount, Date expireDate, Double cashpay, String account,
+			String operator, String remark) {
 		this.feesDate = feesDate;
+		this.vehicle = vehicle;
+		this.feeType = feeType;
 		this.amount = amount;
 		this.expireDate = expireDate;
 		this.cashpay = cashpay;
+		this.account = account;
 		this.operator = operator;
 		this.remark = remark;
 	}
@@ -58,36 +52,28 @@ public class VehicleFees implements java.io.Serializable {
 		this.vehicleFeesId = vehicleFeesId;
 	}
 
-	public Vehicle getVehicle() {
-		return this.vehicle;
-	}
-
-	public void setVehicle(Vehicle vehicle) {
-		this.vehicle = vehicle;
-	}
-
-	public Account getAccount() {
-		return this.account;
-	}
-
-	public void setAccount(Account account) {
-		this.account = account;
-	}
-
-	public VehiclefeesType getVehiclefeesType() {
-		return this.vehiclefeesType;
-	}
-
-	public void setVehiclefeesType(VehiclefeesType vehiclefeesType) {
-		this.vehiclefeesType = vehiclefeesType;
-	}
-
 	public Date getFeesDate() {
 		return this.feesDate;
 	}
 
 	public void setFeesDate(Date feesDate) {
 		this.feesDate = feesDate;
+	}
+
+	public String getVehicle() {
+		return this.vehicle;
+	}
+
+	public void setVehicle(String vehicle) {
+		this.vehicle = vehicle;
+	}
+
+	public String getFeeType() {
+		return this.feeType;
+	}
+
+	public void setFeeType(String feeType) {
+		this.feeType = feeType;
 	}
 
 	public Double getAmount() {
@@ -112,6 +98,14 @@ public class VehicleFees implements java.io.Serializable {
 
 	public void setCashpay(Double cashpay) {
 		this.cashpay = cashpay;
+	}
+
+	public String getAccount() {
+		return this.account;
+	}
+
+	public void setAccount(String account) {
+		this.account = account;
 	}
 
 	public String getOperator() {

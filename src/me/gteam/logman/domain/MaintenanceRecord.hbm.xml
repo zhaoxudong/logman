@@ -8,25 +8,22 @@
     <class name="me.gteam.logman.domain.MaintenanceRecord" table="maintenance_record" catalog="logman">
         <id name="maintId" type="java.lang.Integer">
             <column name="MAINT_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
-        <many-to-one name="vehicle" class="me.gteam.logman.domain.Vehicle" fetch="select">
-            <column name="VEHICLE" />
-        </many-to-one>
-        <many-to-one name="maintenanceItem" class="me.gteam.logman.domain.MaintenanceItem" fetch="select">
-            <column name="TYPE" />
-        </many-to-one>
-        <many-to-one name="supplier" class="me.gteam.logman.domain.Supplier" fetch="select">
-            <column name="LOCATION" />
-        </many-to-one>
-        <many-to-one name="account" class="me.gteam.logman.domain.Account" fetch="select">
-            <column name="ACCOUNT" />
-        </many-to-one>
-        <many-to-one name="driver" class="me.gteam.logman.domain.Driver" fetch="select">
-            <column name="DRIVER" />
-        </many-to-one>
         <property name="maintDate" type="java.util.Date">
             <column name="MAINT_DATE" length="10" />
+        </property>
+        <property name="vehicle" type="java.lang.String">
+            <column name="VEHICLE" length="30" />
+        </property>
+        <property name="driver" type="java.lang.String">
+            <column name="DRIVER" length="30" />
+        </property>
+        <property name="maintPlace" type="java.lang.String">
+            <column name="MAINT_PLACE" length="30" />
+        </property>
+        <property name="maintProject" type="java.lang.String">
+            <column name="MAINT_PROJECT" length="30" />
         </property>
         <property name="lasttimekm" type="java.lang.Double">
             <column name="LASTTIMEKM" precision="22" scale="0" />
@@ -39,6 +36,9 @@
         </property>
         <property name="amount" type="java.lang.Double">
             <column name="AMOUNT" precision="22" scale="0" />
+        </property>
+        <property name="account" type="java.lang.String">
+            <column name="ACCOUNT" length="30" />
         </property>
         <property name="operator" type="java.lang.String">
             <column name="OPERATOR" length="14" />

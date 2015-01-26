@@ -6,40 +6,39 @@
 -->
 <hibernate-mapping>
     <class name="me.gteam.logman.domain.OfficesuppliesPurchase" table="officesupplies_purchase" catalog="logman">
-        <composite-id name="id" class="me.gteam.logman.domain.OfficesuppliesPurchaseId">
-            <key-property name="purchaseId" type="java.lang.Integer">
-                <column name="PURCHASE_ID" />
-            </key-property>
-            <key-property name="date" type="java.util.Date">
-                <column name="DATE" length="10" />
-            </key-property>
-            <key-property name="goods" type="java.lang.String">
-                <column name="GOODS" length="30" />
-            </key-property>
-            <key-property name="quantity" type="java.lang.Double">
-                <column name="QUANTITY" precision="22" scale="0" />
-            </key-property>
-            <key-property name="unitPrice" type="java.lang.Double">
-                <column name="UNIT_PRICE" precision="22" scale="0" />
-            </key-property>
-            <key-property name="amount" type="java.lang.Double">
-                <column name="AMOUNT" precision="22" scale="0" />
-            </key-property>
-            <key-property name="account" type="java.lang.Integer">
-                <column name="ACCOUNT" />
-            </key-property>
-            <key-property name="buyplace" type="java.lang.String">
-                <column name="BUYPLACE" length="50" />
-            </key-property>
-            <key-property name="voucherNo" type="java.lang.String">
-                <column name="VOUCHER_NO" length="20" />
-            </key-property>
-            <key-property name="buyer" type="java.lang.String">
-                <column name="BUYER" length="14" />
-            </key-property>
-            <key-property name="remark" type="java.lang.String">
-                <column name="REMARK" length="50" />
-            </key-property>
-        </composite-id>
+        <id name="purchaseId" type="java.lang.Integer">
+            <column name="PURCHASE_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="date" type="java.util.Date">
+            <column name="DATE" length="10" />
+        </property>
+        <property name="goods" type="java.lang.String">
+            <column name="GOODS" length="30" />
+        </property>
+        <property name="quantity" type="java.lang.Double">
+            <column name="QUANTITY" precision="22" scale="0" />
+        </property>
+        <property name="unitPrice" type="java.lang.Double">
+            <column name="UNIT_PRICE" precision="22" scale="0" />
+        </property>
+        <property name="amount" type="java.lang.Double">
+            <column name="AMOUNT" precision="22" scale="0" />
+        </property>
+        <property name="account" type="java.lang.String">
+            <column name="ACCOUNT" length="30" />
+        </property>
+        <property name="buyplace" type="java.lang.String">
+            <column name="BUYPLACE" length="50" />
+        </property>
+        <property name="voucherNo" type="java.lang.String">
+            <column name="VOUCHER_NO" length="20" />
+        </property>
+        <property name="buyer" type="java.lang.String">
+            <column name="BUYER" length="14" />
+        </property>
+        <property name="remark" type="java.lang.String">
+            <column name="REMARK" length="50" />
+        </property>
     </class>
 </hibernate-mapping>

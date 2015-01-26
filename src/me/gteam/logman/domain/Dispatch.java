@@ -15,14 +15,12 @@ public class Dispatch implements java.io.Serializable {
 	private Integer dispatchId;
 	private Date chucheDate;
 	private Date huichangDate;
-	private Integer fleet;
-	private Integer vehicle;
-	private Integer guache;
-	private Integer driver;
+	private String fleet;
+	private String vehicle;
+	private String guache;
+	private String driver;
 	private String zhuangxieyuan;
 	private String remark;
-	private Set freightNeedtopayDetails = new HashSet(0);
-	private Set freightReceiveDetails = new HashSet(0);
 	private Set dispatchDetails = new HashSet(0);
 
 	// Constructors
@@ -31,17 +29,10 @@ public class Dispatch implements java.io.Serializable {
 	public Dispatch() {
 	}
 
-	/** minimal constructor */
-	public Dispatch(Integer dispatchId) {
-		this.dispatchId = dispatchId;
-	}
-
 	/** full constructor */
-	public Dispatch(Integer dispatchId, Date chucheDate, Date huichangDate,
-			Integer fleet, Integer vehicle, Integer guache, Integer driver,
-			String zhuangxieyuan, String remark, Set freightNeedtopayDetails,
-			Set freightReceiveDetails, Set dispatchDetails) {
-		this.dispatchId = dispatchId;
+	public Dispatch(Date chucheDate, Date huichangDate, String fleet,
+			String vehicle, String guache, String driver, String zhuangxieyuan,
+			String remark, Set dispatchDetails) {
 		this.chucheDate = chucheDate;
 		this.huichangDate = huichangDate;
 		this.fleet = fleet;
@@ -50,8 +41,6 @@ public class Dispatch implements java.io.Serializable {
 		this.driver = driver;
 		this.zhuangxieyuan = zhuangxieyuan;
 		this.remark = remark;
-		this.freightNeedtopayDetails = freightNeedtopayDetails;
-		this.freightReceiveDetails = freightReceiveDetails;
 		this.dispatchDetails = dispatchDetails;
 	}
 
@@ -81,35 +70,35 @@ public class Dispatch implements java.io.Serializable {
 		this.huichangDate = huichangDate;
 	}
 
-	public Integer getFleet() {
+	public String getFleet() {
 		return this.fleet;
 	}
 
-	public void setFleet(Integer fleet) {
+	public void setFleet(String fleet) {
 		this.fleet = fleet;
 	}
 
-	public Integer getVehicle() {
+	public String getVehicle() {
 		return this.vehicle;
 	}
 
-	public void setVehicle(Integer vehicle) {
+	public void setVehicle(String vehicle) {
 		this.vehicle = vehicle;
 	}
 
-	public Integer getGuache() {
+	public String getGuache() {
 		return this.guache;
 	}
 
-	public void setGuache(Integer guache) {
+	public void setGuache(String guache) {
 		this.guache = guache;
 	}
 
-	public Integer getDriver() {
+	public String getDriver() {
 		return this.driver;
 	}
 
-	public void setDriver(Integer driver) {
+	public void setDriver(String driver) {
 		this.driver = driver;
 	}
 
@@ -127,22 +116,6 @@ public class Dispatch implements java.io.Serializable {
 
 	public void setRemark(String remark) {
 		this.remark = remark;
-	}
-
-	public Set getFreightNeedtopayDetails() {
-		return this.freightNeedtopayDetails;
-	}
-
-	public void setFreightNeedtopayDetails(Set freightNeedtopayDetails) {
-		this.freightNeedtopayDetails = freightNeedtopayDetails;
-	}
-
-	public Set getFreightReceiveDetails() {
-		return this.freightReceiveDetails;
-	}
-
-	public void setFreightReceiveDetails(Set freightReceiveDetails) {
-		this.freightReceiveDetails = freightReceiveDetails;
 	}
 
 	public Set getDispatchDetails() {

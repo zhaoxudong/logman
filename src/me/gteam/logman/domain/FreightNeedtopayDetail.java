@@ -8,9 +8,14 @@ public class FreightNeedtopayDetail implements java.io.Serializable {
 
 	// Fields
 
-	private FreightNeedtopayDetailId id;
-	private Dispatch dispatch;
+	private Integer mxid;
 	private FreightNeedtopay freightNeedtopay;
+	private String dispatchNo;
+	private Double needtopay;
+	private Double alreadySettle;
+	private Double nothasSettle;
+	private Double thisSettle;
+	private String ispay;
 
 	// Constructors
 
@@ -18,35 +23,27 @@ public class FreightNeedtopayDetail implements java.io.Serializable {
 	public FreightNeedtopayDetail() {
 	}
 
-	/** minimal constructor */
-	public FreightNeedtopayDetail(FreightNeedtopayDetailId id) {
-		this.id = id;
-	}
-
 	/** full constructor */
-	public FreightNeedtopayDetail(FreightNeedtopayDetailId id,
-			Dispatch dispatch, FreightNeedtopay freightNeedtopay) {
-		this.id = id;
-		this.dispatch = dispatch;
+	public FreightNeedtopayDetail(FreightNeedtopay freightNeedtopay,
+			String dispatchNo, Double needtopay, Double alreadySettle,
+			Double nothasSettle, Double thisSettle, String ispay) {
 		this.freightNeedtopay = freightNeedtopay;
+		this.dispatchNo = dispatchNo;
+		this.needtopay = needtopay;
+		this.alreadySettle = alreadySettle;
+		this.nothasSettle = nothasSettle;
+		this.thisSettle = thisSettle;
+		this.ispay = ispay;
 	}
 
 	// Property accessors
 
-	public FreightNeedtopayDetailId getId() {
-		return this.id;
+	public Integer getMxid() {
+		return this.mxid;
 	}
 
-	public void setId(FreightNeedtopayDetailId id) {
-		this.id = id;
-	}
-
-	public Dispatch getDispatch() {
-		return this.dispatch;
-	}
-
-	public void setDispatch(Dispatch dispatch) {
-		this.dispatch = dispatch;
+	public void setMxid(Integer mxid) {
+		this.mxid = mxid;
 	}
 
 	public FreightNeedtopay getFreightNeedtopay() {
@@ -55,6 +52,54 @@ public class FreightNeedtopayDetail implements java.io.Serializable {
 
 	public void setFreightNeedtopay(FreightNeedtopay freightNeedtopay) {
 		this.freightNeedtopay = freightNeedtopay;
+	}
+
+	public String getDispatchNo() {
+		return this.dispatchNo;
+	}
+
+	public void setDispatchNo(String dispatchNo) {
+		this.dispatchNo = dispatchNo;
+	}
+
+	public Double getNeedtopay() {
+		return this.needtopay;
+	}
+
+	public void setNeedtopay(Double needtopay) {
+		this.needtopay = needtopay;
+	}
+
+	public Double getAlreadySettle() {
+		return this.alreadySettle;
+	}
+
+	public void setAlreadySettle(Double alreadySettle) {
+		this.alreadySettle = alreadySettle;
+	}
+
+	public Double getNothasSettle() {
+		return this.nothasSettle;
+	}
+
+	public void setNothasSettle(Double nothasSettle) {
+		this.nothasSettle = nothasSettle;
+	}
+
+	public Double getThisSettle() {
+		return this.thisSettle;
+	}
+
+	public void setThisSettle(Double thisSettle) {
+		this.thisSettle = thisSettle;
+	}
+
+	public String getIspay() {
+		return this.ispay;
+	}
+
+	public void setIspay(String ispay) {
+		this.ispay = ispay;
 	}
 
 }

@@ -1,6 +1,8 @@
 package me.gteam.logman.domain;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * FittingNeedtopaySettle entity. @author MyEclipse Persistence Tools
@@ -11,15 +13,16 @@ public class FittingNeedtopaySettle implements java.io.Serializable {
 	// Fields
 
 	private Integer settleId;
-	private Account account;
-	private Supplier supplier;
 	private Date settleDate;
+	private String supplier;
 	private Double prepayRemainder;
 	private Double needtopay;
 	private Double prepay;
 	private Double actualPay;
+	private String account;
 	private String operator;
 	private String remark;
+	private Set fittingNeedtopayDetails = new HashSet(0);
 
 	// Constructors
 
@@ -27,26 +30,21 @@ public class FittingNeedtopaySettle implements java.io.Serializable {
 	public FittingNeedtopaySettle() {
 	}
 
-	/** minimal constructor */
-	public FittingNeedtopaySettle(Integer settleId) {
-		this.settleId = settleId;
-	}
-
 	/** full constructor */
-	public FittingNeedtopaySettle(Integer settleId, Account account,
-			Supplier supplier, Date settleDate, Double prepayRemainder,
-			Double needtopay, Double prepay, Double actualPay, String operator,
-			String remark) {
-		this.settleId = settleId;
-		this.account = account;
-		this.supplier = supplier;
+	public FittingNeedtopaySettle(Date settleDate, String supplier,
+			Double prepayRemainder, Double needtopay, Double prepay,
+			Double actualPay, String account, String operator, String remark,
+			Set fittingNeedtopayDetails) {
 		this.settleDate = settleDate;
+		this.supplier = supplier;
 		this.prepayRemainder = prepayRemainder;
 		this.needtopay = needtopay;
 		this.prepay = prepay;
 		this.actualPay = actualPay;
+		this.account = account;
 		this.operator = operator;
 		this.remark = remark;
+		this.fittingNeedtopayDetails = fittingNeedtopayDetails;
 	}
 
 	// Property accessors
@@ -59,28 +57,20 @@ public class FittingNeedtopaySettle implements java.io.Serializable {
 		this.settleId = settleId;
 	}
 
-	public Account getAccount() {
-		return this.account;
-	}
-
-	public void setAccount(Account account) {
-		this.account = account;
-	}
-
-	public Supplier getSupplier() {
-		return this.supplier;
-	}
-
-	public void setSupplier(Supplier supplier) {
-		this.supplier = supplier;
-	}
-
 	public Date getSettleDate() {
 		return this.settleDate;
 	}
 
 	public void setSettleDate(Date settleDate) {
 		this.settleDate = settleDate;
+	}
+
+	public String getSupplier() {
+		return this.supplier;
+	}
+
+	public void setSupplier(String supplier) {
+		this.supplier = supplier;
 	}
 
 	public Double getPrepayRemainder() {
@@ -115,6 +105,14 @@ public class FittingNeedtopaySettle implements java.io.Serializable {
 		this.actualPay = actualPay;
 	}
 
+	public String getAccount() {
+		return this.account;
+	}
+
+	public void setAccount(String account) {
+		this.account = account;
+	}
+
 	public String getOperator() {
 		return this.operator;
 	}
@@ -129,6 +127,14 @@ public class FittingNeedtopaySettle implements java.io.Serializable {
 
 	public void setRemark(String remark) {
 		this.remark = remark;
+	}
+
+	public Set getFittingNeedtopayDetails() {
+		return this.fittingNeedtopayDetails;
+	}
+
+	public void setFittingNeedtopayDetails(Set fittingNeedtopayDetails) {
+		this.fittingNeedtopayDetails = fittingNeedtopayDetails;
 	}
 
 }

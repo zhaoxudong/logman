@@ -1,8 +1,6 @@
 package me.gteam.logman.domain;
 
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * FixpointRefueling entity. @author MyEclipse Persistence Tools
@@ -13,17 +11,16 @@ public class FixpointRefueling implements java.io.Serializable {
 	// Fields
 
 	private Integer refuelingId;
-	private Fuel fuel;
-	private Driver driver;
-	private Vehicle vehicle;
-	private Supplier supplier;
 	private Date refuelingDate;
+	private String vehicle;
+	private String driver;
+	private String oilStation;
+	private String oilType;
 	private Double unitPrice;
 	private Double amont;
 	private Double weight;
 	private String operator;
 	private String remark;
-	private Set addoilPayDetails = new HashSet(0);
 
 	// Constructors
 
@@ -31,28 +28,20 @@ public class FixpointRefueling implements java.io.Serializable {
 	public FixpointRefueling() {
 	}
 
-	/** minimal constructor */
-	public FixpointRefueling(Integer refuelingId) {
-		this.refuelingId = refuelingId;
-	}
-
 	/** full constructor */
-	public FixpointRefueling(Integer refuelingId, Fuel fuel, Driver driver,
-			Vehicle vehicle, Supplier supplier, Date refuelingDate,
-			Double unitPrice, Double amont, Double weight, String operator,
-			String remark, Set addoilPayDetails) {
-		this.refuelingId = refuelingId;
-		this.fuel = fuel;
-		this.driver = driver;
-		this.vehicle = vehicle;
-		this.supplier = supplier;
+	public FixpointRefueling(Date refuelingDate, String vehicle, String driver,
+			String oilStation, String oilType, Double unitPrice, Double amont,
+			Double weight, String operator, String remark) {
 		this.refuelingDate = refuelingDate;
+		this.vehicle = vehicle;
+		this.driver = driver;
+		this.oilStation = oilStation;
+		this.oilType = oilType;
 		this.unitPrice = unitPrice;
 		this.amont = amont;
 		this.weight = weight;
 		this.operator = operator;
 		this.remark = remark;
-		this.addoilPayDetails = addoilPayDetails;
 	}
 
 	// Property accessors
@@ -65,44 +54,44 @@ public class FixpointRefueling implements java.io.Serializable {
 		this.refuelingId = refuelingId;
 	}
 
-	public Fuel getFuel() {
-		return this.fuel;
-	}
-
-	public void setFuel(Fuel fuel) {
-		this.fuel = fuel;
-	}
-
-	public Driver getDriver() {
-		return this.driver;
-	}
-
-	public void setDriver(Driver driver) {
-		this.driver = driver;
-	}
-
-	public Vehicle getVehicle() {
-		return this.vehicle;
-	}
-
-	public void setVehicle(Vehicle vehicle) {
-		this.vehicle = vehicle;
-	}
-
-	public Supplier getSupplier() {
-		return this.supplier;
-	}
-
-	public void setSupplier(Supplier supplier) {
-		this.supplier = supplier;
-	}
-
 	public Date getRefuelingDate() {
 		return this.refuelingDate;
 	}
 
 	public void setRefuelingDate(Date refuelingDate) {
 		this.refuelingDate = refuelingDate;
+	}
+
+	public String getVehicle() {
+		return this.vehicle;
+	}
+
+	public void setVehicle(String vehicle) {
+		this.vehicle = vehicle;
+	}
+
+	public String getDriver() {
+		return this.driver;
+	}
+
+	public void setDriver(String driver) {
+		this.driver = driver;
+	}
+
+	public String getOilStation() {
+		return this.oilStation;
+	}
+
+	public void setOilStation(String oilStation) {
+		this.oilStation = oilStation;
+	}
+
+	public String getOilType() {
+		return this.oilType;
+	}
+
+	public void setOilType(String oilType) {
+		this.oilType = oilType;
 	}
 
 	public Double getUnitPrice() {
@@ -143,14 +132,6 @@ public class FixpointRefueling implements java.io.Serializable {
 
 	public void setRemark(String remark) {
 		this.remark = remark;
-	}
-
-	public Set getAddoilPayDetails() {
-		return this.addoilPayDetails;
-	}
-
-	public void setAddoilPayDetails(Set addoilPayDetails) {
-		this.addoilPayDetails = addoilPayDetails;
 	}
 
 }

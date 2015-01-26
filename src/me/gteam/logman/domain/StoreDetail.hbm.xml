@@ -10,15 +10,6 @@
             <column name="DETAIL_ID" />
             <generator class="assigned" />
         </id>
-        <many-to-one name="costumer" class="me.gteam.logman.domain.Costumer" fetch="select">
-            <column name="COSTUMER" />
-        </many-to-one>
-        <many-to-one name="storehouse" class="me.gteam.logman.domain.Storehouse" fetch="select">
-            <column name="STOREHOUSE" />
-        </many-to-one>
-        <many-to-one name="goods" class="me.gteam.logman.domain.Goods" fetch="select">
-            <column name="GOODS" />
-        </many-to-one>
         <property name="weight" type="java.lang.Double">
             <column name="WEIGHT" precision="22" scale="0" />
         </property>

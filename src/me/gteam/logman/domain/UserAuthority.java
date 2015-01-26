@@ -19,9 +19,7 @@ public class UserAuthority implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public UserAuthority(Integer authorityRecordId,
-			ThirdAuthority thirdAuthority, User user) {
-		this.authorityRecordId = authorityRecordId;
+	public UserAuthority(ThirdAuthority thirdAuthority, User user) {
 		this.thirdAuthority = thirdAuthority;
 		this.user = user;
 	}

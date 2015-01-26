@@ -1,6 +1,8 @@
 package me.gteam.logman.domain;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * SettleSalary entity. @author MyEclipse Persistence Tools
@@ -11,11 +13,13 @@ public class SettleSalary implements java.io.Serializable {
 	// Fields
 
 	private Integer settleId;
-	private String settleNo;
+	private Date startDate;
+	private Date endDate;
 	private Date settledate;
 	private Double amount;
-	private Integer account;
+	private String account;
 	private String remark;
+	private Set payrollDetailses = new HashSet(0);
 
 	// Constructors
 
@@ -23,20 +27,16 @@ public class SettleSalary implements java.io.Serializable {
 	public SettleSalary() {
 	}
 
-	/** minimal constructor */
-	public SettleSalary(Integer settleId) {
-		this.settleId = settleId;
-	}
-
 	/** full constructor */
-	public SettleSalary(Integer settleId, String settleNo, Date settledate,
-			Double amount, Integer account, String remark) {
-		this.settleId = settleId;
-		this.settleNo = settleNo;
+	public SettleSalary(Date startDate, Date endDate, Date settledate,
+			Double amount, String account, String remark, Set payrollDetailses) {
+		this.startDate = startDate;
+		this.endDate = endDate;
 		this.settledate = settledate;
 		this.amount = amount;
 		this.account = account;
 		this.remark = remark;
+		this.payrollDetailses = payrollDetailses;
 	}
 
 	// Property accessors
@@ -49,12 +49,20 @@ public class SettleSalary implements java.io.Serializable {
 		this.settleId = settleId;
 	}
 
-	public String getSettleNo() {
-		return this.settleNo;
+	public Date getStartDate() {
+		return this.startDate;
 	}
 
-	public void setSettleNo(String settleNo) {
-		this.settleNo = settleNo;
+	public void setStartDate(Date startDate) {
+		this.startDate = startDate;
+	}
+
+	public Date getEndDate() {
+		return this.endDate;
+	}
+
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
 	}
 
 	public Date getSettledate() {
@@ -73,11 +81,11 @@ public class SettleSalary implements java.io.Serializable {
 		this.amount = amount;
 	}
 
-	public Integer getAccount() {
+	public String getAccount() {
 		return this.account;
 	}
 
-	public void setAccount(Integer account) {
+	public void setAccount(String account) {
 		this.account = account;
 	}
 
@@ -87,6 +95,14 @@ public class SettleSalary implements java.io.Serializable {
 
 	public void setRemark(String remark) {
 		this.remark = remark;
+	}
+
+	public Set getPayrollDetailses() {
+		return this.payrollDetailses;
+	}
+
+	public void setPayrollDetailses(Set payrollDetailses) {
+		this.payrollDetailses = payrollDetailses;
 	}
 
 }

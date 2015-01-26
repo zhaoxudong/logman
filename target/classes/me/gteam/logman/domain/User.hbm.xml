@@ -8,7 +8,7 @@
     <class name="me.gteam.logman.domain.User" table="user" catalog="logman">
         <id name="userId" type="java.lang.Integer">
             <column name="USER_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <property name="userName" type="java.lang.String">
             <column name="USER_NAME" length="30" not-null="true" />
@@ -18,7 +18,7 @@
         </property>
         <set name="userAuthorities" inverse="true">
             <key>
-                <column name="USER_ID" not-null="true" />
+                <column name="USER_ID" />
             </key>
             <one-to-many class="me.gteam.logman.domain.UserAuthority" />
         </set>

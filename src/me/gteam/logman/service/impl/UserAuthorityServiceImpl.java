@@ -14,36 +14,27 @@ import me.gteam.logman.service.UserAuthorityService;
 
 @Service("userAuthorityService")
 public class UserAuthorityServiceImpl implements UserAuthorityService{
+
 	@Resource(name="userAuthorityDao")
 	private UserAuthorityDao userAuthorityDao;
 
-	@Override
 	public void saveUserAuthority(UserAuthority userAuthority) {
-		// TODO Auto-generated method stub
 		this.userAuthorityDao.saveEntry(userAuthority);
 	}
 
-	@Override
-	public void updateUserAuthority(UserAuthority userAuthority) {
-		// TODO Auto-generated method stub
+	public void updateUserAuthority(UserAuthority userAuthority){
 		this.userAuthorityDao.updateEntry(userAuthority);
 	}
 
-	@Override
 	public void deleteUserAuthorityByID(Serializable id, String deleteMode) {
-		// TODO Auto-generated method stub
 		this.userAuthorityDao.deleteEntry(id);
 	}
 
-	@Override
-	public Collection<UserAuthority> getAllUserAuthorities() {
-		// TODO Auto-generated method stub
+	public Collection<UserAuthority> getAllUserAuthority() {
 		return this.userAuthorityDao.getAllEntry();
 	}
 
-	@Override
 	public UserAuthority getUserAuthorityById(Serializable id) {
-		// TODO Auto-generated method stub
 		return (UserAuthority)this.userAuthorityDao.getEntryById(id);
 	}
 
@@ -52,5 +43,4 @@ public class UserAuthorityServiceImpl implements UserAuthorityService{
 		// TODO Auto-generated method stub
 		return this.userAuthorityDao.getThirdAuthorityByUserIdAndThiId(userId, ThiId);
 	}
-	
 }

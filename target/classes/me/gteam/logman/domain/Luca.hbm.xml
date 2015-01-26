@@ -8,19 +8,19 @@
     <class name="me.gteam.logman.domain.Luca" table="luca" catalog="logman">
         <id name="lucaId" type="java.lang.Integer">
             <column name="LUCA_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
-        <many-to-one name="vehicle" class="me.gteam.logman.domain.Vehicle" fetch="select">
-            <column name="VEHICLE" />
-        </many-to-one>
-        <many-to-one name="lucaType" class="me.gteam.logman.domain.LucaType" fetch="select">
-            <column name="TYPE" />
-        </many-to-one>
         <property name="lucaNo" type="java.lang.String">
             <column name="LUCA_NO" length="20" />
         </property>
+        <property name="type" type="java.lang.String">
+            <column name="TYPE" length="20" />
+        </property>
         <property name="buyDate" type="java.util.Date">
             <column name="BUY_DATE" length="10" />
+        </property>
+        <property name="vehicle" type="java.lang.String">
+            <column name="VEHICLE" length="30" />
         </property>
         <property name="initAmount" type="java.lang.Double">
             <column name="INIT_AMOUNT" precision="22" scale="0" />
@@ -31,11 +31,5 @@
         <property name="remark" type="java.lang.String">
             <column name="REMARK" length="50" />
         </property>
-        <set name="lucaRecharges" inverse="true">
-            <key>
-                <column name="LUCA_NO" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.LucaRecharge" />
-        </set>
     </class>
 </hibernate-mapping>

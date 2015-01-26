@@ -1,8 +1,5 @@
 package me.gteam.logman.domain;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * FulecardType entity. @author MyEclipse Persistence Tools
  */
@@ -13,7 +10,6 @@ public class FulecardType implements java.io.Serializable {
 
 	private Integer fulecardId;
 	private String type;
-	private Set fulecards = new HashSet(0);
 
 	// Constructors
 
@@ -21,16 +17,9 @@ public class FulecardType implements java.io.Serializable {
 	public FulecardType() {
 	}
 
-	/** minimal constructor */
-	public FulecardType(Integer fulecardId) {
-		this.fulecardId = fulecardId;
-	}
-
 	/** full constructor */
-	public FulecardType(Integer fulecardId, String type, Set fulecards) {
-		this.fulecardId = fulecardId;
+	public FulecardType(String type) {
 		this.type = type;
-		this.fulecards = fulecards;
 	}
 
 	// Property accessors
@@ -49,14 +38,6 @@ public class FulecardType implements java.io.Serializable {
 
 	public void setType(String type) {
 		this.type = type;
-	}
-
-	public Set getFulecards() {
-		return this.fulecards;
-	}
-
-	public void setFulecards(Set fulecards) {
-		this.fulecards = fulecards;
 	}
 
 }

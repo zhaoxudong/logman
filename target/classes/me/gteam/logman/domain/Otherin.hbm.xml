@@ -8,25 +8,22 @@
     <class name="me.gteam.logman.domain.Otherin" table="otherin" catalog="logman">
         <id name="inId" type="java.lang.Integer">
             <column name="IN_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
-        <many-to-one name="vehicle" class="me.gteam.logman.domain.Vehicle" fetch="select">
-            <column name="VEHICLE" />
-        </many-to-one>
-        <many-to-one name="account" class="me.gteam.logman.domain.Account" fetch="select">
-            <column name="INTYPE" />
-        </many-to-one>
-        <many-to-one name="otherinType" class="me.gteam.logman.domain.OtherinType" update="false" insert="false" fetch="select">
-            <column name="INTYPE" />
-        </many-to-one>
         <property name="date" type="java.util.Date">
             <column name="DATE" length="10" />
+        </property>
+        <property name="type" type="java.lang.String">
+            <column name="TYPE" length="30" />
+        </property>
+        <property name="vehicle" type="java.lang.String">
+            <column name="VEHICLE" length="30" />
         </property>
         <property name="amount" type="java.lang.Double">
             <column name="AMOUNT" precision="22" scale="0" />
         </property>
-        <property name="account_1" type="java.lang.Integer">
-            <column name="ACCOUNT" />
+        <property name="account" type="java.lang.String">
+            <column name="ACCOUNT" length="30" />
         </property>
         <property name="operator" type="java.lang.String">
             <column name="OPERATOR" length="14" />

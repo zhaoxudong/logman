@@ -10,9 +10,8 @@ public class TireDate implements java.io.Serializable {
 
 	// Fields
 
-	private Integer tireNo;
-	private Vehicle vehicle;
-	private Supplier supplier;
+	private Integer tireId;
+	private String tireNo;
 	private Double km;
 	private String location;
 	private String type;
@@ -20,6 +19,7 @@ public class TireDate implements java.io.Serializable {
 	private String standard;
 	private String figure;
 	private String producingArea;
+	private String supplier;
 	private Date buyDate;
 	private Double buyCost;
 	private Date useDatre;
@@ -33,19 +33,16 @@ public class TireDate implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public TireDate(Integer tireNo) {
+	public TireDate(String tireNo) {
 		this.tireNo = tireNo;
 	}
 
 	/** full constructor */
-	public TireDate(Integer tireNo, Vehicle vehicle, Supplier supplier,
-			Double km, String location, String type, String brand,
-			String standard, String figure, String producingArea, Date buyDate,
-			Double buyCost, Date useDatre, String whetherReimbursement,
-			String remark) {
+	public TireDate(String tireNo, Double km, String location, String type,
+			String brand, String standard, String figure, String producingArea,
+			String supplier, Date buyDate, Double buyCost, Date useDatre,
+			String whetherReimbursement, String remark) {
 		this.tireNo = tireNo;
-		this.vehicle = vehicle;
-		this.supplier = supplier;
 		this.km = km;
 		this.location = location;
 		this.type = type;
@@ -53,6 +50,7 @@ public class TireDate implements java.io.Serializable {
 		this.standard = standard;
 		this.figure = figure;
 		this.producingArea = producingArea;
+		this.supplier = supplier;
 		this.buyDate = buyDate;
 		this.buyCost = buyCost;
 		this.useDatre = useDatre;
@@ -62,28 +60,20 @@ public class TireDate implements java.io.Serializable {
 
 	// Property accessors
 
-	public Integer getTireNo() {
+	public Integer getTireId() {
+		return this.tireId;
+	}
+
+	public void setTireId(Integer tireId) {
+		this.tireId = tireId;
+	}
+
+	public String getTireNo() {
 		return this.tireNo;
 	}
 
-	public void setTireNo(Integer tireNo) {
+	public void setTireNo(String tireNo) {
 		this.tireNo = tireNo;
-	}
-
-	public Vehicle getVehicle() {
-		return this.vehicle;
-	}
-
-	public void setVehicle(Vehicle vehicle) {
-		this.vehicle = vehicle;
-	}
-
-	public Supplier getSupplier() {
-		return this.supplier;
-	}
-
-	public void setSupplier(Supplier supplier) {
-		this.supplier = supplier;
 	}
 
 	public Double getKm() {
@@ -140,6 +130,14 @@ public class TireDate implements java.io.Serializable {
 
 	public void setProducingArea(String producingArea) {
 		this.producingArea = producingArea;
+	}
+
+	public String getSupplier() {
+		return this.supplier;
+	}
+
+	public void setSupplier(String supplier) {
+		this.supplier = supplier;
 	}
 
 	public Date getBuyDate() {

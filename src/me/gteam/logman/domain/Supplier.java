@@ -1,8 +1,5 @@
 package me.gteam.logman.domain;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * Supplier entity. @author MyEclipse Persistence Tools
  */
@@ -22,16 +19,6 @@ public class Supplier implements java.io.Serializable {
 	private String bankOfDeposit;
 	private String bankaccount;
 	private String remark;
-	private Set fixpointRefuelings = new HashSet(0);
-	private Set oilpurchaseNeedtopaySettles = new HashSet(0);
-	private Set fittingPurchases = new HashSet(0);
-	private Set repairNeedtopaies = new HashSet(0);
-	private Set oilProcurements = new HashSet(0);
-	private Set fittingNeedtopaySettles = new HashSet(0);
-	private Set repairs = new HashSet(0);
-	private Set tireDates = new HashSet(0);
-	private Set maintenanceRecords = new HashSet(0);
-	private Set addoilNeedtopaysettles = new HashSet(0);
 
 	// Constructors
 
@@ -39,21 +26,10 @@ public class Supplier implements java.io.Serializable {
 	public Supplier() {
 	}
 
-	/** minimal constructor */
-	public Supplier(Integer supplierId) {
-		this.supplierId = supplierId;
-	}
-
 	/** full constructor */
-	public Supplier(Integer supplierId, String abbr, String fullname,
-			String type, String contact, String tel, String addr,
-			String taxNumber, String bankOfDeposit, String bankaccount,
-			String remark, Set fixpointRefuelings,
-			Set oilpurchaseNeedtopaySettles, Set fittingPurchases,
-			Set repairNeedtopaies, Set oilProcurements,
-			Set fittingNeedtopaySettles, Set repairs, Set tireDates,
-			Set maintenanceRecords, Set addoilNeedtopaysettles) {
-		this.supplierId = supplierId;
+	public Supplier(String abbr, String fullname, String type, String contact,
+			String tel, String addr, String taxNumber, String bankOfDeposit,
+			String bankaccount, String remark) {
 		this.abbr = abbr;
 		this.fullname = fullname;
 		this.type = type;
@@ -64,16 +40,6 @@ public class Supplier implements java.io.Serializable {
 		this.bankOfDeposit = bankOfDeposit;
 		this.bankaccount = bankaccount;
 		this.remark = remark;
-		this.fixpointRefuelings = fixpointRefuelings;
-		this.oilpurchaseNeedtopaySettles = oilpurchaseNeedtopaySettles;
-		this.fittingPurchases = fittingPurchases;
-		this.repairNeedtopaies = repairNeedtopaies;
-		this.oilProcurements = oilProcurements;
-		this.fittingNeedtopaySettles = fittingNeedtopaySettles;
-		this.repairs = repairs;
-		this.tireDates = tireDates;
-		this.maintenanceRecords = maintenanceRecords;
-		this.addoilNeedtopaysettles = addoilNeedtopaysettles;
 	}
 
 	// Property accessors
@@ -164,86 +130,6 @@ public class Supplier implements java.io.Serializable {
 
 	public void setRemark(String remark) {
 		this.remark = remark;
-	}
-
-	public Set getFixpointRefuelings() {
-		return this.fixpointRefuelings;
-	}
-
-	public void setFixpointRefuelings(Set fixpointRefuelings) {
-		this.fixpointRefuelings = fixpointRefuelings;
-	}
-
-	public Set getOilpurchaseNeedtopaySettles() {
-		return this.oilpurchaseNeedtopaySettles;
-	}
-
-	public void setOilpurchaseNeedtopaySettles(Set oilpurchaseNeedtopaySettles) {
-		this.oilpurchaseNeedtopaySettles = oilpurchaseNeedtopaySettles;
-	}
-
-	public Set getFittingPurchases() {
-		return this.fittingPurchases;
-	}
-
-	public void setFittingPurchases(Set fittingPurchases) {
-		this.fittingPurchases = fittingPurchases;
-	}
-
-	public Set getRepairNeedtopaies() {
-		return this.repairNeedtopaies;
-	}
-
-	public void setRepairNeedtopaies(Set repairNeedtopaies) {
-		this.repairNeedtopaies = repairNeedtopaies;
-	}
-
-	public Set getOilProcurements() {
-		return this.oilProcurements;
-	}
-
-	public void setOilProcurements(Set oilProcurements) {
-		this.oilProcurements = oilProcurements;
-	}
-
-	public Set getFittingNeedtopaySettles() {
-		return this.fittingNeedtopaySettles;
-	}
-
-	public void setFittingNeedtopaySettles(Set fittingNeedtopaySettles) {
-		this.fittingNeedtopaySettles = fittingNeedtopaySettles;
-	}
-
-	public Set getRepairs() {
-		return this.repairs;
-	}
-
-	public void setRepairs(Set repairs) {
-		this.repairs = repairs;
-	}
-
-	public Set getTireDates() {
-		return this.tireDates;
-	}
-
-	public void setTireDates(Set tireDates) {
-		this.tireDates = tireDates;
-	}
-
-	public Set getMaintenanceRecords() {
-		return this.maintenanceRecords;
-	}
-
-	public void setMaintenanceRecords(Set maintenanceRecords) {
-		this.maintenanceRecords = maintenanceRecords;
-	}
-
-	public Set getAddoilNeedtopaysettles() {
-		return this.addoilNeedtopaysettles;
-	}
-
-	public void setAddoilNeedtopaysettles(Set addoilNeedtopaysettles) {
-		this.addoilNeedtopaysettles = addoilNeedtopaysettles;
 	}
 
 }

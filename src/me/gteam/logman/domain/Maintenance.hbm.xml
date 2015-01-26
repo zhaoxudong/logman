@@ -8,13 +8,13 @@
     <class name="me.gteam.logman.domain.Maintenance" table="maintenance" catalog="logman">
         <id name="maintenanceId" type="java.lang.Integer">
             <column name="MAINTENANCE_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
-        <many-to-one name="department" class="me.gteam.logman.domain.Department" fetch="select">
-            <column name="DEPARTMENT_ID" />
-        </many-to-one>
         <property name="name" type="java.lang.String">
             <column name="NAME" length="10" />
+        </property>
+        <property name="department" type="java.lang.String">
+            <column name="DEPARTMENT" length="30" />
         </property>
         <property name="birth" type="java.util.Date">
             <column name="BIRTH" length="10" />
@@ -34,11 +34,5 @@
         <property name="remark" type="java.lang.String">
             <column name="REMARK" length="50" />
         </property>
-        <set name="repairs" inverse="true">
-            <key>
-                <column name="SERVICEMAN" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.Repair" />
-        </set>
     </class>
 </hibernate-mapping>

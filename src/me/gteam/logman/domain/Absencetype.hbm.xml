@@ -8,7 +8,7 @@
     <class name="me.gteam.logman.domain.Absencetype" table="absencetype" catalog="logman">
         <id name="absencetypeId" type="java.lang.Integer">
             <column name="ABSENCETYPE_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <property name="absencetypeName" type="java.lang.String">
             <column name="ABSENCETYPE_NAME" length="14" />
@@ -16,11 +16,5 @@
         <property name="deduction" type="java.lang.Integer">
             <column name="DEDUCTION" />
         </property>
-        <set name="absences" inverse="true">
-            <key>
-                <column name="ABSENCETYPE_ID" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.Absence" />
-        </set>
     </class>
 </hibernate-mapping>

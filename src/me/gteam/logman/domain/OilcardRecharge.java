@@ -11,10 +11,10 @@ public class OilcardRecharge implements java.io.Serializable {
 	// Fields
 
 	private Integer oilcardrechargeId;
-	private Account account;
-	private Fulecard fulecard;
 	private Date date;
+	private String oilcardNo;
 	private Double amount;
+	private String account;
 	private String operator;
 	private String remark;
 
@@ -24,20 +24,13 @@ public class OilcardRecharge implements java.io.Serializable {
 	public OilcardRecharge() {
 	}
 
-	/** minimal constructor */
-	public OilcardRecharge(Integer oilcardrechargeId) {
-		this.oilcardrechargeId = oilcardrechargeId;
-	}
-
 	/** full constructor */
-	public OilcardRecharge(Integer oilcardrechargeId, Account account,
-			Fulecard fulecard, Date date, Double amount, String operator,
-			String remark) {
-		this.oilcardrechargeId = oilcardrechargeId;
-		this.account = account;
-		this.fulecard = fulecard;
+	public OilcardRecharge(Date date, String oilcardNo, Double amount,
+			String account, String operator, String remark) {
 		this.date = date;
+		this.oilcardNo = oilcardNo;
 		this.amount = amount;
+		this.account = account;
 		this.operator = operator;
 		this.remark = remark;
 	}
@@ -52,22 +45,6 @@ public class OilcardRecharge implements java.io.Serializable {
 		this.oilcardrechargeId = oilcardrechargeId;
 	}
 
-	public Account getAccount() {
-		return this.account;
-	}
-
-	public void setAccount(Account account) {
-		this.account = account;
-	}
-
-	public Fulecard getFulecard() {
-		return this.fulecard;
-	}
-
-	public void setFulecard(Fulecard fulecard) {
-		this.fulecard = fulecard;
-	}
-
 	public Date getDate() {
 		return this.date;
 	}
@@ -76,12 +53,28 @@ public class OilcardRecharge implements java.io.Serializable {
 		this.date = date;
 	}
 
+	public String getOilcardNo() {
+		return this.oilcardNo;
+	}
+
+	public void setOilcardNo(String oilcardNo) {
+		this.oilcardNo = oilcardNo;
+	}
+
 	public Double getAmount() {
 		return this.amount;
 	}
 
 	public void setAmount(Double amount) {
 		this.amount = amount;
+	}
+
+	public String getAccount() {
+		return this.account;
+	}
+
+	public void setAccount(String account) {
+		this.account = account;
 	}
 
 	public String getOperator() {

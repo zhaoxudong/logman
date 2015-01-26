@@ -1,8 +1,6 @@
 package me.gteam.logman.domain;
 
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * Luca entity. @author MyEclipse Persistence Tools
@@ -13,14 +11,13 @@ public class Luca implements java.io.Serializable {
 	// Fields
 
 	private Integer lucaId;
-	private Vehicle vehicle;
-	private LucaType lucaType;
 	private String lucaNo;
+	private String type;
 	private Date buyDate;
+	private String vehicle;
 	private Double initAmount;
 	private Double currentAmount;
 	private String remark;
-	private Set lucaRecharges = new HashSet(0);
 
 	// Constructors
 
@@ -28,24 +25,16 @@ public class Luca implements java.io.Serializable {
 	public Luca() {
 	}
 
-	/** minimal constructor */
-	public Luca(Integer lucaId) {
-		this.lucaId = lucaId;
-	}
-
 	/** full constructor */
-	public Luca(Integer lucaId, Vehicle vehicle, LucaType lucaType,
-			String lucaNo, Date buyDate, Double initAmount,
-			Double currentAmount, String remark, Set lucaRecharges) {
-		this.lucaId = lucaId;
-		this.vehicle = vehicle;
-		this.lucaType = lucaType;
+	public Luca(String lucaNo, String type, Date buyDate, String vehicle,
+			Double initAmount, Double currentAmount, String remark) {
 		this.lucaNo = lucaNo;
+		this.type = type;
 		this.buyDate = buyDate;
+		this.vehicle = vehicle;
 		this.initAmount = initAmount;
 		this.currentAmount = currentAmount;
 		this.remark = remark;
-		this.lucaRecharges = lucaRecharges;
 	}
 
 	// Property accessors
@@ -58,22 +47,6 @@ public class Luca implements java.io.Serializable {
 		this.lucaId = lucaId;
 	}
 
-	public Vehicle getVehicle() {
-		return this.vehicle;
-	}
-
-	public void setVehicle(Vehicle vehicle) {
-		this.vehicle = vehicle;
-	}
-
-	public LucaType getLucaType() {
-		return this.lucaType;
-	}
-
-	public void setLucaType(LucaType lucaType) {
-		this.lucaType = lucaType;
-	}
-
 	public String getLucaNo() {
 		return this.lucaNo;
 	}
@@ -82,12 +55,28 @@ public class Luca implements java.io.Serializable {
 		this.lucaNo = lucaNo;
 	}
 
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
 	public Date getBuyDate() {
 		return this.buyDate;
 	}
 
 	public void setBuyDate(Date buyDate) {
 		this.buyDate = buyDate;
+	}
+
+	public String getVehicle() {
+		return this.vehicle;
+	}
+
+	public void setVehicle(String vehicle) {
+		this.vehicle = vehicle;
 	}
 
 	public Double getInitAmount() {
@@ -112,14 +101,6 @@ public class Luca implements java.io.Serializable {
 
 	public void setRemark(String remark) {
 		this.remark = remark;
-	}
-
-	public Set getLucaRecharges() {
-		return this.lucaRecharges;
-	}
-
-	public void setLucaRecharges(Set lucaRecharges) {
-		this.lucaRecharges = lucaRecharges;
 	}
 
 }

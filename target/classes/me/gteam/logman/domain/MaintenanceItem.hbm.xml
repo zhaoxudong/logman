@@ -8,7 +8,7 @@
     <class name="me.gteam.logman.domain.MaintenanceItem" table="maintenance_item" catalog="logman">
         <id name="maintitemId" type="java.lang.Integer">
             <column name="MAINTITEM_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <property name="name" type="java.lang.String">
             <column name="NAME" length="20" />
@@ -22,11 +22,5 @@
         <property name="remark" type="java.lang.String">
             <column name="REMARK" length="50" />
         </property>
-        <set name="maintenanceRecords" inverse="true">
-            <key>
-                <column name="TYPE" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.MaintenanceRecord" />
-        </set>
     </class>
 </hibernate-mapping>

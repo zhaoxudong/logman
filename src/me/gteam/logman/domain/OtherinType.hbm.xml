@@ -8,16 +8,13 @@
     <class name="me.gteam.logman.domain.OtherinType" table="otherin_type" catalog="logman">
         <id name="typeid" type="java.lang.Integer">
             <column name="TYPEID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" length="30" />
+        </property>
         <property name="ishevicle" type="java.lang.String">
             <column name="ISHEVICLE" length="6" />
         </property>
-        <set name="otherins" inverse="true">
-            <key>
-                <column name="INTYPE" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.Otherin" />
-        </set>
     </class>
 </hibernate-mapping>

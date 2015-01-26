@@ -8,34 +8,16 @@
     <class name="me.gteam.logman.domain.Storehouse" table="storehouse" catalog="logman">
         <id name="warehouseId" type="java.lang.Integer">
             <column name="WAREHOUSE_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <property name="addr" type="java.lang.String">
             <column name="ADDR" length="50" />
         </property>
-        <property name="chargeman" type="java.lang.Integer">
-            <column name="CHARGEMAN" />
+        <property name="chargeman" type="java.lang.String">
+            <column name="CHARGEMAN" length="30" />
         </property>
         <property name="capacity" type="java.lang.Double">
             <column name="CAPACITY" precision="22" scale="0" />
         </property>
-        <set name="storageIns" inverse="true">
-            <key>
-                <column name="STOREHOUSE" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.StorageIn" />
-        </set>
-        <set name="storeageOuts" inverse="true">
-            <key>
-                <column name="STOREHOUSE" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.StoreageOut" />
-        </set>
-        <set name="storeDetails" inverse="true">
-            <key>
-                <column name="STOREHOUSE" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.StoreDetail" />
-        </set>
     </class>
 </hibernate-mapping>

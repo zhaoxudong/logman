@@ -11,11 +11,11 @@ public class Otherout implements java.io.Serializable {
 	// Fields
 
 	private Integer outId;
-	private Vehicle vehicle;
-	private OtheroutType otheroutType;
-	private Account account;
+	private String type;
 	private Date date;
+	private String vehicle;
 	private Double amount;
+	private String account;
 	private String operator;
 	private String remark;
 
@@ -25,21 +25,14 @@ public class Otherout implements java.io.Serializable {
 	public Otherout() {
 	}
 
-	/** minimal constructor */
-	public Otherout(Integer outId) {
-		this.outId = outId;
-	}
-
 	/** full constructor */
-	public Otherout(Integer outId, Vehicle vehicle, OtheroutType otheroutType,
-			Account account, Date date, Double amount, String operator,
-			String remark) {
-		this.outId = outId;
-		this.vehicle = vehicle;
-		this.otheroutType = otheroutType;
-		this.account = account;
+	public Otherout(String type, Date date, String vehicle, Double amount,
+			String account, String operator, String remark) {
+		this.type = type;
 		this.date = date;
+		this.vehicle = vehicle;
 		this.amount = amount;
+		this.account = account;
 		this.operator = operator;
 		this.remark = remark;
 	}
@@ -54,28 +47,12 @@ public class Otherout implements java.io.Serializable {
 		this.outId = outId;
 	}
 
-	public Vehicle getVehicle() {
-		return this.vehicle;
+	public String getType() {
+		return this.type;
 	}
 
-	public void setVehicle(Vehicle vehicle) {
-		this.vehicle = vehicle;
-	}
-
-	public OtheroutType getOtheroutType() {
-		return this.otheroutType;
-	}
-
-	public void setOtheroutType(OtheroutType otheroutType) {
-		this.otheroutType = otheroutType;
-	}
-
-	public Account getAccount() {
-		return this.account;
-	}
-
-	public void setAccount(Account account) {
-		this.account = account;
+	public void setType(String type) {
+		this.type = type;
 	}
 
 	public Date getDate() {
@@ -86,12 +63,28 @@ public class Otherout implements java.io.Serializable {
 		this.date = date;
 	}
 
+	public String getVehicle() {
+		return this.vehicle;
+	}
+
+	public void setVehicle(String vehicle) {
+		this.vehicle = vehicle;
+	}
+
 	public Double getAmount() {
 		return this.amount;
 	}
 
 	public void setAmount(Double amount) {
 		this.amount = amount;
+	}
+
+	public String getAccount() {
+		return this.account;
+	}
+
+	public void setAccount(String account) {
+		this.account = account;
 	}
 
 	public String getOperator() {

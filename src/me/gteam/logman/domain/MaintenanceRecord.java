@@ -11,16 +11,16 @@ public class MaintenanceRecord implements java.io.Serializable {
 	// Fields
 
 	private Integer maintId;
-	private Vehicle vehicle;
-	private MaintenanceItem maintenanceItem;
-	private Supplier supplier;
-	private Account account;
-	private Driver driver;
 	private Date maintDate;
+	private String vehicle;
+	private String driver;
+	private String maintPlace;
+	private String maintProject;
 	private Double lasttimekm;
 	private Double currentkm;
 	private Double nextkm;
 	private Double amount;
+	private String account;
 	private String operator;
 	private String remark;
 
@@ -30,28 +30,21 @@ public class MaintenanceRecord implements java.io.Serializable {
 	public MaintenanceRecord() {
 	}
 
-	/** minimal constructor */
-	public MaintenanceRecord(Integer maintId) {
-		this.maintId = maintId;
-	}
-
 	/** full constructor */
-	public MaintenanceRecord(Integer maintId, Vehicle vehicle,
-			MaintenanceItem maintenanceItem, Supplier supplier,
-			Account account, Driver driver, Date maintDate, Double lasttimekm,
-			Double currentkm, Double nextkm, Double amount, String operator,
-			String remark) {
-		this.maintId = maintId;
-		this.vehicle = vehicle;
-		this.maintenanceItem = maintenanceItem;
-		this.supplier = supplier;
-		this.account = account;
-		this.driver = driver;
+	public MaintenanceRecord(Date maintDate, String vehicle, String driver,
+			String maintPlace, String maintProject, Double lasttimekm,
+			Double currentkm, Double nextkm, Double amount, String account,
+			String operator, String remark) {
 		this.maintDate = maintDate;
+		this.vehicle = vehicle;
+		this.driver = driver;
+		this.maintPlace = maintPlace;
+		this.maintProject = maintProject;
 		this.lasttimekm = lasttimekm;
 		this.currentkm = currentkm;
 		this.nextkm = nextkm;
 		this.amount = amount;
+		this.account = account;
 		this.operator = operator;
 		this.remark = remark;
 	}
@@ -66,52 +59,44 @@ public class MaintenanceRecord implements java.io.Serializable {
 		this.maintId = maintId;
 	}
 
-	public Vehicle getVehicle() {
-		return this.vehicle;
-	}
-
-	public void setVehicle(Vehicle vehicle) {
-		this.vehicle = vehicle;
-	}
-
-	public MaintenanceItem getMaintenanceItem() {
-		return this.maintenanceItem;
-	}
-
-	public void setMaintenanceItem(MaintenanceItem maintenanceItem) {
-		this.maintenanceItem = maintenanceItem;
-	}
-
-	public Supplier getSupplier() {
-		return this.supplier;
-	}
-
-	public void setSupplier(Supplier supplier) {
-		this.supplier = supplier;
-	}
-
-	public Account getAccount() {
-		return this.account;
-	}
-
-	public void setAccount(Account account) {
-		this.account = account;
-	}
-
-	public Driver getDriver() {
-		return this.driver;
-	}
-
-	public void setDriver(Driver driver) {
-		this.driver = driver;
-	}
-
 	public Date getMaintDate() {
 		return this.maintDate;
 	}
 
 	public void setMaintDate(Date maintDate) {
 		this.maintDate = maintDate;
+	}
+
+	public String getVehicle() {
+		return this.vehicle;
+	}
+
+	public void setVehicle(String vehicle) {
+		this.vehicle = vehicle;
+	}
+
+	public String getDriver() {
+		return this.driver;
+	}
+
+	public void setDriver(String driver) {
+		this.driver = driver;
+	}
+
+	public String getMaintPlace() {
+		return this.maintPlace;
+	}
+
+	public void setMaintPlace(String maintPlace) {
+		this.maintPlace = maintPlace;
+	}
+
+	public String getMaintProject() {
+		return this.maintProject;
+	}
+
+	public void setMaintProject(String maintProject) {
+		this.maintProject = maintProject;
 	}
 
 	public Double getLasttimekm() {
@@ -144,6 +129,14 @@ public class MaintenanceRecord implements java.io.Serializable {
 
 	public void setAmount(Double amount) {
 		this.amount = amount;
+	}
+
+	public String getAccount() {
+		return this.account;
+	}
+
+	public void setAccount(String account) {
+		this.account = account;
 	}
 
 	public String getOperator() {

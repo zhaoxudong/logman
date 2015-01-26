@@ -1,8 +1,5 @@
 package me.gteam.logman.domain;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * Fittingdetail entity. @author MyEclipse Persistence Tools
  */
@@ -21,9 +18,6 @@ public class Fittingdetail implements java.io.Serializable {
 	private Double initAmount;
 	private Double currentAmount;
 	private String mnemonic;
-	private Set fittingStocks = new HashSet(0);
-	private Set fittingpurchaseDetails = new HashSet(0);
-	private Set repairDetails = new HashSet(0);
 
 	// Constructors
 
@@ -31,18 +25,10 @@ public class Fittingdetail implements java.io.Serializable {
 	public Fittingdetail() {
 	}
 
-	/** minimal constructor */
-	public Fittingdetail(Integer fittingId) {
-		this.fittingId = fittingId;
-	}
-
 	/** full constructor */
-	public Fittingdetail(Integer fittingId, String fittingname, String unit,
-			String standard, String classification, Double inPrice,
-			Double storePrice, Double initAmount, Double currentAmount,
-			String mnemonic, Set fittingStocks, Set fittingpurchaseDetails,
-			Set repairDetails) {
-		this.fittingId = fittingId;
+	public Fittingdetail(String fittingname, String unit, String standard,
+			String classification, Double inPrice, Double storePrice,
+			Double initAmount, Double currentAmount, String mnemonic) {
 		this.fittingname = fittingname;
 		this.unit = unit;
 		this.standard = standard;
@@ -52,9 +38,6 @@ public class Fittingdetail implements java.io.Serializable {
 		this.initAmount = initAmount;
 		this.currentAmount = currentAmount;
 		this.mnemonic = mnemonic;
-		this.fittingStocks = fittingStocks;
-		this.fittingpurchaseDetails = fittingpurchaseDetails;
-		this.repairDetails = repairDetails;
 	}
 
 	// Property accessors
@@ -137,30 +120,6 @@ public class Fittingdetail implements java.io.Serializable {
 
 	public void setMnemonic(String mnemonic) {
 		this.mnemonic = mnemonic;
-	}
-
-	public Set getFittingStocks() {
-		return this.fittingStocks;
-	}
-
-	public void setFittingStocks(Set fittingStocks) {
-		this.fittingStocks = fittingStocks;
-	}
-
-	public Set getFittingpurchaseDetails() {
-		return this.fittingpurchaseDetails;
-	}
-
-	public void setFittingpurchaseDetails(Set fittingpurchaseDetails) {
-		this.fittingpurchaseDetails = fittingpurchaseDetails;
-	}
-
-	public Set getRepairDetails() {
-		return this.repairDetails;
-	}
-
-	public void setRepairDetails(Set repairDetails) {
-		this.repairDetails = repairDetails;
 	}
 
 }

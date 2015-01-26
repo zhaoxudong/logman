@@ -11,16 +11,14 @@ public class CashRefuel implements java.io.Serializable {
 	// Fields
 
 	private Integer cashrefuelId;
-	private Fuel fuel;
-	private Driver driver;
-	private Vehicle vehicle;
-	private Account account;
 	private Date refuelDate;
-	private Integer vehicle_1;
-	private Integer driver_1;
+	private String vehicle;
+	private String driver;
+	private String oilType;
 	private Double unitPrice;
 	private Double amount;
 	private Double weight;
+	private String account;
 	private String operator;
 	private String remark;
 
@@ -30,27 +28,18 @@ public class CashRefuel implements java.io.Serializable {
 	public CashRefuel() {
 	}
 
-	/** minimal constructor */
-	public CashRefuel(Integer cashrefuelId) {
-		this.cashrefuelId = cashrefuelId;
-	}
-
 	/** full constructor */
-	public CashRefuel(Integer cashrefuelId, Fuel fuel, Driver driver,
-			Vehicle vehicle, Account account, Date refuelDate,
-			Integer vehicle_1, Integer driver_1, Double unitPrice,
-			Double amount, Double weight, String operator, String remark) {
-		this.cashrefuelId = cashrefuelId;
-		this.fuel = fuel;
-		this.driver = driver;
-		this.vehicle = vehicle;
-		this.account = account;
+	public CashRefuel(Date refuelDate, String vehicle, String driver,
+			String oilType, Double unitPrice, Double amount, Double weight,
+			String account, String operator, String remark) {
 		this.refuelDate = refuelDate;
-		this.vehicle_1 = vehicle_1;
-		this.driver_1 = driver_1;
+		this.vehicle = vehicle;
+		this.driver = driver;
+		this.oilType = oilType;
 		this.unitPrice = unitPrice;
 		this.amount = amount;
 		this.weight = weight;
+		this.account = account;
 		this.operator = operator;
 		this.remark = remark;
 	}
@@ -65,38 +54,6 @@ public class CashRefuel implements java.io.Serializable {
 		this.cashrefuelId = cashrefuelId;
 	}
 
-	public Fuel getFuel() {
-		return this.fuel;
-	}
-
-	public void setFuel(Fuel fuel) {
-		this.fuel = fuel;
-	}
-
-	public Driver getDriver() {
-		return this.driver;
-	}
-
-	public void setDriver(Driver driver) {
-		this.driver = driver;
-	}
-
-	public Vehicle getVehicle() {
-		return this.vehicle;
-	}
-
-	public void setVehicle(Vehicle vehicle) {
-		this.vehicle = vehicle;
-	}
-
-	public Account getAccount() {
-		return this.account;
-	}
-
-	public void setAccount(Account account) {
-		this.account = account;
-	}
-
 	public Date getRefuelDate() {
 		return this.refuelDate;
 	}
@@ -105,20 +62,28 @@ public class CashRefuel implements java.io.Serializable {
 		this.refuelDate = refuelDate;
 	}
 
-	public Integer getVehicle_1() {
-		return this.vehicle_1;
+	public String getVehicle() {
+		return this.vehicle;
 	}
 
-	public void setVehicle_1(Integer vehicle_1) {
-		this.vehicle_1 = vehicle_1;
+	public void setVehicle(String vehicle) {
+		this.vehicle = vehicle;
 	}
 
-	public Integer getDriver_1() {
-		return this.driver_1;
+	public String getDriver() {
+		return this.driver;
 	}
 
-	public void setDriver_1(Integer driver_1) {
-		this.driver_1 = driver_1;
+	public void setDriver(String driver) {
+		this.driver = driver;
+	}
+
+	public String getOilType() {
+		return this.oilType;
+	}
+
+	public void setOilType(String oilType) {
+		this.oilType = oilType;
 	}
 
 	public Double getUnitPrice() {
@@ -143,6 +108,14 @@ public class CashRefuel implements java.io.Serializable {
 
 	public void setWeight(Double weight) {
 		this.weight = weight;
+	}
+
+	public String getAccount() {
+		return this.account;
+	}
+
+	public void setAccount(String account) {
+		this.account = account;
 	}
 
 	public String getOperator() {

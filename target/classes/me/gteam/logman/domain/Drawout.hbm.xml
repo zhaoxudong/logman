@@ -6,52 +6,39 @@
 -->
 <hibernate-mapping>
     <class name="me.gteam.logman.domain.Drawout" table="drawout" catalog="logman">
-        <composite-id name="id" class="me.gteam.logman.domain.DrawoutId">
-            <key-property name="drawoutId" type="java.lang.Integer">
-                <column name="DRAWOUT_ID" />
-            </key-property>
-            <key-property name="have" type="java.lang.String">
-                <column name="HAVE" length="6" />
-            </key-property>
-            <key-property name="date" type="java.util.Date">
-                <column name="DATE" length="10" />
-            </key-property>
-            <key-property name="timeLimit" type="java.util.Date">
-                <column name="TIME_LIMIT" length="10" />
-            </key-property>
-            <key-property name="prepay" type="java.lang.Double">
-                <column name="PREPAY" precision="22" scale="0" />
-            </key-property>
-            <key-property name="planDrawout" type="java.util.Date">
-                <column name="PLAN_DRAWOUT" length="10" />
-            </key-property>
-            <key-property name="fleet" type="java.lang.Integer">
-                <column name="FLEET" />
-            </key-property>
-            <key-property name="vehicle" type="java.lang.Integer">
-                <column name="VEHICLE" />
-            </key-property>
-            <key-property name="trailer" type="java.lang.Integer">
-                <column name="TRAILER" />
-            </key-property>
-            <key-property name="driver" type="java.lang.Integer">
-                <column name="DRIVER" />
-            </key-property>
-            <key-property name="handler" type="java.lang.String">
-                <column name="HANDLER" length="30" />
-            </key-property>
-            <key-property name="client" type="java.lang.String">
-                <column name="CLIENT" length="14" />
-            </key-property>
-            <key-property name="destination" type="java.lang.String">
-                <column name="DESTINATION" length="50" />
-            </key-property>
-            <key-property name="goods" type="java.lang.Integer">
-                <column name="GOODS" />
-            </key-property>
-            <key-property name="remark" type="java.lang.String">
-                <column name="REMARK" length="50" />
-            </key-property>
-        </composite-id>
+        <id name="drawoutId" type="java.lang.Integer">
+            <column name="DRAWOUT_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="dispatchId" type="java.lang.Integer">
+            <column name="DISPATCH_ID" />
+        </property>
+        <property name="have" type="java.lang.String">
+            <column name="HAVE" length="6" />
+        </property>
+        <property name="fleet" type="java.lang.String">
+            <column name="FLEET" length="30" />
+        </property>
+        <property name="vehicle" type="java.lang.String">
+            <column name="VEHICLE" length="30" />
+        </property>
+        <property name="guache" type="java.lang.String">
+            <column name="GUACHE" length="30" />
+        </property>
+        <property name="driver" type="java.lang.String">
+            <column name="DRIVER" length="30" />
+        </property>
+        <property name="date" type="java.util.Date">
+            <column name="DATE" length="10" />
+        </property>
+        <property name="prepay" type="java.lang.Double">
+            <column name="PREPAY" precision="22" scale="0" />
+        </property>
+        <property name="drawMan" type="java.lang.String">
+            <column name="DRAW_MAN" length="30" />
+        </property>
+        <property name="remark" type="java.lang.String">
+            <column name="REMARK" length="50" />
+        </property>
     </class>
 </hibernate-mapping>

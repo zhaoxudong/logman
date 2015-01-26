@@ -8,22 +8,22 @@
     <class name="me.gteam.logman.domain.Otherout" table="otherout" catalog="logman">
         <id name="outId" type="java.lang.Integer">
             <column name="OUT_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
-        <many-to-one name="vehicle" class="me.gteam.logman.domain.Vehicle" fetch="select">
-            <column name="VEHICLE" />
-        </many-to-one>
-        <many-to-one name="otheroutType" class="me.gteam.logman.domain.OtheroutType" fetch="select">
-            <column name="OUT_TYPE" />
-        </many-to-one>
-        <many-to-one name="account" class="me.gteam.logman.domain.Account" fetch="select">
-            <column name="ACCOUNT" />
-        </many-to-one>
+        <property name="type" type="java.lang.String">
+            <column name="TYPE" length="30" />
+        </property>
         <property name="date" type="java.util.Date">
             <column name="DATE" length="10" />
         </property>
+        <property name="vehicle" type="java.lang.String">
+            <column name="VEHICLE" length="30" />
+        </property>
         <property name="amount" type="java.lang.Double">
             <column name="AMOUNT" precision="22" scale="0" />
+        </property>
+        <property name="account" type="java.lang.String">
+            <column name="ACCOUNT" length="30" />
         </property>
         <property name="operator" type="java.lang.String">
             <column name="OPERATOR" length="14" />

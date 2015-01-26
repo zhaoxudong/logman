@@ -8,22 +8,19 @@
     <class name="me.gteam.logman.domain.OilProcurement" table="oil_procurement" catalog="logman">
         <id name="oilProcurement" type="java.lang.Integer">
             <column name="OIL_PROCUREMENT" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
-        <many-to-one name="oiltank" class="me.gteam.logman.domain.Oiltank" fetch="select">
-            <column name="TANK" />
-        </many-to-one>
-        <many-to-one name="account" class="me.gteam.logman.domain.Account" fetch="select">
-            <column name="ACCOUNT" />
-        </many-to-one>
-        <many-to-one name="supplier" class="me.gteam.logman.domain.Supplier" fetch="select">
-            <column name="SUPPLIER" />
-        </many-to-one>
-        <many-to-one name="fuel" class="me.gteam.logman.domain.Fuel" fetch="select">
-            <column name="OILTYPE" />
-        </many-to-one>
         <property name="procDate" type="java.util.Date">
             <column name="PROC_DATE" length="10" />
+        </property>
+        <property name="supplier" type="java.lang.String">
+            <column name="SUPPLIER" length="30" />
+        </property>
+        <property name="oilType" type="java.lang.String">
+            <column name="OIL_TYPE" length="30" />
+        </property>
+        <property name="oilTank" type="java.lang.String">
+            <column name="OIL_TANK" length="30" />
         </property>
         <property name="weight" type="java.lang.Double">
             <column name="WEIGHT" precision="22" scale="0" />
@@ -37,17 +34,14 @@
         <property name="cashpay" type="java.lang.Double">
             <column name="CASHPAY" precision="22" scale="0" />
         </property>
+        <property name="account" type="java.lang.String">
+            <column name="ACCOUNT" length="30" />
+        </property>
         <property name="operator" type="java.lang.String">
             <column name="OPERATOR" length="14" />
         </property>
         <property name="remark" type="java.lang.String">
             <column name="REMARK" length="50" />
         </property>
-        <set name="iolpurchaseSettledetails" inverse="true">
-            <key>
-                <column name="PROCUREMENT_ID" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.IolpurchaseSettledetail" />
-        </set>
     </class>
 </hibernate-mapping>

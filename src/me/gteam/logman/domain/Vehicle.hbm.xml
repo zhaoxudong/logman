@@ -8,22 +8,22 @@
     <class name="me.gteam.logman.domain.Vehicle" table="vehicle" catalog="logman">
         <id name="vehicleId" type="java.lang.Integer">
             <column name="VEHICLE_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
-        <many-to-one name="vehiclemodel" class="me.gteam.logman.domain.Vehiclemodel" fetch="select">
-            <column name="VEHICLE_MODEL" />
-        </many-to-one>
-        <many-to-one name="fleet" class="me.gteam.logman.domain.Fleet" fetch="select">
-            <column name="FLEET_ID" />
-        </many-to-one>
         <property name="licensePlate" type="java.lang.String">
             <column name="LICENSE_PLATE" length="20" />
+        </property>
+        <property name="fleet" type="java.lang.String">
+            <column name="FLEET" length="30" />
         </property>
         <property name="type" type="java.lang.String">
             <column name="TYPE" length="10" />
         </property>
         <property name="defaultDrag" type="java.lang.String">
             <column name="DEFAULT_DRAG" length="10" />
+        </property>
+        <property name="vehicleType" type="java.lang.String">
+            <column name="VEHICLE_TYPE" length="10" />
         </property>
         <property name="mileage" type="java.lang.Double">
             <column name="MILEAGE" precision="22" scale="0" />
@@ -55,101 +55,5 @@
         <property name="remarks" type="java.lang.String">
             <column name="REMARKS" length="50" />
         </property>
-        <set name="otherouts" inverse="true">
-            <key>
-                <column name="VEHICLE" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.Otherout" />
-        </set>
-        <set name="vehicleFeeses" inverse="true">
-            <key>
-                <column name="VEHICLE" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.VehicleFees" />
-        </set>
-        <set name="storageIns" inverse="true">
-            <key>
-                <column name="VEHICLE" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.StorageIn" />
-        </set>
-        <set name="cashRefuels" inverse="true">
-            <key>
-                <column name="VEHICLE_ID" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.CashRefuel" />
-        </set>
-        <set name="repairs" inverse="true">
-            <key>
-                <column name="VEHICLE" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.Repair" />
-        </set>
-        <set name="storeageOuts" inverse="true">
-            <key>
-                <column name="VEHICLE" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.StoreageOut" />
-        </set>
-        <set name="maintenanceRecords" inverse="true">
-            <key>
-                <column name="VEHICLE" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.MaintenanceRecord" />
-        </set>
-        <set name="otherins" inverse="true">
-            <key>
-                <column name="VEHICLE" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.Otherin" />
-        </set>
-        <set name="illegals" inverse="true">
-            <key>
-                <column name="VEHICLE" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.Illegal" />
-        </set>
-        <set name="fixpointRefuelings" inverse="true">
-            <key>
-                <column name="VEHICLE_ID" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.FixpointRefueling" />
-        </set>
-        <set name="fulecards" inverse="true">
-            <key>
-                <column name="VEHICLE_ID" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.Fulecard" />
-        </set>
-        <set name="tankRefuels" inverse="true">
-            <key>
-                <column name="VEHICLE" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.TankRefuel" />
-        </set>
-        <set name="drivers" inverse="true">
-            <key>
-                <column name="VEHICLE_ID" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.Driver" />
-        </set>
-        <set name="accidents" inverse="true">
-            <key>
-                <column name="VEHICAL" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.Accident" />
-        </set>
-        <set name="lucas" inverse="true">
-            <key>
-                <column name="VEHICLE" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.Luca" />
-        </set>
-        <set name="tireDates" inverse="true">
-            <key>
-                <column name="VEHICLE" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.TireDate" />
-        </set>
     </class>
 </hibernate-mapping>

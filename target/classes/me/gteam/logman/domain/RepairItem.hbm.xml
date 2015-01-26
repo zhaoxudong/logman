@@ -8,16 +8,10 @@
     <class name="me.gteam.logman.domain.RepairItem" table="repair_item" catalog="logman">
         <id name="itemId" type="java.lang.Integer">
             <column name="ITEM_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <property name="itemName" type="java.lang.String">
             <column name="ITEM_NAME" length="20" />
         </property>
-        <set name="repairDetails" inverse="true">
-            <key>
-                <column name="REPAIR_ITEM" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.RepairDetail" />
-        </set>
     </class>
 </hibernate-mapping>

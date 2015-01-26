@@ -8,7 +8,7 @@
     <class name="me.gteam.logman.domain.PrimaryAuthority" table="primary_authority" catalog="logman">
         <id name="priId" type="java.lang.Integer">
             <column name="PRI_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <property name="priAuthority" type="java.lang.String">
             <column name="PRI_AUTHORITY" length="20" />

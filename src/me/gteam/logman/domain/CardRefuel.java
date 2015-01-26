@@ -11,9 +11,11 @@ public class CardRefuel implements java.io.Serializable {
 	// Fields
 
 	private Integer cardRefuelId;
-	private Fuel fuel;
-	private Fulecard fulecard;
 	private Date refuelDate;
+	private String vehicle;
+	private String driver;
+	private String oilcard;
+	private String oiltype;
 	private Double unitPrice;
 	private Double amount;
 	private Double weignt;
@@ -26,19 +28,15 @@ public class CardRefuel implements java.io.Serializable {
 	public CardRefuel() {
 	}
 
-	/** minimal constructor */
-	public CardRefuel(Integer cardRefuelId) {
-		this.cardRefuelId = cardRefuelId;
-	}
-
 	/** full constructor */
-	public CardRefuel(Integer cardRefuelId, Fuel fuel, Fulecard fulecard,
-			Date refuelDate, Double unitPrice, Double amount, Double weignt,
-			String operator, String remark) {
-		this.cardRefuelId = cardRefuelId;
-		this.fuel = fuel;
-		this.fulecard = fulecard;
+	public CardRefuel(Date refuelDate, String vehicle, String driver,
+			String oilcard, String oiltype, Double unitPrice, Double amount,
+			Double weignt, String operator, String remark) {
 		this.refuelDate = refuelDate;
+		this.vehicle = vehicle;
+		this.driver = driver;
+		this.oilcard = oilcard;
+		this.oiltype = oiltype;
 		this.unitPrice = unitPrice;
 		this.amount = amount;
 		this.weignt = weignt;
@@ -56,28 +54,44 @@ public class CardRefuel implements java.io.Serializable {
 		this.cardRefuelId = cardRefuelId;
 	}
 
-	public Fuel getFuel() {
-		return this.fuel;
-	}
-
-	public void setFuel(Fuel fuel) {
-		this.fuel = fuel;
-	}
-
-	public Fulecard getFulecard() {
-		return this.fulecard;
-	}
-
-	public void setFulecard(Fulecard fulecard) {
-		this.fulecard = fulecard;
-	}
-
 	public Date getRefuelDate() {
 		return this.refuelDate;
 	}
 
 	public void setRefuelDate(Date refuelDate) {
 		this.refuelDate = refuelDate;
+	}
+
+	public String getVehicle() {
+		return this.vehicle;
+	}
+
+	public void setVehicle(String vehicle) {
+		this.vehicle = vehicle;
+	}
+
+	public String getDriver() {
+		return this.driver;
+	}
+
+	public void setDriver(String driver) {
+		this.driver = driver;
+	}
+
+	public String getOilcard() {
+		return this.oilcard;
+	}
+
+	public void setOilcard(String oilcard) {
+		this.oilcard = oilcard;
+	}
+
+	public String getOiltype() {
+		return this.oiltype;
+	}
+
+	public void setOiltype(String oiltype) {
+		this.oiltype = oiltype;
 	}
 
 	public Double getUnitPrice() {

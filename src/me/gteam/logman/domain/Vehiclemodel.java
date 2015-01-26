@@ -1,8 +1,5 @@
 package me.gteam.logman.domain;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * Vehiclemodel entity. @author MyEclipse Persistence Tools
  */
@@ -13,7 +10,6 @@ public class Vehiclemodel implements java.io.Serializable {
 
 	private Integer modleId;
 	private String vehiclemodle;
-	private Set vehicles = new HashSet(0);
 
 	// Constructors
 
@@ -21,16 +17,9 @@ public class Vehiclemodel implements java.io.Serializable {
 	public Vehiclemodel() {
 	}
 
-	/** minimal constructor */
-	public Vehiclemodel(Integer modleId) {
-		this.modleId = modleId;
-	}
-
 	/** full constructor */
-	public Vehiclemodel(Integer modleId, String vehiclemodle, Set vehicles) {
-		this.modleId = modleId;
+	public Vehiclemodel(String vehiclemodle) {
 		this.vehiclemodle = vehiclemodle;
-		this.vehicles = vehicles;
 	}
 
 	// Property accessors
@@ -49,14 +38,6 @@ public class Vehiclemodel implements java.io.Serializable {
 
 	public void setVehiclemodle(String vehiclemodle) {
 		this.vehiclemodle = vehiclemodle;
-	}
-
-	public Set getVehicles() {
-		return this.vehicles;
-	}
-
-	public void setVehicles(Set vehicles) {
-		this.vehicles = vehicles;
 	}
 
 }

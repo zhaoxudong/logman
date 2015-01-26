@@ -1,8 +1,6 @@
 package me.gteam.logman.domain;
 
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * OilProcurement entity. @author MyEclipse Persistence Tools
@@ -13,18 +11,17 @@ public class OilProcurement implements java.io.Serializable {
 	// Fields
 
 	private Integer oilProcurement;
-	private Oiltank oiltank;
-	private Account account;
-	private Supplier supplier;
-	private Fuel fuel;
 	private Date procDate;
+	private String supplier;
+	private String oilType;
+	private String oilTank;
 	private Double weight;
 	private Double unitPrice;
 	private Double amount;
 	private Double cashpay;
+	private String account;
 	private String operator;
 	private String remark;
-	private Set iolpurchaseSettledetails = new HashSet(0);
 
 	// Constructors
 
@@ -32,29 +29,21 @@ public class OilProcurement implements java.io.Serializable {
 	public OilProcurement() {
 	}
 
-	/** minimal constructor */
-	public OilProcurement(Integer oilProcurement) {
-		this.oilProcurement = oilProcurement;
-	}
-
 	/** full constructor */
-	public OilProcurement(Integer oilProcurement, Oiltank oiltank,
-			Account account, Supplier supplier, Fuel fuel, Date procDate,
-			Double weight, Double unitPrice, Double amount, Double cashpay,
-			String operator, String remark, Set iolpurchaseSettledetails) {
-		this.oilProcurement = oilProcurement;
-		this.oiltank = oiltank;
-		this.account = account;
-		this.supplier = supplier;
-		this.fuel = fuel;
+	public OilProcurement(Date procDate, String supplier, String oilType,
+			String oilTank, Double weight, Double unitPrice, Double amount,
+			Double cashpay, String account, String operator, String remark) {
 		this.procDate = procDate;
+		this.supplier = supplier;
+		this.oilType = oilType;
+		this.oilTank = oilTank;
 		this.weight = weight;
 		this.unitPrice = unitPrice;
 		this.amount = amount;
 		this.cashpay = cashpay;
+		this.account = account;
 		this.operator = operator;
 		this.remark = remark;
-		this.iolpurchaseSettledetails = iolpurchaseSettledetails;
 	}
 
 	// Property accessors
@@ -67,44 +56,36 @@ public class OilProcurement implements java.io.Serializable {
 		this.oilProcurement = oilProcurement;
 	}
 
-	public Oiltank getOiltank() {
-		return this.oiltank;
-	}
-
-	public void setOiltank(Oiltank oiltank) {
-		this.oiltank = oiltank;
-	}
-
-	public Account getAccount() {
-		return this.account;
-	}
-
-	public void setAccount(Account account) {
-		this.account = account;
-	}
-
-	public Supplier getSupplier() {
-		return this.supplier;
-	}
-
-	public void setSupplier(Supplier supplier) {
-		this.supplier = supplier;
-	}
-
-	public Fuel getFuel() {
-		return this.fuel;
-	}
-
-	public void setFuel(Fuel fuel) {
-		this.fuel = fuel;
-	}
-
 	public Date getProcDate() {
 		return this.procDate;
 	}
 
 	public void setProcDate(Date procDate) {
 		this.procDate = procDate;
+	}
+
+	public String getSupplier() {
+		return this.supplier;
+	}
+
+	public void setSupplier(String supplier) {
+		this.supplier = supplier;
+	}
+
+	public String getOilType() {
+		return this.oilType;
+	}
+
+	public void setOilType(String oilType) {
+		this.oilType = oilType;
+	}
+
+	public String getOilTank() {
+		return this.oilTank;
+	}
+
+	public void setOilTank(String oilTank) {
+		this.oilTank = oilTank;
 	}
 
 	public Double getWeight() {
@@ -139,6 +120,14 @@ public class OilProcurement implements java.io.Serializable {
 		this.cashpay = cashpay;
 	}
 
+	public String getAccount() {
+		return this.account;
+	}
+
+	public void setAccount(String account) {
+		this.account = account;
+	}
+
 	public String getOperator() {
 		return this.operator;
 	}
@@ -153,14 +142,6 @@ public class OilProcurement implements java.io.Serializable {
 
 	public void setRemark(String remark) {
 		this.remark = remark;
-	}
-
-	public Set getIolpurchaseSettledetails() {
-		return this.iolpurchaseSettledetails;
-	}
-
-	public void setIolpurchaseSettledetails(Set iolpurchaseSettledetails) {
-		this.iolpurchaseSettledetails = iolpurchaseSettledetails;
 	}
 
 }

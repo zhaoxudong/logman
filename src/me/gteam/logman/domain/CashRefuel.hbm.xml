@@ -8,28 +8,19 @@
     <class name="me.gteam.logman.domain.CashRefuel" table="cash_refuel" catalog="logman">
         <id name="cashrefuelId" type="java.lang.Integer">
             <column name="CASHREFUEL_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
-        <many-to-one name="fuel" class="me.gteam.logman.domain.Fuel" fetch="select">
-            <column name="OIL_TYPE" />
-        </many-to-one>
-        <many-to-one name="driver" class="me.gteam.logman.domain.Driver" fetch="select">
-            <column name="DRIVER_ID" />
-        </many-to-one>
-        <many-to-one name="vehicle" class="me.gteam.logman.domain.Vehicle" fetch="select">
-            <column name="VEHICLE_ID" />
-        </many-to-one>
-        <many-to-one name="account" class="me.gteam.logman.domain.Account" fetch="select">
-            <column name="ACCOUNT" />
-        </many-to-one>
         <property name="refuelDate" type="java.util.Date">
             <column name="REFUEL_DATE" length="10" />
         </property>
-        <property name="vehicle_1" type="java.lang.Integer">
-            <column name="VEHICLE" />
+        <property name="vehicle" type="java.lang.String">
+            <column name="VEHICLE" length="30" />
         </property>
-        <property name="driver_1" type="java.lang.Integer">
-            <column name="DRIVER" />
+        <property name="driver" type="java.lang.String">
+            <column name="DRIVER" length="30" />
+        </property>
+        <property name="oilType" type="java.lang.String">
+            <column name="OIL_TYPE" length="30" />
         </property>
         <property name="unitPrice" type="java.lang.Double">
             <column name="UNIT_PRICE" precision="22" scale="0" />
@@ -39,6 +30,9 @@
         </property>
         <property name="weight" type="java.lang.Double">
             <column name="WEIGHT" precision="22" scale="0" />
+        </property>
+        <property name="account" type="java.lang.String">
+            <column name="ACCOUNT" length="30" />
         </property>
         <property name="operator" type="java.lang.String">
             <column name="OPERATOR" length="14" />

@@ -13,13 +13,13 @@ public class RepairNeedtopay implements java.io.Serializable {
 	// Fields
 
 	private Integer repairsettleId;
-	private Account account;
-	private Supplier supplier;
 	private Date settleDate;
+	private String repairFactory;
 	private Double prepayRemainder;
 	private Double needtopay;
 	private Double prepay;
 	private Double actualPay;
+	private String account;
 	private String operator;
 	private String remark;
 	private Set repairPayDetails = new HashSet(0);
@@ -30,24 +30,18 @@ public class RepairNeedtopay implements java.io.Serializable {
 	public RepairNeedtopay() {
 	}
 
-	/** minimal constructor */
-	public RepairNeedtopay(Integer repairsettleId) {
-		this.repairsettleId = repairsettleId;
-	}
-
 	/** full constructor */
-	public RepairNeedtopay(Integer repairsettleId, Account account,
-			Supplier supplier, Date settleDate, Double prepayRemainder,
-			Double needtopay, Double prepay, Double actualPay, String operator,
-			String remark, Set repairPayDetails) {
-		this.repairsettleId = repairsettleId;
-		this.account = account;
-		this.supplier = supplier;
+	public RepairNeedtopay(Date settleDate, String repairFactory,
+			Double prepayRemainder, Double needtopay, Double prepay,
+			Double actualPay, String account, String operator, String remark,
+			Set repairPayDetails) {
 		this.settleDate = settleDate;
+		this.repairFactory = repairFactory;
 		this.prepayRemainder = prepayRemainder;
 		this.needtopay = needtopay;
 		this.prepay = prepay;
 		this.actualPay = actualPay;
+		this.account = account;
 		this.operator = operator;
 		this.remark = remark;
 		this.repairPayDetails = repairPayDetails;
@@ -63,28 +57,20 @@ public class RepairNeedtopay implements java.io.Serializable {
 		this.repairsettleId = repairsettleId;
 	}
 
-	public Account getAccount() {
-		return this.account;
-	}
-
-	public void setAccount(Account account) {
-		this.account = account;
-	}
-
-	public Supplier getSupplier() {
-		return this.supplier;
-	}
-
-	public void setSupplier(Supplier supplier) {
-		this.supplier = supplier;
-	}
-
 	public Date getSettleDate() {
 		return this.settleDate;
 	}
 
 	public void setSettleDate(Date settleDate) {
 		this.settleDate = settleDate;
+	}
+
+	public String getRepairFactory() {
+		return this.repairFactory;
+	}
+
+	public void setRepairFactory(String repairFactory) {
+		this.repairFactory = repairFactory;
 	}
 
 	public Double getPrepayRemainder() {
@@ -117,6 +103,14 @@ public class RepairNeedtopay implements java.io.Serializable {
 
 	public void setActualPay(Double actualPay) {
 		this.actualPay = actualPay;
+	}
+
+	public String getAccount() {
+		return this.account;
+	}
+
+	public void setAccount(String account) {
+		this.account = account;
 	}
 
 	public String getOperator() {

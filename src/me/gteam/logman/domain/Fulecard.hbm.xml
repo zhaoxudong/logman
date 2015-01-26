@@ -8,19 +8,16 @@
     <class name="me.gteam.logman.domain.Fulecard" table="fulecard" catalog="logman">
         <id name="fulecardId" type="java.lang.Integer">
             <column name="FULECARD_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
-        <many-to-one name="vehicle" class="me.gteam.logman.domain.Vehicle" fetch="select">
-            <column name="VEHICLE_ID" />
-        </many-to-one>
-        <many-to-one name="fulecardType" class="me.gteam.logman.domain.FulecardType" fetch="select">
-            <column name="TYPE" />
-        </many-to-one>
         <property name="fulecardNo" type="java.lang.String">
             <column name="FULECARD_NO" length="20" />
         </property>
         <property name="buyDate" type="java.util.Date">
             <column name="BUY_DATE" length="10" />
+        </property>
+        <property name="vehicle" type="java.lang.String">
+            <column name="VEHICLE" length="30" />
         </property>
         <property name="warningAmount" type="java.lang.Double">
             <column name="WARNING_AMOUNT" precision="22" scale="0" />
@@ -31,17 +28,5 @@
         <property name="currentAmount" type="java.lang.Double">
             <column name="CURRENT_AMOUNT" precision="22" scale="0" />
         </property>
-        <set name="cardRefuels" inverse="true">
-            <key>
-                <column name="CARD_NO" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.CardRefuel" />
-        </set>
-        <set name="oilcardRecharges" inverse="true">
-            <key>
-                <column name="OILCARD_NO" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.OilcardRecharge" />
-        </set>
     </class>
 </hibernate-mapping>

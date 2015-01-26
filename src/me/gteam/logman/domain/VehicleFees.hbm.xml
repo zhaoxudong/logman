@@ -8,19 +8,16 @@
     <class name="me.gteam.logman.domain.VehicleFees" table="vehicle_fees" catalog="logman">
         <id name="vehicleFeesId" type="java.lang.Integer">
             <column name="VEHICLE_FEES_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
-        <many-to-one name="vehicle" class="me.gteam.logman.domain.Vehicle" fetch="select">
-            <column name="VEHICLE" />
-        </many-to-one>
-        <many-to-one name="account" class="me.gteam.logman.domain.Account" fetch="select">
-            <column name="ACCOUNT" />
-        </many-to-one>
-        <many-to-one name="vehiclefeesType" class="me.gteam.logman.domain.VehiclefeesType" fetch="select">
-            <column name="FEE_TYPE" />
-        </many-to-one>
         <property name="feesDate" type="java.util.Date">
             <column name="FEES_DATE" length="10" />
+        </property>
+        <property name="vehicle" type="java.lang.String">
+            <column name="VEHICLE" length="30" />
+        </property>
+        <property name="feeType" type="java.lang.String">
+            <column name="FEE_TYPE" length="30" />
         </property>
         <property name="amount" type="java.lang.Double">
             <column name="AMOUNT" precision="22" scale="0" />
@@ -30,6 +27,9 @@
         </property>
         <property name="cashpay" type="java.lang.Double">
             <column name="CASHPAY" precision="22" scale="0" />
+        </property>
+        <property name="account" type="java.lang.String">
+            <column name="ACCOUNT" length="30" />
         </property>
         <property name="operator" type="java.lang.String">
             <column name="OPERATOR" length="14" />

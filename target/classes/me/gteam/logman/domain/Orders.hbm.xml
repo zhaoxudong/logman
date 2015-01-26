@@ -8,34 +8,16 @@
     <class name="me.gteam.logman.domain.Orders" table="orders" catalog="logman">
         <id name="orderId" type="java.lang.Integer">
             <column name="ORDER_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
-        <many-to-one name="routeTemplate" class="me.gteam.logman.domain.RouteTemplate" fetch="select">
-            <column name="TEMPLATE_NO" />
-        </many-to-one>
-        <many-to-one name="unloadLocation" class="me.gteam.logman.domain.UnloadLocation" fetch="select">
-            <column name="UNLOAD_ADDR" />
-        </many-to-one>
-        <many-to-one name="route" class="me.gteam.logman.domain.Route" fetch="select">
-            <column name="ROUTE_ID" />
-        </many-to-one>
-        <many-to-one name="loadLocation" class="me.gteam.logman.domain.LoadLocation" fetch="select">
-            <column name="LOAD_ADDR" />
-        </many-to-one>
-        <many-to-one name="costumerByConsignee" class="me.gteam.logman.domain.Costumer" fetch="select">
-            <column name="CONSIGNEE" />
-        </many-to-one>
-        <many-to-one name="costumerByShipper" class="me.gteam.logman.domain.Costumer" fetch="select">
-            <column name="SHIPPER" />
-        </many-to-one>
-        <many-to-one name="goods" class="me.gteam.logman.domain.Goods" fetch="select">
-            <column name="GOODS" />
-        </many-to-one>
         <property name="orderTime" type="java.util.Date">
             <column name="ORDER_TIME" length="10" />
         </property>
         <property name="requireTime" type="java.util.Date">
             <column name="REQUIRE_TIME" length="10" />
+        </property>
+        <property name="shipper" type="java.lang.Integer">
+            <column name="SHIPPER" />
         </property>
         <property name="shipperContact" type="java.lang.String">
             <column name="SHIPPER_CONTACT" length="14" />
@@ -43,17 +25,32 @@
         <property name="shipperTel" type="java.lang.String">
             <column name="SHIPPER_TEL" length="11" />
         </property>
+        <property name="consignee" type="java.lang.Integer">
+            <column name="CONSIGNEE" />
+        </property>
         <property name="consigneeContact" type="java.lang.String">
             <column name="CONSIGNEE_CONTACT" length="14" />
         </property>
         <property name="consigneeTel" type="java.lang.String">
             <column name="CONSIGNEE_TEL" length="11" />
         </property>
+        <property name="loadPlace" type="java.lang.String">
+            <column name="LOAD_PLACE" length="70" />
+        </property>
+        <property name="unloadPlace" type="java.lang.String">
+            <column name="UNLOAD_PLACE" length="70" />
+        </property>
         <property name="contractNumber" type="java.lang.String">
             <column name="CONTRACT_NUMBER" length="30" />
         </property>
+        <property name="good" type="java.lang.String">
+            <column name="GOOD" length="50" />
+        </property>
         <property name="measurementUnit" type="java.lang.String">
-            <column name="MEASUREMENT_UNIT" length="8" />
+            <column name="MEASUREMENT_UNIT" length="20" />
+        </property>
+        <property name="route" type="java.lang.String">
+            <column name="ROUTE" length="30" />
         </property>
         <property name="advanceAmount" type="java.lang.Double">
             <column name="ADVANCE_AMOUNT" precision="22" scale="0" />
@@ -85,8 +82,8 @@
         <property name="operator" type="java.lang.String">
             <column name="OPERATOR" length="14" />
         </property>
-        <property name="isFinished" type="java.lang.Integer">
-            <column name="IS_FINISHED" />
+        <property name="isFinished" type="java.lang.String">
+            <column name="IS_FINISHED" length="10" />
         </property>
         <property name="remark" type="java.lang.String">
             <column name="REMARK" length="50" />

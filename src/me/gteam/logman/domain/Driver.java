@@ -1,8 +1,6 @@
 package me.gteam.logman.domain;
 
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * Driver entity. @author MyEclipse Persistence Tools
@@ -13,10 +11,10 @@ public class Driver implements java.io.Serializable {
 	// Fields
 
 	private Integer driverId;
-	private Department department;
-	private Vehicle vehicle;
 	private String name;
 	private String mnemonic;
+	private String vehicle;
+	private String department;
 	private String idcard;
 	private Date birth;
 	private String tel;
@@ -31,15 +29,6 @@ public class Driver implements java.io.Serializable {
 	private String drivingType;
 	private String isleave;
 	private String ramark;
-	private Set tankRefuels = new HashSet(0);
-	private Set cashRefuels = new HashSet(0);
-	private Set accidents = new HashSet(0);
-	private Set repairs = new HashSet(0);
-	private Set illegals = new HashSet(0);
-	private Set fixpointRefuelings = new HashSet(0);
-	private Set storeageOuts = new HashSet(0);
-	private Set storageIns = new HashSet(0);
-	private Set maintenanceRecords = new HashSet(0);
 
 	// Constructors
 
@@ -47,25 +36,17 @@ public class Driver implements java.io.Serializable {
 	public Driver() {
 	}
 
-	/** minimal constructor */
-	public Driver(Integer driverId) {
-		this.driverId = driverId;
-	}
-
 	/** full constructor */
-	public Driver(Integer driverId, Department department, Vehicle vehicle,
-			String name, String mnemonic, String idcard, Date birth,
-			String tel, String addr, Date jointime, Date driLicDat,
-			Date extendDate, String drivingLicense, String drivingPermitNo,
+	public Driver(String name, String mnemonic, String vehicle,
+			String department, String idcard, Date birth, String tel,
+			String addr, Date jointime, Date driLicDat, Date extendDate,
+			String drivingLicense, String drivingPermitNo,
 			String licenseNumber, String skillLevel, String drivingType,
-			String isleave, String ramark, Set tankRefuels, Set cashRefuels,
-			Set accidents, Set repairs, Set illegals, Set fixpointRefuelings,
-			Set storeageOuts, Set storageIns, Set maintenanceRecords) {
-		this.driverId = driverId;
-		this.department = department;
-		this.vehicle = vehicle;
+			String isleave, String ramark) {
 		this.name = name;
 		this.mnemonic = mnemonic;
+		this.vehicle = vehicle;
+		this.department = department;
 		this.idcard = idcard;
 		this.birth = birth;
 		this.tel = tel;
@@ -80,15 +61,6 @@ public class Driver implements java.io.Serializable {
 		this.drivingType = drivingType;
 		this.isleave = isleave;
 		this.ramark = ramark;
-		this.tankRefuels = tankRefuels;
-		this.cashRefuels = cashRefuels;
-		this.accidents = accidents;
-		this.repairs = repairs;
-		this.illegals = illegals;
-		this.fixpointRefuelings = fixpointRefuelings;
-		this.storeageOuts = storeageOuts;
-		this.storageIns = storageIns;
-		this.maintenanceRecords = maintenanceRecords;
 	}
 
 	// Property accessors
@@ -99,22 +71,6 @@ public class Driver implements java.io.Serializable {
 
 	public void setDriverId(Integer driverId) {
 		this.driverId = driverId;
-	}
-
-	public Department getDepartment() {
-		return this.department;
-	}
-
-	public void setDepartment(Department department) {
-		this.department = department;
-	}
-
-	public Vehicle getVehicle() {
-		return this.vehicle;
-	}
-
-	public void setVehicle(Vehicle vehicle) {
-		this.vehicle = vehicle;
 	}
 
 	public String getName() {
@@ -131,6 +87,22 @@ public class Driver implements java.io.Serializable {
 
 	public void setMnemonic(String mnemonic) {
 		this.mnemonic = mnemonic;
+	}
+
+	public String getVehicle() {
+		return this.vehicle;
+	}
+
+	public void setVehicle(String vehicle) {
+		this.vehicle = vehicle;
+	}
+
+	public String getDepartment() {
+		return this.department;
+	}
+
+	public void setDepartment(String department) {
+		this.department = department;
 	}
 
 	public String getIdcard() {
@@ -243,78 +215,6 @@ public class Driver implements java.io.Serializable {
 
 	public void setRamark(String ramark) {
 		this.ramark = ramark;
-	}
-
-	public Set getTankRefuels() {
-		return this.tankRefuels;
-	}
-
-	public void setTankRefuels(Set tankRefuels) {
-		this.tankRefuels = tankRefuels;
-	}
-
-	public Set getCashRefuels() {
-		return this.cashRefuels;
-	}
-
-	public void setCashRefuels(Set cashRefuels) {
-		this.cashRefuels = cashRefuels;
-	}
-
-	public Set getAccidents() {
-		return this.accidents;
-	}
-
-	public void setAccidents(Set accidents) {
-		this.accidents = accidents;
-	}
-
-	public Set getRepairs() {
-		return this.repairs;
-	}
-
-	public void setRepairs(Set repairs) {
-		this.repairs = repairs;
-	}
-
-	public Set getIllegals() {
-		return this.illegals;
-	}
-
-	public void setIllegals(Set illegals) {
-		this.illegals = illegals;
-	}
-
-	public Set getFixpointRefuelings() {
-		return this.fixpointRefuelings;
-	}
-
-	public void setFixpointRefuelings(Set fixpointRefuelings) {
-		this.fixpointRefuelings = fixpointRefuelings;
-	}
-
-	public Set getStoreageOuts() {
-		return this.storeageOuts;
-	}
-
-	public void setStoreageOuts(Set storeageOuts) {
-		this.storeageOuts = storeageOuts;
-	}
-
-	public Set getStorageIns() {
-		return this.storageIns;
-	}
-
-	public void setStorageIns(Set storageIns) {
-		this.storageIns = storageIns;
-	}
-
-	public Set getMaintenanceRecords() {
-		return this.maintenanceRecords;
-	}
-
-	public void setMaintenanceRecords(Set maintenanceRecords) {
-		this.maintenanceRecords = maintenanceRecords;
 	}
 
 }

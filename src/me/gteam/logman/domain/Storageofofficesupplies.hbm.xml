@@ -6,16 +6,15 @@
 -->
 <hibernate-mapping>
     <class name="me.gteam.logman.domain.Storageofofficesupplies" table="storageofofficesupplies" catalog="logman">
-        <composite-id name="id" class="me.gteam.logman.domain.StorageofofficesuppliesId">
-            <key-property name="officesuppliesname" type="java.lang.String">
-                <column name="OFFICESUPPLIESNAME" length="30" />
-            </key-property>
-            <key-property name="price" type="java.lang.Double">
-                <column name="PRICE" precision="22" scale="0" />
-            </key-property>
-            <key-property name="currentAmount" type="java.lang.Double">
-                <column name="CURRENT_AMOUNT" precision="22" scale="0" />
-            </key-property>
-        </composite-id>
+        <id name="stockId" type="java.lang.Integer">
+            <column name="STOCK_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="officesuppliesname" type="java.lang.String">
+            <column name="OFFICESUPPLIESNAME" length="30" />
+        </property>
+        <property name="currentAmount" type="java.lang.Double">
+            <column name="CURRENT_AMOUNT" precision="22" scale="0" />
+        </property>
     </class>
 </hibernate-mapping>

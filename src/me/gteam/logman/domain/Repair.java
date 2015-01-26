@@ -13,18 +13,18 @@ public class Repair implements java.io.Serializable {
 	// Fields
 
 	private Integer repairId;
-	private Vehicle vehicle;
-	private Maintenance maintenance;
-	private Account account;
-	private Driver driver;
-	private Supplier supplier;
 	private Date repairDate;
+	private String repairFactory;
 	private String isinternal;
+	private String vehicle;
+	private String driver;
 	private String warrantyNumber;
+	private String repairman;
 	private Double fittingCost;
 	private Double laborCost;
 	private Double amount;
 	private Double cashpay;
+	private String account;
 	private String operator;
 	private String remark;
 	private Set repairDetails = new HashSet(0);
@@ -35,30 +35,24 @@ public class Repair implements java.io.Serializable {
 	public Repair() {
 	}
 
-	/** minimal constructor */
-	public Repair(Integer repairId) {
-		this.repairId = repairId;
-	}
-
 	/** full constructor */
-	public Repair(Integer repairId, Vehicle vehicle, Maintenance maintenance,
-			Account account, Driver driver, Supplier supplier, Date repairDate,
-			String isinternal, String warrantyNumber, Double fittingCost,
-			Double laborCost, Double amount, Double cashpay, String operator,
+	public Repair(Date repairDate, String repairFactory, String isinternal,
+			String vehicle, String driver, String warrantyNumber,
+			String repairman, Double fittingCost, Double laborCost,
+			Double amount, Double cashpay, String account, String operator,
 			String remark, Set repairDetails) {
-		this.repairId = repairId;
-		this.vehicle = vehicle;
-		this.maintenance = maintenance;
-		this.account = account;
-		this.driver = driver;
-		this.supplier = supplier;
 		this.repairDate = repairDate;
+		this.repairFactory = repairFactory;
 		this.isinternal = isinternal;
+		this.vehicle = vehicle;
+		this.driver = driver;
 		this.warrantyNumber = warrantyNumber;
+		this.repairman = repairman;
 		this.fittingCost = fittingCost;
 		this.laborCost = laborCost;
 		this.amount = amount;
 		this.cashpay = cashpay;
+		this.account = account;
 		this.operator = operator;
 		this.remark = remark;
 		this.repairDetails = repairDetails;
@@ -74,52 +68,20 @@ public class Repair implements java.io.Serializable {
 		this.repairId = repairId;
 	}
 
-	public Vehicle getVehicle() {
-		return this.vehicle;
-	}
-
-	public void setVehicle(Vehicle vehicle) {
-		this.vehicle = vehicle;
-	}
-
-	public Maintenance getMaintenance() {
-		return this.maintenance;
-	}
-
-	public void setMaintenance(Maintenance maintenance) {
-		this.maintenance = maintenance;
-	}
-
-	public Account getAccount() {
-		return this.account;
-	}
-
-	public void setAccount(Account account) {
-		this.account = account;
-	}
-
-	public Driver getDriver() {
-		return this.driver;
-	}
-
-	public void setDriver(Driver driver) {
-		this.driver = driver;
-	}
-
-	public Supplier getSupplier() {
-		return this.supplier;
-	}
-
-	public void setSupplier(Supplier supplier) {
-		this.supplier = supplier;
-	}
-
 	public Date getRepairDate() {
 		return this.repairDate;
 	}
 
 	public void setRepairDate(Date repairDate) {
 		this.repairDate = repairDate;
+	}
+
+	public String getRepairFactory() {
+		return this.repairFactory;
+	}
+
+	public void setRepairFactory(String repairFactory) {
+		this.repairFactory = repairFactory;
 	}
 
 	public String getIsinternal() {
@@ -130,12 +92,36 @@ public class Repair implements java.io.Serializable {
 		this.isinternal = isinternal;
 	}
 
+	public String getVehicle() {
+		return this.vehicle;
+	}
+
+	public void setVehicle(String vehicle) {
+		this.vehicle = vehicle;
+	}
+
+	public String getDriver() {
+		return this.driver;
+	}
+
+	public void setDriver(String driver) {
+		this.driver = driver;
+	}
+
 	public String getWarrantyNumber() {
 		return this.warrantyNumber;
 	}
 
 	public void setWarrantyNumber(String warrantyNumber) {
 		this.warrantyNumber = warrantyNumber;
+	}
+
+	public String getRepairman() {
+		return this.repairman;
+	}
+
+	public void setRepairman(String repairman) {
+		this.repairman = repairman;
 	}
 
 	public Double getFittingCost() {
@@ -168,6 +154,14 @@ public class Repair implements java.io.Serializable {
 
 	public void setCashpay(Double cashpay) {
 		this.cashpay = cashpay;
+	}
+
+	public String getAccount() {
+		return this.account;
+	}
+
+	public void setAccount(String account) {
+		this.account = account;
 	}
 
 	public String getOperator() {

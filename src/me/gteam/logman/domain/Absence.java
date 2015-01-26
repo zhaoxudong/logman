@@ -11,10 +11,9 @@ public class Absence implements java.io.Serializable {
 	// Fields
 
 	private Integer absenceId;
-	private Absencetype absencetype;
-	private Staff staff;
 	private Date date;
 	private String name;
+	private String type;
 	private Float duration;
 	private Double deductedAmount;
 	private String operator;
@@ -26,20 +25,12 @@ public class Absence implements java.io.Serializable {
 	public Absence() {
 	}
 
-	/** minimal constructor */
-	public Absence(Integer absenceId) {
-		this.absenceId = absenceId;
-	}
-
 	/** full constructor */
-	public Absence(Integer absenceId, Absencetype absencetype, Staff staff,
-			Date date, String name, Float duration, Double deductedAmount,
-			String operator, String remark) {
-		this.absenceId = absenceId;
-		this.absencetype = absencetype;
-		this.staff = staff;
+	public Absence(Date date, String name, String type, Float duration,
+			Double deductedAmount, String operator, String remark) {
 		this.date = date;
 		this.name = name;
+		this.type = type;
 		this.duration = duration;
 		this.deductedAmount = deductedAmount;
 		this.operator = operator;
@@ -56,22 +47,6 @@ public class Absence implements java.io.Serializable {
 		this.absenceId = absenceId;
 	}
 
-	public Absencetype getAbsencetype() {
-		return this.absencetype;
-	}
-
-	public void setAbsencetype(Absencetype absencetype) {
-		this.absencetype = absencetype;
-	}
-
-	public Staff getStaff() {
-		return this.staff;
-	}
-
-	public void setStaff(Staff staff) {
-		this.staff = staff;
-	}
-
 	public Date getDate() {
 		return this.date;
 	}
@@ -86,6 +61,14 @@ public class Absence implements java.io.Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 
 	public Float getDuration() {

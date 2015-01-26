@@ -11,11 +11,11 @@ public class TankRefuel implements java.io.Serializable {
 	// Fields
 
 	private Integer tankrefuelId;
-	private Fuel fuel;
-	private Vehicle vehicle;
-	private Oiltank oiltank;
-	private Driver driver;
 	private Date refuelDate;
+	private String vehicle;
+	private String driver;
+	private String oilTank;
+	private String oilType;
 	private Double unitPrice;
 	private Double amount;
 	private Double weight;
@@ -28,21 +28,15 @@ public class TankRefuel implements java.io.Serializable {
 	public TankRefuel() {
 	}
 
-	/** minimal constructor */
-	public TankRefuel(Integer tankrefuelId) {
-		this.tankrefuelId = tankrefuelId;
-	}
-
 	/** full constructor */
-	public TankRefuel(Integer tankrefuelId, Fuel fuel, Vehicle vehicle,
-			Oiltank oiltank, Driver driver, Date refuelDate, Double unitPrice,
-			Double amount, Double weight, String operator, String remark) {
-		this.tankrefuelId = tankrefuelId;
-		this.fuel = fuel;
-		this.vehicle = vehicle;
-		this.oiltank = oiltank;
-		this.driver = driver;
+	public TankRefuel(Date refuelDate, String vehicle, String driver,
+			String oilTank, String oilType, Double unitPrice, Double amount,
+			Double weight, String operator, String remark) {
 		this.refuelDate = refuelDate;
+		this.vehicle = vehicle;
+		this.driver = driver;
+		this.oilTank = oilTank;
+		this.oilType = oilType;
 		this.unitPrice = unitPrice;
 		this.amount = amount;
 		this.weight = weight;
@@ -60,44 +54,44 @@ public class TankRefuel implements java.io.Serializable {
 		this.tankrefuelId = tankrefuelId;
 	}
 
-	public Fuel getFuel() {
-		return this.fuel;
-	}
-
-	public void setFuel(Fuel fuel) {
-		this.fuel = fuel;
-	}
-
-	public Vehicle getVehicle() {
-		return this.vehicle;
-	}
-
-	public void setVehicle(Vehicle vehicle) {
-		this.vehicle = vehicle;
-	}
-
-	public Oiltank getOiltank() {
-		return this.oiltank;
-	}
-
-	public void setOiltank(Oiltank oiltank) {
-		this.oiltank = oiltank;
-	}
-
-	public Driver getDriver() {
-		return this.driver;
-	}
-
-	public void setDriver(Driver driver) {
-		this.driver = driver;
-	}
-
 	public Date getRefuelDate() {
 		return this.refuelDate;
 	}
 
 	public void setRefuelDate(Date refuelDate) {
 		this.refuelDate = refuelDate;
+	}
+
+	public String getVehicle() {
+		return this.vehicle;
+	}
+
+	public void setVehicle(String vehicle) {
+		this.vehicle = vehicle;
+	}
+
+	public String getDriver() {
+		return this.driver;
+	}
+
+	public void setDriver(String driver) {
+		this.driver = driver;
+	}
+
+	public String getOilTank() {
+		return this.oilTank;
+	}
+
+	public void setOilTank(String oilTank) {
+		this.oilTank = oilTank;
+	}
+
+	public String getOilType() {
+		return this.oilType;
+	}
+
+	public void setOilType(String oilType) {
+		this.oilType = oilType;
 	}
 
 	public Double getUnitPrice() {

@@ -6,6 +6,7 @@
   	<package name="order" namespace="/" extends="struts-default">
   		<action name="orderAction_*"  method="{1}" class="me.gteam.logman.struts2.action.OrderAction">
   			<result name="addOrderUI">/jsp/order/addOrder.jsp</result>
+  			<result name="success">/jsp/order/addOrder.jsp</result>
   		</action>
   	</package>
 </struts>	

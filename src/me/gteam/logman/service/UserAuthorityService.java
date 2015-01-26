@@ -7,13 +7,14 @@ import me.gteam.logman.domain.ThirdAuthority;
 import me.gteam.logman.domain.UserAuthority;
 
 public interface UserAuthorityService {
+
 	public void saveUserAuthority(UserAuthority userAuthority);
 
 	public void updateUserAuthority(UserAuthority userAuthority);
 
 	public void deleteUserAuthorityByID(Serializable id,String deleteMode);
 
-	public Collection<UserAuthority> getAllUserAuthorities();
+	public Collection<UserAuthority> getAllUserAuthority();
 
 	public UserAuthority getUserAuthorityById(Serializable id);
 	

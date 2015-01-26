@@ -6,28 +6,30 @@
 -->
 <hibernate-mapping>
     <class name="me.gteam.logman.domain.FittingNeedtopayDetail" table="fitting_needtopay_detail" catalog="logman">
-        <composite-id name="id" class="me.gteam.logman.domain.FittingNeedtopayDetailId">
-            <key-property name="purchaseId" type="java.lang.Integer">
-                <column name="PURCHASE_ID" />
-            </key-property>
-            <key-property name="date" type="java.util.Date">
-                <column name="DATE" length="10" />
-            </key-property>
-            <key-property name="needtopay" type="java.lang.Double">
-                <column name="NEEDTOPAY" precision="22" scale="0" />
-            </key-property>
-            <key-property name="aldeaypay" type="java.lang.Double">
-                <column name="ALDEAYPAY" precision="22" scale="0" />
-            </key-property>
-            <key-property name="nothasPay" type="java.lang.Double">
-                <column name="NOTHAS_PAY" precision="22" scale="0" />
-            </key-property>
-            <key-property name="thisPay" type="java.lang.Double">
-                <column name="THIS_PAY" precision="22" scale="0" />
-            </key-property>
-            <key-property name="ispay" type="java.lang.String">
-                <column name="ISPAY" length="6" />
-            </key-property>
-        </composite-id>
+        <id name="mxid" type="java.lang.Integer">
+            <column name="MXID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="fittingNeedtopaySettle" class="me.gteam.logman.domain.FittingNeedtopaySettle" fetch="select">
+            <column name="SETTLE_ID" />
+        </many-to-one>
+        <property name="purchaseId" type="java.lang.String">
+            <column name="PURCHASE_ID" length="30" />
+        </property>
+        <property name="needtopay" type="java.lang.Double">
+            <column name="NEEDTOPAY" precision="22" scale="0" />
+        </property>
+        <property name="aldeaypay" type="java.lang.Double">
+            <column name="ALDEAYPAY" precision="22" scale="0" />
+        </property>
+        <property name="nothasPay" type="java.lang.Double">
+            <column name="NOTHAS_PAY" precision="22" scale="0" />
+        </property>
+        <property name="thisPay" type="java.lang.Double">
+            <column name="THIS_PAY" precision="22" scale="0" />
+        </property>
+        <property name="ispay" type="java.lang.String">
+            <column name="ISPAY" length="6" />
+        </property>
     </class>
 </hibernate-mapping>

@@ -14,43 +14,33 @@ import me.gteam.logman.service.ThirdAuthorityService;
 
 @Service("thirdAuthorityService")
 public class ThirdAuthorityServiceImpl implements ThirdAuthorityService{
+
 	@Resource(name="thirdAuthorityDao")
 	private ThirdAuthorityDao thirdAuthorityDao;
 
-	@Override
 	public void saveThirdAuthority(ThirdAuthority thirdAuthority) {
-		// TODO Auto-generated method stub
 		this.thirdAuthorityDao.saveEntry(thirdAuthority);
-		
 	}
 
-	@Override
-	public void updateThirdAuthority(ThirdAuthority thirdAuthority) {
-		// TODO Auto-generated method stub
+	public void updateThirdAuthority(ThirdAuthority thirdAuthority){
 		this.thirdAuthorityDao.updateEntry(thirdAuthority);
 	}
 
-	@Override
 	public void deleteThirdAuthorityByID(Serializable id, String deleteMode) {
-		// TODO Auto-generated method stub
 		this.thirdAuthorityDao.deleteEntry(id);
 	}
 
-	@Override
-	public Collection<ThirdAuthority> getAllThirdAuthorities() {
-		// TODO Auto-generated method stub
+	public Collection<ThirdAuthority> getAllThirdAuthority() {
 		return this.thirdAuthorityDao.getAllEntry();
 	}
 
-	@Override
 	public ThirdAuthority getThirdAuthorityById(Serializable id) {
-		// TODO Auto-generated method stub
-		return (ThirdAuthority)this.getThirdAuthorityById(id);
+		return (ThirdAuthority)this.thirdAuthorityDao.getEntryById(id);
 	}
-
-	@Override
+	
 	public List getThirdAuthoritiesBySecId(String secId) {
 		// TODO Auto-generated method stub
 		return this.thirdAuthorityDao.getThirdAuthoritiesBySecId(secId);
 	}
+
 }

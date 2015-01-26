@@ -18,14 +18,8 @@ public class SalaryType implements java.io.Serializable {
 	public SalaryType() {
 	}
 
-	/** minimal constructor */
-	public SalaryType(Integer salarytypeId) {
-		this.salarytypeId = salarytypeId;
-	}
-
 	/** full constructor */
-	public SalaryType(Integer salarytypeId, String typename, String type) {
-		this.salarytypeId = salarytypeId;
+	public SalaryType(String typename, String type) {
 		this.typename = typename;
 		this.type = type;
 	}

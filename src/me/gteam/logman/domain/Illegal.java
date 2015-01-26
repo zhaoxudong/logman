@@ -11,16 +11,16 @@ public class Illegal implements java.io.Serializable {
 	// Fields
 
 	private Integer illegalId;
-	private Vehicle vehicle;
-	private Account account;
-	private Driver driver;
 	private Date illegalDate;
 	private Date expendDate;
+	private String vehicle;
+	private String driver;
 	private String location;
 	private String type;
 	private Double point;
 	private Double fine;
 	private Double companyCost;
+	private String account;
 	private Double driverCost;
 	private String remark;
 
@@ -30,27 +30,21 @@ public class Illegal implements java.io.Serializable {
 	public Illegal() {
 	}
 
-	/** minimal constructor */
-	public Illegal(Integer illegalId) {
-		this.illegalId = illegalId;
-	}
-
 	/** full constructor */
-	public Illegal(Integer illegalId, Vehicle vehicle, Account account,
-			Driver driver, Date illegalDate, Date expendDate, String location,
-			String type, Double point, Double fine, Double companyCost,
-			Double driverCost, String remark) {
-		this.illegalId = illegalId;
-		this.vehicle = vehicle;
-		this.account = account;
-		this.driver = driver;
+	public Illegal(Date illegalDate, Date expendDate, String vehicle,
+			String driver, String location, String type, Double point,
+			Double fine, Double companyCost, String account, Double driverCost,
+			String remark) {
 		this.illegalDate = illegalDate;
 		this.expendDate = expendDate;
+		this.vehicle = vehicle;
+		this.driver = driver;
 		this.location = location;
 		this.type = type;
 		this.point = point;
 		this.fine = fine;
 		this.companyCost = companyCost;
+		this.account = account;
 		this.driverCost = driverCost;
 		this.remark = remark;
 	}
@@ -63,30 +57,6 @@ public class Illegal implements java.io.Serializable {
 
 	public void setIllegalId(Integer illegalId) {
 		this.illegalId = illegalId;
-	}
-
-	public Vehicle getVehicle() {
-		return this.vehicle;
-	}
-
-	public void setVehicle(Vehicle vehicle) {
-		this.vehicle = vehicle;
-	}
-
-	public Account getAccount() {
-		return this.account;
-	}
-
-	public void setAccount(Account account) {
-		this.account = account;
-	}
-
-	public Driver getDriver() {
-		return this.driver;
-	}
-
-	public void setDriver(Driver driver) {
-		this.driver = driver;
 	}
 
 	public Date getIllegalDate() {
@@ -103,6 +73,22 @@ public class Illegal implements java.io.Serializable {
 
 	public void setExpendDate(Date expendDate) {
 		this.expendDate = expendDate;
+	}
+
+	public String getVehicle() {
+		return this.vehicle;
+	}
+
+	public void setVehicle(String vehicle) {
+		this.vehicle = vehicle;
+	}
+
+	public String getDriver() {
+		return this.driver;
+	}
+
+	public void setDriver(String driver) {
+		this.driver = driver;
 	}
 
 	public String getLocation() {
@@ -143,6 +129,14 @@ public class Illegal implements java.io.Serializable {
 
 	public void setCompanyCost(Double companyCost) {
 		this.companyCost = companyCost;
+	}
+
+	public String getAccount() {
+		return this.account;
+	}
+
+	public void setAccount(String account) {
+		this.account = account;
 	}
 
 	public Double getDriverCost() {

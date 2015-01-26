@@ -9,8 +9,9 @@ public class FittingpurchaseDetail implements java.io.Serializable {
 	// Fields
 
 	private Integer detailId;
-	private Fittingdetail fittingdetail;
 	private FittingPurchase fittingPurchase;
+	private String fittingNo;
+	private String fittingName;
 	private String standard;
 	private Double quantity;
 	private Double unitPrice;
@@ -22,18 +23,13 @@ public class FittingpurchaseDetail implements java.io.Serializable {
 	public FittingpurchaseDetail() {
 	}
 
-	/** minimal constructor */
-	public FittingpurchaseDetail(Integer detailId) {
-		this.detailId = detailId;
-	}
-
 	/** full constructor */
-	public FittingpurchaseDetail(Integer detailId, Fittingdetail fittingdetail,
-			FittingPurchase fittingPurchase, String standard, Double quantity,
-			Double unitPrice, Double amount) {
-		this.detailId = detailId;
-		this.fittingdetail = fittingdetail;
+	public FittingpurchaseDetail(FittingPurchase fittingPurchase,
+			String fittingNo, String fittingName, String standard,
+			Double quantity, Double unitPrice, Double amount) {
 		this.fittingPurchase = fittingPurchase;
+		this.fittingNo = fittingNo;
+		this.fittingName = fittingName;
 		this.standard = standard;
 		this.quantity = quantity;
 		this.unitPrice = unitPrice;
@@ -50,20 +46,28 @@ public class FittingpurchaseDetail implements java.io.Serializable {
 		this.detailId = detailId;
 	}
 
-	public Fittingdetail getFittingdetail() {
-		return this.fittingdetail;
-	}
-
-	public void setFittingdetail(Fittingdetail fittingdetail) {
-		this.fittingdetail = fittingdetail;
-	}
-
 	public FittingPurchase getFittingPurchase() {
 		return this.fittingPurchase;
 	}
 
 	public void setFittingPurchase(FittingPurchase fittingPurchase) {
 		this.fittingPurchase = fittingPurchase;
+	}
+
+	public String getFittingNo() {
+		return this.fittingNo;
+	}
+
+	public void setFittingNo(String fittingNo) {
+		this.fittingNo = fittingNo;
+	}
+
+	public String getFittingName() {
+		return this.fittingName;
+	}
+
+	public void setFittingName(String fittingName) {
+		this.fittingName = fittingName;
 	}
 
 	public String getStandard() {

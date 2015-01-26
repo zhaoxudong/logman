@@ -9,9 +9,6 @@ public class StoreDetail implements java.io.Serializable {
 	// Fields
 
 	private Integer detailId;
-	private Costumer costumer;
-	private Storehouse storehouse;
-	private Goods goods;
 	private Double weight;
 
 	// Constructors
@@ -26,12 +23,8 @@ public class StoreDetail implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public StoreDetail(Integer detailId, Costumer costumer,
-			Storehouse storehouse, Goods goods, Double weight) {
+	public StoreDetail(Integer detailId, Double weight) {
 		this.detailId = detailId;
-		this.costumer = costumer;
-		this.storehouse = storehouse;
-		this.goods = goods;
 		this.weight = weight;
 	}
 
@@ -43,30 +36,6 @@ public class StoreDetail implements java.io.Serializable {
 
 	public void setDetailId(Integer detailId) {
 		this.detailId = detailId;
-	}
-
-	public Costumer getCostumer() {
-		return this.costumer;
-	}
-
-	public void setCostumer(Costumer costumer) {
-		this.costumer = costumer;
-	}
-
-	public Storehouse getStorehouse() {
-		return this.storehouse;
-	}
-
-	public void setStorehouse(Storehouse storehouse) {
-		this.storehouse = storehouse;
-	}
-
-	public Goods getGoods() {
-		return this.goods;
-	}
-
-	public void setGoods(Goods goods) {
-		this.goods = goods;
 	}
 
 	public Double getWeight() {

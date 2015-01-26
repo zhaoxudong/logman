@@ -11,12 +11,11 @@ public class Otherin implements java.io.Serializable {
 	// Fields
 
 	private Integer inId;
-	private Vehicle vehicle;
-	private Account account;
-	private OtherinType otherinType;
 	private Date date;
+	private String type;
+	private String vehicle;
 	private Double amount;
-	private Integer account_1;
+	private String account;
 	private String operator;
 	private String remark;
 
@@ -26,22 +25,14 @@ public class Otherin implements java.io.Serializable {
 	public Otherin() {
 	}
 
-	/** minimal constructor */
-	public Otherin(Integer inId) {
-		this.inId = inId;
-	}
-
 	/** full constructor */
-	public Otherin(Integer inId, Vehicle vehicle, Account account,
-			OtherinType otherinType, Date date, Double amount,
-			Integer account_1, String operator, String remark) {
-		this.inId = inId;
-		this.vehicle = vehicle;
-		this.account = account;
-		this.otherinType = otherinType;
+	public Otherin(Date date, String type, String vehicle, Double amount,
+			String account, String operator, String remark) {
 		this.date = date;
+		this.type = type;
+		this.vehicle = vehicle;
 		this.amount = amount;
-		this.account_1 = account_1;
+		this.account = account;
 		this.operator = operator;
 		this.remark = remark;
 	}
@@ -56,36 +47,28 @@ public class Otherin implements java.io.Serializable {
 		this.inId = inId;
 	}
 
-	public Vehicle getVehicle() {
-		return this.vehicle;
-	}
-
-	public void setVehicle(Vehicle vehicle) {
-		this.vehicle = vehicle;
-	}
-
-	public Account getAccount() {
-		return this.account;
-	}
-
-	public void setAccount(Account account) {
-		this.account = account;
-	}
-
-	public OtherinType getOtherinType() {
-		return this.otherinType;
-	}
-
-	public void setOtherinType(OtherinType otherinType) {
-		this.otherinType = otherinType;
-	}
-
 	public Date getDate() {
 		return this.date;
 	}
 
 	public void setDate(Date date) {
 		this.date = date;
+	}
+
+	public String getType() {
+		return this.type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String getVehicle() {
+		return this.vehicle;
+	}
+
+	public void setVehicle(String vehicle) {
+		this.vehicle = vehicle;
 	}
 
 	public Double getAmount() {
@@ -96,12 +79,12 @@ public class Otherin implements java.io.Serializable {
 		this.amount = amount;
 	}
 
-	public Integer getAccount_1() {
-		return this.account_1;
+	public String getAccount() {
+		return this.account;
 	}
 
-	public void setAccount_1(Integer account_1) {
-		this.account_1 = account_1;
+	public void setAccount(String account) {
+		this.account = account;
 	}
 
 	public String getOperator() {

@@ -8,7 +8,7 @@
     <class name="me.gteam.logman.domain.Dispatch" table="dispatch" catalog="logman">
         <id name="dispatchId" type="java.lang.Integer">
             <column name="DISPATCH_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <property name="chucheDate" type="java.util.Date">
             <column name="CHUCHE_DATE" length="10" />
@@ -16,17 +16,17 @@
         <property name="huichangDate" type="java.util.Date">
             <column name="HUICHANG_DATE" length="10" />
         </property>
-        <property name="fleet" type="java.lang.Integer">
-            <column name="FLEET" />
+        <property name="fleet" type="java.lang.String">
+            <column name="FLEET" length="30" />
         </property>
-        <property name="vehicle" type="java.lang.Integer">
-            <column name="VEHICLE" />
+        <property name="vehicle" type="java.lang.String">
+            <column name="VEHICLE" length="30" />
         </property>
-        <property name="guache" type="java.lang.Integer">
-            <column name="GUACHE" />
+        <property name="guache" type="java.lang.String">
+            <column name="GUACHE" length="30" />
         </property>
-        <property name="driver" type="java.lang.Integer">
-            <column name="DRIVER" />
+        <property name="driver" type="java.lang.String">
+            <column name="DRIVER" length="30" />
         </property>
         <property name="zhuangxieyuan" type="java.lang.String">
             <column name="ZHUANGXIEYUAN" length="14" />
@@ -34,18 +34,6 @@
         <property name="remark" type="java.lang.String">
             <column name="REMARK" length="50" />
         </property>
-        <set name="freightNeedtopayDetails" inverse="true">
-            <key>
-                <column name="DISPATCH_ID" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.FreightNeedtopayDetail" />
-        </set>
-        <set name="freightReceiveDetails" inverse="true">
-            <key>
-                <column name="DISPATCH_ID" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.FreightReceiveDetail" />
-        </set>
         <set name="dispatchDetails" inverse="true">
             <key>
                 <column name="DISPATCH_ID" />

@@ -8,31 +8,28 @@
     <class name="me.gteam.logman.domain.Repair" table="repair" catalog="logman">
         <id name="repairId" type="java.lang.Integer">
             <column name="REPAIR_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
-        <many-to-one name="vehicle" class="me.gteam.logman.domain.Vehicle" fetch="select">
-            <column name="VEHICLE" />
-        </many-to-one>
-        <many-to-one name="maintenance" class="me.gteam.logman.domain.Maintenance" fetch="select">
-            <column name="SERVICEMAN" />
-        </many-to-one>
-        <many-to-one name="account" class="me.gteam.logman.domain.Account" fetch="select">
-            <column name="ACCOUNT" />
-        </many-to-one>
-        <many-to-one name="driver" class="me.gteam.logman.domain.Driver" fetch="select">
-            <column name="DRIVER" />
-        </many-to-one>
-        <many-to-one name="supplier" class="me.gteam.logman.domain.Supplier" fetch="select">
-            <column name="FACTORY" />
-        </many-to-one>
         <property name="repairDate" type="java.util.Date">
             <column name="REPAIR_DATE" length="10" />
+        </property>
+        <property name="repairFactory" type="java.lang.String">
+            <column name="REPAIR_FACTORY" length="30" />
         </property>
         <property name="isinternal" type="java.lang.String">
             <column name="ISINTERNAL" length="6" />
         </property>
+        <property name="vehicle" type="java.lang.String">
+            <column name="VEHICLE" length="30" />
+        </property>
+        <property name="driver" type="java.lang.String">
+            <column name="DRIVER" length="30" />
+        </property>
         <property name="warrantyNumber" type="java.lang.String">
             <column name="WARRANTY_NUMBER" length="20" />
+        </property>
+        <property name="repairman" type="java.lang.String">
+            <column name="REPAIRMAN" length="30" />
         </property>
         <property name="fittingCost" type="java.lang.Double">
             <column name="FITTING_COST" precision="22" scale="0" />
@@ -46,6 +43,9 @@
         <property name="cashpay" type="java.lang.Double">
             <column name="CASHPAY" precision="22" scale="0" />
         </property>
+        <property name="account" type="java.lang.String">
+            <column name="ACCOUNT" length="30" />
+        </property>
         <property name="operator" type="java.lang.String">
             <column name="OPERATOR" length="14" />
         </property>
@@ -54,7 +54,7 @@
         </property>
         <set name="repairDetails" inverse="true">
             <key>
-                <column name="REPAIR_NO" />
+                <column name="REPAIR_ID" />
             </key>
             <one-to-many class="me.gteam.logman.domain.RepairDetail" />
         </set>

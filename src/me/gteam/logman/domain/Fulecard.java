@@ -1,8 +1,6 @@
 package me.gteam.logman.domain;
 
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * Fulecard entity. @author MyEclipse Persistence Tools
@@ -13,15 +11,12 @@ public class Fulecard implements java.io.Serializable {
 	// Fields
 
 	private Integer fulecardId;
-	private Vehicle vehicle;
-	private FulecardType fulecardType;
 	private String fulecardNo;
 	private Date buyDate;
+	private String vehicle;
 	private Double warningAmount;
 	private Double initAmount;
 	private Double currentAmount;
-	private Set cardRefuels = new HashSet(0);
-	private Set oilcardRecharges = new HashSet(0);
 
 	// Constructors
 
@@ -29,26 +24,15 @@ public class Fulecard implements java.io.Serializable {
 	public Fulecard() {
 	}
 
-	/** minimal constructor */
-	public Fulecard(Integer fulecardId) {
-		this.fulecardId = fulecardId;
-	}
-
 	/** full constructor */
-	public Fulecard(Integer fulecardId, Vehicle vehicle,
-			FulecardType fulecardType, String fulecardNo, Date buyDate,
-			Double warningAmount, Double initAmount, Double currentAmount,
-			Set cardRefuels, Set oilcardRecharges) {
-		this.fulecardId = fulecardId;
-		this.vehicle = vehicle;
-		this.fulecardType = fulecardType;
+	public Fulecard(String fulecardNo, Date buyDate, String vehicle,
+			Double warningAmount, Double initAmount, Double currentAmount) {
 		this.fulecardNo = fulecardNo;
 		this.buyDate = buyDate;
+		this.vehicle = vehicle;
 		this.warningAmount = warningAmount;
 		this.initAmount = initAmount;
 		this.currentAmount = currentAmount;
-		this.cardRefuels = cardRefuels;
-		this.oilcardRecharges = oilcardRecharges;
 	}
 
 	// Property accessors
@@ -59,22 +43,6 @@ public class Fulecard implements java.io.Serializable {
 
 	public void setFulecardId(Integer fulecardId) {
 		this.fulecardId = fulecardId;
-	}
-
-	public Vehicle getVehicle() {
-		return this.vehicle;
-	}
-
-	public void setVehicle(Vehicle vehicle) {
-		this.vehicle = vehicle;
-	}
-
-	public FulecardType getFulecardType() {
-		return this.fulecardType;
-	}
-
-	public void setFulecardType(FulecardType fulecardType) {
-		this.fulecardType = fulecardType;
 	}
 
 	public String getFulecardNo() {
@@ -91,6 +59,14 @@ public class Fulecard implements java.io.Serializable {
 
 	public void setBuyDate(Date buyDate) {
 		this.buyDate = buyDate;
+	}
+
+	public String getVehicle() {
+		return this.vehicle;
+	}
+
+	public void setVehicle(String vehicle) {
+		this.vehicle = vehicle;
 	}
 
 	public Double getWarningAmount() {
@@ -115,22 +91,6 @@ public class Fulecard implements java.io.Serializable {
 
 	public void setCurrentAmount(Double currentAmount) {
 		this.currentAmount = currentAmount;
-	}
-
-	public Set getCardRefuels() {
-		return this.cardRefuels;
-	}
-
-	public void setCardRefuels(Set cardRefuels) {
-		this.cardRefuels = cardRefuels;
-	}
-
-	public Set getOilcardRecharges() {
-		return this.oilcardRecharges;
-	}
-
-	public void setOilcardRecharges(Set oilcardRecharges) {
-		this.oilcardRecharges = oilcardRecharges;
 	}
 
 }

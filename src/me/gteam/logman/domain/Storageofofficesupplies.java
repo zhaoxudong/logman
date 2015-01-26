@@ -8,7 +8,9 @@ public class Storageofofficesupplies implements java.io.Serializable {
 
 	// Fields
 
-	private StorageofofficesuppliesId id;
+	private Integer stockId;
+	private String officesuppliesname;
+	private Double currentAmount;
 
 	// Constructors
 
@@ -17,18 +19,36 @@ public class Storageofofficesupplies implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Storageofofficesupplies(StorageofofficesuppliesId id) {
-		this.id = id;
+	public Storageofofficesupplies(String officesuppliesname,
+			Double currentAmount) {
+		this.officesuppliesname = officesuppliesname;
+		this.currentAmount = currentAmount;
 	}
 
 	// Property accessors
 
-	public StorageofofficesuppliesId getId() {
-		return this.id;
+	public Integer getStockId() {
+		return this.stockId;
 	}
 
-	public void setId(StorageofofficesuppliesId id) {
-		this.id = id;
+	public void setStockId(Integer stockId) {
+		this.stockId = stockId;
+	}
+
+	public String getOfficesuppliesname() {
+		return this.officesuppliesname;
+	}
+
+	public void setOfficesuppliesname(String officesuppliesname) {
+		this.officesuppliesname = officesuppliesname;
+	}
+
+	public Double getCurrentAmount() {
+		return this.currentAmount;
+	}
+
+	public void setCurrentAmount(Double currentAmount) {
+		this.currentAmount = currentAmount;
 	}
 
 }

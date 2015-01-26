@@ -1,22 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ include file="/jsp/common.jsp"%>
-
 <html >
   <head>
-    <!--
-        ===
-        This comment should NOT be removed.
-
-        Charisma v2.0.0
-
-        Copyright 2012-2014 Muhammad Usman
-        Licensed under the Apache License v2.0
-        http://www.apache.org/licenses/LICENSE-2.0
-
-        http://usman.it
-        http://twitter.com/halalit_usman
-        ===
-    -->
     <meta charset="utf-8">
     <title>物流管理系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -70,97 +55,17 @@
 	
 	                    </div>
 	                    <ul class="nav nav-pills nav-stacked main-menu">
-							<li class="accordion">
-	                            <a href="form.html"><i class="glyphicon glyphicon-list-alt"></i><span>&nbsp;&nbsp;&nbsp;业务管理</span></a>
-	                            <ul class="nav nav-pills nav-stacked">
-	                                <li><a href="../orders/order.jsp" target="right">订单管理</a></li>
-	                                <li><a href="../orders/order.jsp" target="right">调度配送</a></li>
-									<li><a href="../orders/order.jsp" target="right">出车登记</a></li>
-									<li><a href="../orders/order.jsp" target="right">回车报账</a></li>
-	                            </ul>
-	                        </li>
-	                        <li class="accordion">
-	                            <a href="form.html"><i class="glyphicon glyphicon-header"></i><span>&nbsp;&nbsp;&nbsp;车辆管理</span></a>
-	                            <ul class="nav nav-pills nav-stacked">
-	                                <li><a href="../orders/order.jsp" target="right">维修登记</a></li>
-	                                <li><a href="../orders/order.jsp" target="right">保养登记</a></li>
-									<li><a href="../orders/order.jsp" target="right">违章登记</a></li>
-									<li><a href="../orders/order.jsp" target="right">事故登记</a></li>
-									<li><a href="../orders/order.jsp" target="right">规费登记</a></li>
-									<li><a href="../orders/order.jsp" target="right">配件相关</a></li>
-	                            </ul>
-	                        </li>
-	                        <li class="accordion">
-	                            <a href="form.html"><i class="glyphicon glyphicon-tower"></i><span>&nbsp;&nbsp;&nbsp;油料管理</span></a>
-	                            <ul class="nav nav-pills nav-stacked">
-	                                <li><a href="../orders/order.jsp" target="right">油料管理</a></li>
-	                                <li><a href="../orders/order.jsp" target="right">油卡管理</a></li>
-									<li><a href="../orders/order.jsp" target="right">加油登记</a></li>
-	                            </ul>
-	                        </li>
-	                        <li class="accordion">
-	                            <a href="form.html"><i class="glyphicon glyphicon-credit-card"></i><span>&nbsp;&nbsp;&nbsp;现金银行</span></a>
-	                            <ul class="nav nav-pills nav-stacked">
-	                                <li><a href="../orders/order.jsp" target="right">路卡充值登记</a></li>
-	                                <li><a href="../orders/order.jsp" target="right">办公用品管理</a></li>
-	                                <li><a href="../orders/order.jsp" target="right">银行存取款</a></li>
-									<li><a href="../orders/order.jsp" target="right">借还款登记</a></li>
-									<li><a href="../orders/order.jsp" target="right">其他支出</a></li>
-									<li><a href="../orders/order.jsp" target="right">其他收入</a></li>
-	                            </ul>
-	                        </li>
-	                        <li class="accordion">
-	                            <a href="form.html"><i class="glyphicon glyphicon-list-alt"></i><span>&nbsp;&nbsp;&nbsp;应收应付</span></a>
-	                            <ul class="nav nav-pills nav-stacked">
-	                                <li><a href="../orders/order.jsp" target="right">应付结算</a></li>
-	                                <li><a href="../orders/order.jsp" target="right">应收结算</a></li>
-									<li><a href="../orders/order.jsp" target="right">预收预付管理</a></li>
-									<li><a href="../orders/order.jsp" target="right">应收应付账簿</a></li>
-	                            </ul>
-	                        </li>
-	                        <li class="accordion">
-	                            <a href="form.html"><i class="glyphicon glyphicon-calendar"></i><span>&nbsp;&nbsp;&nbsp;工资管理</span></a>
-	                            <ul class="nav nav-pills nav-stacked">
-	                                <li><a href="../orders/order.jsp" target="right">缺勤登记</a></li>
-	                                <li><a href="../orders/order.jsp" target="right">工资结算</a></li>
-									<li><a href="../orders/order.jsp" target="right">工资设置</a></li>
-	                            </ul>
-	                        </li>
-	                        <li class="accordion">
-	                            <a href="form.html"><i class="glyphicon glyphicon-stats"></i><span>&nbsp;&nbsp;&nbsp;经营分析</span></a>
-	                            <ul class="nav nav-pills nav-stacked">
-	                                <li><a href="../orders/order.jsp" target="right">订单管理</a></li>
-	                                <li><a href="../orders/order.jsp" target="right">调度配送</a></li>
-									<li><a href="../orders/order.jsp" target="right">出车登记</a></li>
-									<li><a href="../orders/order.jsp" target="right">回车报账</a></li>
-	                            </ul>
-	                        </li>
-	                        <li class="accordion">
-	                            <a href="form.html"><i class="glyphicon glyphicon-asterisk"></i><span>&nbsp;&nbsp;&nbsp;系统维护</span></a>
-	                            <ul class="nav nav-pills nav-stacked">
-	                                <li><a href="../orders/order.jsp" target="right">企业资料</a></li>
-	                                <li><a href="../orders/order.jsp" target="right">客户资料</a></li>
-	                                <li><a href="../orders/order.jsp" target="right">常用资料</a></li>
-									<li><a href="../orders/order.jsp" target="right">供应商资料</a></li>
-	                            </ul>
-	                        </li>
-	                        <li class="accordion">
-	                            <a href="form.html"><i class="glyphicon glyphicon-inbox"></i><span>&nbsp;&nbsp;&nbsp;仓储管理</span></a>
-	                            <ul class="nav nav-pills nav-stacked">
-	                                <li><a href="../orders/order.jsp" target="right">入库管理</a></li>
-	                                <li><a href="../orders/order.jsp" target="right">出库管理</a></li>
-									<li><a href="../orders/order.jsp" target="right">库存明细</a></li>
-									<li><a href="../orders/order.jsp" target="right">出入库查询</a></li>
-	                            </ul>
-	                        </li>
-							<li class="accordion">
-	                            <a href="form.html"><i class="glyphicon glyphicon-wrench"></i><span>&nbsp;&nbsp;&nbsp;辅助工具</span></a>
-	                            <ul class="nav nav-pills nav-stacked">
-	                                <li><a href="form.html">新增员工</a></li>
-	                                <li><a href="form.html">修改信息</a></li>
-									<li><a href="form.html">员工状态</a></li>
-	                            </ul>
-	                        </li>
+	                    	<s:iterator value="#authorityList">
+								<li class="accordion">
+		                            <a><i class="glyphicon glyphicon-list-alt"></i><span>&nbsp;&nbsp;&nbsp;<s:property value="priAuthority"/></span></a>
+		                            <ul class="nav nav-pills nav-stacked">
+		                            	<s:iterator value="secondAuthorities">
+		                            		<li><s:a action="validateAction_getThirdAuthorityById?secId=%{secId}" target="right"><s:property value="secAuthority"/></s:a></li>
+		                            	</s:iterator>
+		                            </ul>
+	                        	</li>
+							</s:iterator>
+	                    	
 	                    </ul>
 	                </div>
 	            </div>
@@ -177,19 +82,15 @@
 	            </div>
 	        </noscript>
 	
+	        
+	        
 	        <div id="content" class="col-lg-10 col-sm-10">
-	            <!-- content starts -->
-	            <iframe name="right" scrolling="no" frameborder="0" style="width: 100%;" onload="this.height=this.contentWindow.document.documentElement.scrollHeight*2">
-	           
+	            
+	            <iframe name="right" scrolling="no" frameborder="0" style="width: 100%;" onload="this.height=this.contentWindow.document.documentElement.scrollHeight*100">
+	           		
 	            </iframe>
 	
-	
-	
-					
-	
-	    <!-- content ends -->
-	    	</div><!--/#content.col-md-0-->
-	
+	    	</div>
 	
 	
 	

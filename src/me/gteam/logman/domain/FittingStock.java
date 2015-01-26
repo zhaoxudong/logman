@@ -8,13 +8,12 @@ public class FittingStock implements java.io.Serializable {
 
 	// Fields
 
-	private Integer fittingNo;
-	private Fittingdetail fittingdetail;
+	private Integer stockId;
+	private String fittingNo;
+	private String name;
 	private String standard;
 	private String classification;
 	private Double quantity;
-	private Double unitPrice;
-	private Double amount;
 
 	// Constructors
 
@@ -23,40 +22,44 @@ public class FittingStock implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public FittingStock(Integer fittingNo, Fittingdetail fittingdetail) {
+	public FittingStock(String fittingNo) {
 		this.fittingNo = fittingNo;
-		this.fittingdetail = fittingdetail;
 	}
 
 	/** full constructor */
-	public FittingStock(Integer fittingNo, Fittingdetail fittingdetail,
-			String standard, String classification, Double quantity,
-			Double unitPrice, Double amount) {
+	public FittingStock(String fittingNo, String name, String standard,
+			String classification, Double quantity) {
 		this.fittingNo = fittingNo;
-		this.fittingdetail = fittingdetail;
+		this.name = name;
 		this.standard = standard;
 		this.classification = classification;
 		this.quantity = quantity;
-		this.unitPrice = unitPrice;
-		this.amount = amount;
 	}
 
 	// Property accessors
 
-	public Integer getFittingNo() {
+	public Integer getStockId() {
+		return this.stockId;
+	}
+
+	public void setStockId(Integer stockId) {
+		this.stockId = stockId;
+	}
+
+	public String getFittingNo() {
 		return this.fittingNo;
 	}
 
-	public void setFittingNo(Integer fittingNo) {
+	public void setFittingNo(String fittingNo) {
 		this.fittingNo = fittingNo;
 	}
 
-	public Fittingdetail getFittingdetail() {
-		return this.fittingdetail;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setFittingdetail(Fittingdetail fittingdetail) {
-		this.fittingdetail = fittingdetail;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getStandard() {
@@ -81,22 +84,6 @@ public class FittingStock implements java.io.Serializable {
 
 	public void setQuantity(Double quantity) {
 		this.quantity = quantity;
-	}
-
-	public Double getUnitPrice() {
-		return this.unitPrice;
-	}
-
-	public void setUnitPrice(Double unitPrice) {
-		this.unitPrice = unitPrice;
-	}
-
-	public Double getAmount() {
-		return this.amount;
-	}
-
-	public void setAmount(Double amount) {
-		this.amount = amount;
 	}
 
 }

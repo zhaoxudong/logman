@@ -1,8 +1,6 @@
 package me.gteam.logman.domain;
 
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * Maintenance entity. @author MyEclipse Persistence Tools
@@ -13,15 +11,14 @@ public class Maintenance implements java.io.Serializable {
 	// Fields
 
 	private Integer maintenanceId;
-	private Department department;
 	private String name;
+	private String department;
 	private Date birth;
 	private String idcard;
 	private String tel;
 	private String addr;
 	private String isleave;
 	private String remark;
-	private Set repairs = new HashSet(0);
 
 	// Constructors
 
@@ -29,25 +26,18 @@ public class Maintenance implements java.io.Serializable {
 	public Maintenance() {
 	}
 
-	/** minimal constructor */
-	public Maintenance(Integer maintenanceId) {
-		this.maintenanceId = maintenanceId;
-	}
-
 	/** full constructor */
-	public Maintenance(Integer maintenanceId, Department department,
-			String name, Date birth, String idcard, String tel, String addr,
-			String isleave, String remark, Set repairs) {
-		this.maintenanceId = maintenanceId;
-		this.department = department;
+	public Maintenance(String name, String department, Date birth,
+			String idcard, String tel, String addr, String isleave,
+			String remark) {
 		this.name = name;
+		this.department = department;
 		this.birth = birth;
 		this.idcard = idcard;
 		this.tel = tel;
 		this.addr = addr;
 		this.isleave = isleave;
 		this.remark = remark;
-		this.repairs = repairs;
 	}
 
 	// Property accessors
@@ -60,20 +50,20 @@ public class Maintenance implements java.io.Serializable {
 		this.maintenanceId = maintenanceId;
 	}
 
-	public Department getDepartment() {
-		return this.department;
-	}
-
-	public void setDepartment(Department department) {
-		this.department = department;
-	}
-
 	public String getName() {
 		return this.name;
 	}
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getDepartment() {
+		return this.department;
+	}
+
+	public void setDepartment(String department) {
+		this.department = department;
 	}
 
 	public Date getBirth() {
@@ -122,14 +112,6 @@ public class Maintenance implements java.io.Serializable {
 
 	public void setRemark(String remark) {
 		this.remark = remark;
-	}
-
-	public Set getRepairs() {
-		return this.repairs;
-	}
-
-	public void setRepairs(Set repairs) {
-		this.repairs = repairs;
 	}
 
 }

@@ -11,12 +11,14 @@ public class BorrowReturn implements java.io.Serializable {
 	// Fields
 
 	private Integer recordId;
-	private BorrowPurpose borrowPurpose;
 	private Date date;
-	private String staffFleet;
-	private String borrowReturn;
+	private String type;
+	private String name;
+	private String usePurpose;
 	private Double amount;
-	private Integer account;
+	private String account;
+	private String reback;
+	private String isfinished;
 	private String operator;
 	private String remark;
 
@@ -26,22 +28,18 @@ public class BorrowReturn implements java.io.Serializable {
 	public BorrowReturn() {
 	}
 
-	/** minimal constructor */
-	public BorrowReturn(Integer recordId) {
-		this.recordId = recordId;
-	}
-
 	/** full constructor */
-	public BorrowReturn(Integer recordId, BorrowPurpose borrowPurpose,
-			Date date, String staffFleet, String borrowReturn, Double amount,
-			Integer account, String operator, String remark) {
-		this.recordId = recordId;
-		this.borrowPurpose = borrowPurpose;
+	public BorrowReturn(Date date, String type, String name, String usePurpose,
+			Double amount, String account, String reback, String isfinished,
+			String operator, String remark) {
 		this.date = date;
-		this.staffFleet = staffFleet;
-		this.borrowReturn = borrowReturn;
+		this.type = type;
+		this.name = name;
+		this.usePurpose = usePurpose;
 		this.amount = amount;
 		this.account = account;
+		this.reback = reback;
+		this.isfinished = isfinished;
 		this.operator = operator;
 		this.remark = remark;
 	}
@@ -56,14 +54,6 @@ public class BorrowReturn implements java.io.Serializable {
 		this.recordId = recordId;
 	}
 
-	public BorrowPurpose getBorrowPurpose() {
-		return this.borrowPurpose;
-	}
-
-	public void setBorrowPurpose(BorrowPurpose borrowPurpose) {
-		this.borrowPurpose = borrowPurpose;
-	}
-
 	public Date getDate() {
 		return this.date;
 	}
@@ -72,20 +62,28 @@ public class BorrowReturn implements java.io.Serializable {
 		this.date = date;
 	}
 
-	public String getStaffFleet() {
-		return this.staffFleet;
+	public String getType() {
+		return this.type;
 	}
 
-	public void setStaffFleet(String staffFleet) {
-		this.staffFleet = staffFleet;
+	public void setType(String type) {
+		this.type = type;
 	}
 
-	public String getBorrowReturn() {
-		return this.borrowReturn;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setBorrowReturn(String borrowReturn) {
-		this.borrowReturn = borrowReturn;
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getUsePurpose() {
+		return this.usePurpose;
+	}
+
+	public void setUsePurpose(String usePurpose) {
+		this.usePurpose = usePurpose;
 	}
 
 	public Double getAmount() {
@@ -96,12 +94,28 @@ public class BorrowReturn implements java.io.Serializable {
 		this.amount = amount;
 	}
 
-	public Integer getAccount() {
+	public String getAccount() {
 		return this.account;
 	}
 
-	public void setAccount(Integer account) {
+	public void setAccount(String account) {
 		this.account = account;
+	}
+
+	public String getReback() {
+		return this.reback;
+	}
+
+	public void setReback(String reback) {
+		this.reback = reback;
+	}
+
+	public String getIsfinished() {
+		return this.isfinished;
+	}
+
+	public void setIsfinished(String isfinished) {
+		this.isfinished = isfinished;
 	}
 
 	public String getOperator() {

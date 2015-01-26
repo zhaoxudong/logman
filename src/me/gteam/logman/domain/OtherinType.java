@@ -1,8 +1,5 @@
 package me.gteam.logman.domain;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * OtherinType entity. @author MyEclipse Persistence Tools
  */
@@ -12,8 +9,8 @@ public class OtherinType implements java.io.Serializable {
 	// Fields
 
 	private Integer typeid;
+	private String name;
 	private String ishevicle;
-	private Set otherins = new HashSet(0);
 
 	// Constructors
 
@@ -21,16 +18,10 @@ public class OtherinType implements java.io.Serializable {
 	public OtherinType() {
 	}
 
-	/** minimal constructor */
-	public OtherinType(Integer typeid) {
-		this.typeid = typeid;
-	}
-
 	/** full constructor */
-	public OtherinType(Integer typeid, String ishevicle, Set otherins) {
-		this.typeid = typeid;
+	public OtherinType(String name, String ishevicle) {
+		this.name = name;
 		this.ishevicle = ishevicle;
-		this.otherins = otherins;
 	}
 
 	// Property accessors
@@ -43,20 +34,20 @@ public class OtherinType implements java.io.Serializable {
 		this.typeid = typeid;
 	}
 
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public String getIshevicle() {
 		return this.ishevicle;
 	}
 
 	public void setIshevicle(String ishevicle) {
 		this.ishevicle = ishevicle;
-	}
-
-	public Set getOtherins() {
-		return this.otherins;
-	}
-
-	public void setOtherins(Set otherins) {
-		this.otherins = otherins;
 	}
 
 }

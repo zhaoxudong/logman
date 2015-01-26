@@ -1,8 +1,5 @@
 package me.gteam.logman.domain;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * LucaType entity. @author MyEclipse Persistence Tools
  */
@@ -13,7 +10,6 @@ public class LucaType implements java.io.Serializable {
 
 	private Integer lucatypeId;
 	private String lucaType;
-	private Set lucas = new HashSet(0);
 
 	// Constructors
 
@@ -21,16 +17,9 @@ public class LucaType implements java.io.Serializable {
 	public LucaType() {
 	}
 
-	/** minimal constructor */
-	public LucaType(Integer lucatypeId) {
-		this.lucatypeId = lucatypeId;
-	}
-
 	/** full constructor */
-	public LucaType(Integer lucatypeId, String lucaType, Set lucas) {
-		this.lucatypeId = lucatypeId;
+	public LucaType(String lucaType) {
 		this.lucaType = lucaType;
-		this.lucas = lucas;
 	}
 
 	// Property accessors
@@ -49,14 +38,6 @@ public class LucaType implements java.io.Serializable {
 
 	public void setLucaType(String lucaType) {
 		this.lucaType = lucaType;
-	}
-
-	public Set getLucas() {
-		return this.lucas;
-	}
-
-	public void setLucas(Set lucas) {
-		this.lucas = lucas;
 	}
 
 }

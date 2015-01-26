@@ -23,15 +23,9 @@ public class ThirdAuthority implements java.io.Serializable {
 	public ThirdAuthority() {
 	}
 
-	/** minimal constructor */
-	public ThirdAuthority(Integer thiId) {
-		this.thiId = thiId;
-	}
-
 	/** full constructor */
-	public ThirdAuthority(Integer thiId, SecondAuthority secondAuthority,
-			String thiAuthority, String url, Set userAuthorities) {
-		this.thiId = thiId;
+	public ThirdAuthority(SecondAuthority secondAuthority, String thiAuthority,
+			String url, Set userAuthorities) {
 		this.secondAuthority = secondAuthority;
 		this.thiAuthority = thiAuthority;
 		this.url = url;

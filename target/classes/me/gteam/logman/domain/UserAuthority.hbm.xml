@@ -8,13 +8,13 @@
     <class name="me.gteam.logman.domain.UserAuthority" table="user_authority" catalog="logman">
         <id name="authorityRecordId" type="java.lang.Integer">
             <column name="AUTHORITY_RECORD_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <many-to-one name="thirdAuthority" class="me.gteam.logman.domain.ThirdAuthority" fetch="select">
-            <column name="THI_AUTHORITY_ID" not-null="true" />
+            <column name="THI_AUTHORITY_ID" />
         </many-to-one>
         <many-to-one name="user" class="me.gteam.logman.domain.User" fetch="select">
-            <column name="USER_ID" not-null="true" />
+            <column name="USER_ID" />
         </many-to-one>
     </class>
 </hibernate-mapping>

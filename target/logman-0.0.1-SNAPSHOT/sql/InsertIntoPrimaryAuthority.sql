@@ -1,0 +1,10 @@
+INSERT INTO `logman`.`primary_authority` (`PRI_ID`, `PRI_AUTHORITY`) VALUES ('1', '业务管理');
+INSERT INTO `logman`.`primary_authority` (`PRI_ID`, `PRI_AUTHORITY`) VALUES ('2', '车辆管理');
+INSERT INTO `logman`.`primary_authority` (`PRI_ID`, `PRI_AUTHORITY`) VALUES ('3', '油料管理');
+INSERT INTO `logman`.`primary_authority` (`PRI_ID`, `PRI_AUTHORITY`) VALUES ('4', '现金银行');
+INSERT INTO `logman`.`primary_authority` (`PRI_ID`, `PRI_AUTHORITY`) VALUES ('5', '应收应付');
+INSERT INTO `logman`.`primary_authority` (`PRI_ID`, `PRI_AUTHORITY`) VALUES ('6', '工资管理');
+INSERT INTO `logman`.`primary_authority` (`PRI_ID`, `PRI_AUTHORITY`) VALUES ('7', '经营分析');
+INSERT INTO `logman`.`primary_authority` (`PRI_ID`, `PRI_AUTHORITY`) VALUES ('8', '系统维护');
+INSERT INTO `logman`.`primary_authority` (`PRI_ID`, `PRI_AUTHORITY`) VALUES ('9', '仓储管理');
+INSERT INTO `logman`.`primary_authority` (`PRI_ID`, `PRI_AUTHORITY`) VALUES ('10', '辅助工具');

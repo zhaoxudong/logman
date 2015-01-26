@@ -1,8 +1,5 @@
 package me.gteam.logman.domain;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * OtheroutType entity. @author MyEclipse Persistence Tools
  */
@@ -12,9 +9,9 @@ public class OtheroutType implements java.io.Serializable {
 	// Fields
 
 	private Integer typeid;
+	private String name;
 	private String isvehicle;
 	private String issplitthecost;
-	private Set otherouts = new HashSet(0);
 
 	// Constructors
 
@@ -22,18 +19,11 @@ public class OtheroutType implements java.io.Serializable {
 	public OtheroutType() {
 	}
 
-	/** minimal constructor */
-	public OtheroutType(Integer typeid) {
-		this.typeid = typeid;
-	}
-
 	/** full constructor */
-	public OtheroutType(Integer typeid, String isvehicle,
-			String issplitthecost, Set otherouts) {
-		this.typeid = typeid;
+	public OtheroutType(String name, String isvehicle, String issplitthecost) {
+		this.name = name;
 		this.isvehicle = isvehicle;
 		this.issplitthecost = issplitthecost;
-		this.otherouts = otherouts;
 	}
 
 	// Property accessors
@@ -44,6 +34,14 @@ public class OtheroutType implements java.io.Serializable {
 
 	public void setTypeid(Integer typeid) {
 		this.typeid = typeid;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getIsvehicle() {
@@ -60,14 +58,6 @@ public class OtheroutType implements java.io.Serializable {
 
 	public void setIssplitthecost(String issplitthecost) {
 		this.issplitthecost = issplitthecost;
-	}
-
-	public Set getOtherouts() {
-		return this.otherouts;
-	}
-
-	public void setOtherouts(Set otherouts) {
-		this.otherouts = otherouts;
 	}
 
 }

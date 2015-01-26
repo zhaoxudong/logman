@@ -1,8 +1,5 @@
 package me.gteam.logman.domain;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * RepairItem entity. @author MyEclipse Persistence Tools
  */
@@ -13,7 +10,6 @@ public class RepairItem implements java.io.Serializable {
 
 	private Integer itemId;
 	private String itemName;
-	private Set repairDetails = new HashSet(0);
 
 	// Constructors
 
@@ -21,16 +17,9 @@ public class RepairItem implements java.io.Serializable {
 	public RepairItem() {
 	}
 
-	/** minimal constructor */
-	public RepairItem(Integer itemId) {
-		this.itemId = itemId;
-	}
-
 	/** full constructor */
-	public RepairItem(Integer itemId, String itemName, Set repairDetails) {
-		this.itemId = itemId;
+	public RepairItem(String itemName) {
 		this.itemName = itemName;
-		this.repairDetails = repairDetails;
 	}
 
 	// Property accessors
@@ -49,14 +38,6 @@ public class RepairItem implements java.io.Serializable {
 
 	public void setItemName(String itemName) {
 		this.itemName = itemName;
-	}
-
-	public Set getRepairDetails() {
-		return this.repairDetails;
-	}
-
-	public void setRepairDetails(Set repairDetails) {
-		this.repairDetails = repairDetails;
 	}
 
 }

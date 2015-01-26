@@ -8,14 +8,20 @@
     <class name="me.gteam.logman.domain.RouteTemplate" table="route_template" catalog="logman">
         <id name="templateNo" type="java.lang.Integer">
             <column name="TEMPLATE_NO" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
-        <many-to-one name="route" class="me.gteam.logman.domain.Route" fetch="select">
-            <column name="ROUTE_ID" />
-        </many-to-one>
-        <many-to-one name="goods" class="me.gteam.logman.domain.Goods" fetch="select">
-            <column name="GOODS_ID" />
-        </many-to-one>
+        <property name="shipper" type="java.lang.String">
+            <column name="SHIPPER" length="30" />
+        </property>
+        <property name="consignee" type="java.lang.String">
+            <column name="CONSIGNEE" length="30" />
+        </property>
+        <property name="good" type="java.lang.String">
+            <column name="GOOD" length="30" />
+        </property>
+        <property name="route" type="java.lang.String">
+            <column name="ROUTE" length="30" />
+        </property>
         <property name="pricingFormula" type="java.lang.String">
             <column name="PRICING_FORMULA" length="30" />
         </property>
@@ -25,11 +31,5 @@
         <property name="remark" type="java.lang.String">
             <column name="REMARK" length="50" />
         </property>
-        <set name="orderses" inverse="true">
-            <key>
-                <column name="TEMPLATE_NO" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.Orders" />
-        </set>
     </class>
 </hibernate-mapping>

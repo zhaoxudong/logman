@@ -11,7 +11,7 @@ public interface OrdersService {
 
 	public void updateOrders(Orders orders);
 
-	public void deleteOrderByID(Serializable id,String deleteMode);
+	public void deleteOrdersByID(Serializable id,String deleteMode);
 
 	public Collection<Orders> getAllOrders();
 

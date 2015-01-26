@@ -11,8 +11,8 @@ public class Handler implements java.io.Serializable {
 	// Fields
 
 	private Integer handlerId;
-	private Department department;
 	private String name;
+	private String department;
 	private Date birth;
 	private String idcard;
 	private String tel;
@@ -26,18 +26,11 @@ public class Handler implements java.io.Serializable {
 	public Handler() {
 	}
 
-	/** minimal constructor */
-	public Handler(Integer handlerId) {
-		this.handlerId = handlerId;
-	}
-
 	/** full constructor */
-	public Handler(Integer handlerId, Department department, String name,
-			Date birth, String idcard, String tel, String addr, String isleave,
-			String remark) {
-		this.handlerId = handlerId;
-		this.department = department;
+	public Handler(String name, String department, Date birth, String idcard,
+			String tel, String addr, String isleave, String remark) {
 		this.name = name;
+		this.department = department;
 		this.birth = birth;
 		this.idcard = idcard;
 		this.tel = tel;
@@ -56,20 +49,20 @@ public class Handler implements java.io.Serializable {
 		this.handlerId = handlerId;
 	}
 
-	public Department getDepartment() {
-		return this.department;
-	}
-
-	public void setDepartment(Department department) {
-		this.department = department;
-	}
-
 	public String getName() {
 		return this.name;
 	}
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getDepartment() {
+		return this.department;
+	}
+
+	public void setDepartment(String department) {
+		this.department = department;
 	}
 
 	public Date getBirth() {

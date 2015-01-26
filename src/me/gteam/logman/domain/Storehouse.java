@@ -1,8 +1,5 @@
 package me.gteam.logman.domain;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * Storehouse entity. @author MyEclipse Persistence Tools
  */
@@ -13,11 +10,8 @@ public class Storehouse implements java.io.Serializable {
 
 	private Integer warehouseId;
 	private String addr;
-	private Integer chargeman;
+	private String chargeman;
 	private Double capacity;
-	private Set storageIns = new HashSet(0);
-	private Set storeageOuts = new HashSet(0);
-	private Set storeDetails = new HashSet(0);
 
 	// Constructors
 
@@ -25,21 +19,11 @@ public class Storehouse implements java.io.Serializable {
 	public Storehouse() {
 	}
 
-	/** minimal constructor */
-	public Storehouse(Integer warehouseId) {
-		this.warehouseId = warehouseId;
-	}
-
 	/** full constructor */
-	public Storehouse(Integer warehouseId, String addr, Integer chargeman,
-			Double capacity, Set storageIns, Set storeageOuts, Set storeDetails) {
-		this.warehouseId = warehouseId;
+	public Storehouse(String addr, String chargeman, Double capacity) {
 		this.addr = addr;
 		this.chargeman = chargeman;
 		this.capacity = capacity;
-		this.storageIns = storageIns;
-		this.storeageOuts = storeageOuts;
-		this.storeDetails = storeDetails;
 	}
 
 	// Property accessors
@@ -60,11 +44,11 @@ public class Storehouse implements java.io.Serializable {
 		this.addr = addr;
 	}
 
-	public Integer getChargeman() {
+	public String getChargeman() {
 		return this.chargeman;
 	}
 
-	public void setChargeman(Integer chargeman) {
+	public void setChargeman(String chargeman) {
 		this.chargeman = chargeman;
 	}
 
@@ -74,30 +58,6 @@ public class Storehouse implements java.io.Serializable {
 
 	public void setCapacity(Double capacity) {
 		this.capacity = capacity;
-	}
-
-	public Set getStorageIns() {
-		return this.storageIns;
-	}
-
-	public void setStorageIns(Set storageIns) {
-		this.storageIns = storageIns;
-	}
-
-	public Set getStoreageOuts() {
-		return this.storeageOuts;
-	}
-
-	public void setStoreageOuts(Set storeageOuts) {
-		this.storeageOuts = storeageOuts;
-	}
-
-	public Set getStoreDetails() {
-		return this.storeDetails;
-	}
-
-	public void setStoreDetails(Set storeDetails) {
-		this.storeDetails = storeDetails;
 	}
 
 }

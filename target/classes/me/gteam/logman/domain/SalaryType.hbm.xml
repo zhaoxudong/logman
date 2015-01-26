@@ -8,7 +8,7 @@
     <class name="me.gteam.logman.domain.SalaryType" table="salary_type" catalog="logman">
         <id name="salarytypeId" type="java.lang.Integer">
             <column name="SALARYTYPE_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <property name="typename" type="java.lang.String">
             <column name="TYPENAME" length="30" />

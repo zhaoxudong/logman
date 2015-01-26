@@ -15,38 +15,26 @@ import me.gteam.logman.service.SecondAuthorityService;
 public class SecondAuthorityServiceImpl implements SecondAuthorityService{
 
 	@Resource(name="secondAuthorityDao")
-	private SecondAuthorityDao secondAuthorityDao ;
+	private SecondAuthorityDao secondAuthorityDao;
 
-	@Override
 	public void saveSecondAuthority(SecondAuthority secondAuthority) {
-		// TODO Auto-generated method stub
 		this.secondAuthorityDao.saveEntry(secondAuthority);
-		
 	}
 
-	@Override
-	public void updateSecondAuthority(SecondAuthority secondAuthority) {
-		// TODO Auto-generated method stub
+	public void updateSecondAuthority(SecondAuthority secondAuthority){
 		this.secondAuthorityDao.updateEntry(secondAuthority);
-		
 	}
 
-	@Override
 	public void deleteSecondAuthorityByID(Serializable id, String deleteMode) {
-		// TODO Auto-generated method stub
 		this.secondAuthorityDao.deleteEntry(id);
-		
 	}
 
-	@Override
-	public Collection<SecondAuthority> getAllSecondAuthorities() {
-		// TODO Auto-generated method stub
+	public Collection<SecondAuthority> getAllSecondAuthority() {
 		return this.secondAuthorityDao.getAllEntry();
 	}
 
-	@Override
 	public SecondAuthority getSecondAuthorityById(Serializable id) {
-		// TODO Auto-generated method stub
 		return (SecondAuthority)this.secondAuthorityDao.getEntryById(id);
 	}
+
 }

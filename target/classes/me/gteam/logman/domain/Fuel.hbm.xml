@@ -8,7 +8,7 @@
     <class name="me.gteam.logman.domain.Fuel" table="fuel" catalog="logman">
         <id name="fuelId" type="java.lang.Integer">
             <column name="FUEL_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <property name="type" type="java.lang.String">
             <column name="TYPE" length="14" />
@@ -16,47 +16,5 @@
         <property name="unitPrice" type="java.lang.Double">
             <column name="UNIT_PRICE" precision="22" scale="0" />
         </property>
-        <set name="oilProcurements" inverse="true">
-            <key>
-                <column name="OILTYPE" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.OilProcurement" />
-        </set>
-        <set name="cardRefuels" inverse="true">
-            <key>
-                <column name="OIL_TYPE" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.CardRefuel" />
-        </set>
-        <set name="cashRefuels" inverse="true">
-            <key>
-                <column name="OIL_TYPE" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.CashRefuel" />
-        </set>
-        <set name="oilinventories" inverse="true">
-            <key>
-                <column name="OILTYPE" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.Oilinventory" />
-        </set>
-        <set name="fixpointRefuelings" inverse="true">
-            <key>
-                <column name="OIL_TYPE" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.FixpointRefueling" />
-        </set>
-        <set name="tankRefuels" inverse="true">
-            <key>
-                <column name="OIL_TYPE" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.TankRefuel" />
-        </set>
-        <set name="oiltanks" inverse="true">
-            <key>
-                <column name="OILTYPE" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.Oiltank" />
-        </set>
     </class>
 </hibernate-mapping>
