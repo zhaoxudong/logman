@@ -1,19 +1,21 @@
 package me.gteam.logman.domain;
 
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 /**
  * PrimaryAuthority entity. @author MyEclipse Persistence Tools
  */
 
-public class PrimaryAuthority implements java.io.Serializable {
+public class PrimaryAuthority implements java.io.Serializable, Comparable<PrimaryAuthority>{
 
 	// Fields
 
 	private Integer priId;
 	private String priAuthority;
-	private Set secondAuthorities = new HashSet(0);
+	private Set secondAuthorities = new TreeSet<SecondAuthority>();
 
 	// Constructors
 
@@ -56,6 +58,16 @@ public class PrimaryAuthority implements java.io.Serializable {
 
 	public void setSecondAuthorities(Set secondAuthorities) {
 		this.secondAuthorities = secondAuthorities;
+	}
+
+
+	@Override
+	public int compareTo(PrimaryAuthority o) {
+		// TODO Auto-generated method stub
+		if(this.priId<o.priId) return -1;
+		if(this.priId==o.priId) return 0;
+		if(this.priId>o.priId) return 1;
+		return 0;
 	}
 
 }

@@ -13,7 +13,7 @@
         <property name="priAuthority" type="java.lang.String">
             <column name="PRI_AUTHORITY" length="20" />
         </property>
-        <set name="secondAuthorities" inverse="true">
+        <set name="secondAuthorities" sort="natural" inverse="true">
             <key>
                 <column name="BELONG_PRI_ID" />
             </key>

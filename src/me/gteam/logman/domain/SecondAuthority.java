@@ -1,5 +1,6 @@
 package me.gteam.logman.domain;
 
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -7,7 +8,7 @@ import java.util.Set;
  * SecondAuthority entity. @author MyEclipse Persistence Tools
  */
 
-public class SecondAuthority implements java.io.Serializable {
+public class SecondAuthority implements java.io.Serializable, Comparable<SecondAuthority>{
 
 	// Fields
 
@@ -68,5 +69,16 @@ public class SecondAuthority implements java.io.Serializable {
 	public void setThirdAuthorities(Set thirdAuthorities) {
 		this.thirdAuthorities = thirdAuthorities;
 	}
+
+	@Override
+	public int compareTo(SecondAuthority o) {
+		// TODO Auto-generated method stub
+		if(this.secId<o.secId) return -1;
+		if(this.secId==o.secId) return 0;
+		if(this.secId>o.secId) return 1;
+		return 0;
+	}
+
+	
 
 }
