@@ -89,20 +89,6 @@ public class ValidateAction extends BaseAction<User> {
 				
 			}
 			Collections.sort(authorityList);
-//			for(int i = 0;i<authorityList.size();i++){
-//				Set<SecondAuthority> secondAuthorities = new TreeSet<SecondAuthority>(new Comparator<SecondAuthority>(){
-//					public int compare(SecondAuthority o1, SecondAuthority o2) {
-//						if(o1.getSecId()<o2.getSecId()) return -1;
-//						if(o1.getSecId()<o2.getSecId()) return 0 ;
-//						if(o1.getSecId()<o2.getSecId()) return 1 ;
-//						return 0;
-//					}
-//				});
-//				secondAuthorities.addAll(authorityList.get(i).getSecondAuthorities());
-//				
-//				authorityList.get(i).setSecondAuthorities(secondAuthorities);
-//			}
-			
 			ActionContext.getContext().put("authorityList",authorityList);
 			ActionContext.getContext().getSession().put("user", userInDB);
 			
