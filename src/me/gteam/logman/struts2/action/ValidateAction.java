@@ -105,8 +105,9 @@ public class ValidateAction extends BaseAction<User> {
 		List<ThirdAuthority> thirdAuthorities = this.thirdAuthorityService.getThirdAuthoritiesBySecId(strings[0]);
 		List<ThirdAuthority> thirdAuthorities2=new ArrayList<ThirdAuthority>();
 		for(ThirdAuthority thirdAuthority:thirdAuthorities){
-			if(this.userAuthorityService.getThirdAuthorityByUserIdAndThiId(user.getUserId(), thirdAuthority.getThiId())!=null){
-				thirdAuthorities2.add(this.userAuthorityService.getThirdAuthorityByUserIdAndThiId(user.getUserId(), thirdAuthority.getThiId()));
+			ThirdAuthority tAuthority;
+			if((tAuthority=this.userAuthorityService.getThirdAuthorityByUserIdAndThiId(user.getUserId(), thirdAuthority.getThiId()))!=null){
+				thirdAuthorities2.add(tAuthority);
 			}
 		}
 		ActionContext.getContext().put("thirdAuthorities",thirdAuthorities2);

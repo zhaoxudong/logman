@@ -8,16 +8,10 @@
     <class name="me.gteam.logman.domain.BorrowPurpose" table="borrow_purpose" catalog="logman">
         <id name="purposeId" type="java.lang.Integer">
             <column name="PURPOSE_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <property name="purpose" type="java.lang.String">
             <column name="PURPOSE" length="20" />
         </property>
-        <set name="borrowReturns" inverse="true">
-            <key>
-                <column name="PURPOSE" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.BorrowReturn" />
-        </set>
     </class>
 </hibernate-mapping>

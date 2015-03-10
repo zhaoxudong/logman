@@ -8,7 +8,7 @@
     <class name="me.gteam.logman.domain.Fittingdetail" table="fittingdetail" catalog="logman">
         <id name="fittingId" type="java.lang.Integer">
             <column name="FITTING_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <property name="fittingname" type="java.lang.String">
             <column name="FITTINGNAME" length="30" />
@@ -37,23 +37,5 @@
         <property name="mnemonic" type="java.lang.String">
             <column name="MNEMONIC" length="14" />
         </property>
-        <set name="fittingStocks" inverse="true">
-            <key>
-                <column name="FITTING_NO" not-null="true" unique="true" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.FittingStock" />
-        </set>
-        <set name="fittingpurchaseDetails" inverse="true">
-            <key>
-                <column name="FITTING_ID" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.FittingpurchaseDetail" />
-        </set>
-        <set name="repairDetails" inverse="true">
-            <key>
-                <column name="FITTING_NO" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.RepairDetail" />
-        </set>
     </class>
 </hibernate-mapping>

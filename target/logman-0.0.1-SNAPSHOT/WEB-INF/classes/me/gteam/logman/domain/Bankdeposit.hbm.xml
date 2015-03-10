@@ -6,34 +6,33 @@
 -->
 <hibernate-mapping>
     <class name="me.gteam.logman.domain.Bankdeposit" table="bankdeposit" catalog="logman">
-        <composite-id name="id" class="me.gteam.logman.domain.BankdepositId">
-            <key-property name="depsitId" type="java.lang.Integer">
-                <column name="DEPSIT_ID" />
-            </key-property>
-            <key-property name="depositNo" type="java.lang.String">
-                <column name="DEPOSIT_NO" length="40" />
-            </key-property>
-            <key-property name="date" type="java.util.Date">
-                <column name="DATE" length="10" />
-            </key-property>
-            <key-property name="payaccount" type="java.lang.Integer">
-                <column name="PAYACCOUNT" />
-            </key-property>
-            <key-property name="receive" type="java.lang.Integer">
-                <column name="RECEIVE" />
-            </key-property>
-            <key-property name="amount" type="java.lang.Double">
-                <column name="AMOUNT" precision="22" scale="0" />
-            </key-property>
-            <key-property name="checkNumber" type="java.lang.String">
-                <column name="CHECK_NUMBER" length="30" />
-            </key-property>
-            <key-property name="operator" type="java.lang.String">
-                <column name="OPERATOR" length="14" />
-            </key-property>
-            <key-property name="rermark" type="java.lang.String">
-                <column name="RERMARK" length="50" />
-            </key-property>
-        </composite-id>
+        <id name="depsitId" type="java.lang.Integer">
+            <column name="DEPSIT_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="depositNo" type="java.lang.String">
+            <column name="DEPOSIT_NO" length="40" />
+        </property>
+        <property name="date" type="java.util.Date">
+            <column name="DATE" length="10" />
+        </property>
+        <property name="payaccount" type="java.lang.String">
+            <column name="PAYACCOUNT" length="30" />
+        </property>
+        <property name="receive" type="java.lang.String">
+            <column name="RECEIVE" length="30" />
+        </property>
+        <property name="amount" type="java.lang.Double">
+            <column name="AMOUNT" precision="22" scale="0" />
+        </property>
+        <property name="checkNumber" type="java.lang.String">
+            <column name="CHECK_NUMBER" length="30" />
+        </property>
+        <property name="operator" type="java.lang.String">
+            <column name="OPERATOR" length="14" />
+        </property>
+        <property name="rermark" type="java.lang.String">
+            <column name="RERMARK" length="50" />
+        </property>
     </class>
 </hibernate-mapping>

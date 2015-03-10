@@ -8,7 +8,7 @@
     <class name="me.gteam.logman.domain.Goods" table="goods" catalog="logman">
         <id name="goodsId" type="java.lang.Integer">
             <column name="GOODS_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <property name="goodName" type="java.lang.String">
             <column name="GOOD_NAME" length="20" />
@@ -22,35 +22,5 @@
         <property name="code" type="java.lang.String">
             <column name="CODE" length="20" />
         </property>
-        <set name="storeDetails" inverse="true">
-            <key>
-                <column name="GOODS" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.StoreDetail" />
-        </set>
-        <set name="storageIns" inverse="true">
-            <key>
-                <column name="GOODS" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.StorageIn" />
-        </set>
-        <set name="routeTemplates" inverse="true">
-            <key>
-                <column name="GOODS_ID" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.RouteTemplate" />
-        </set>
-        <set name="storeageOuts" inverse="true">
-            <key>
-                <column name="GOODS" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.StoreageOut" />
-        </set>
-        <set name="orderses" inverse="true">
-            <key>
-                <column name="GOODS" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.Orders" />
-        </set>
     </class>
 </hibernate-mapping>

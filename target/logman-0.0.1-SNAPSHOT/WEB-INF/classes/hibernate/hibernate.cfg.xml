@@ -16,7 +16,7 @@
 	<property name="connection.driver_class">
 		com.mysql.jdbc.Driver
 	</property>
-	<property name="myeclipse.connection.profile"></property>
+	<property name="myeclipse.connection.profile">mysql</property>
 	<property name="hbm2ddl.auto">update</property>
 	<property name="show_sql">true</property>
 	<property name="connection.autocommit">true</property>
@@ -77,6 +77,7 @@
 	<mapping resource="me/gteam/logman/domain/OtherinType.hbm.xml" />
 	<mapping resource="me/gteam/logman/domain/Otherout.hbm.xml" />
 	<mapping resource="me/gteam/logman/domain/OtheroutType.hbm.xml" />
+	<mapping resource="me/gteam/logman/domain/PayrollDetails.hbm.xml" />
 	<mapping resource="me/gteam/logman/domain/Prepay.hbm.xml" />
 	<mapping resource="me/gteam/logman/domain/Prereceive.hbm.xml" />
 	<mapping resource="me/gteam/logman/domain/PrimaryAuthority.hbm.xml" />
@@ -90,10 +91,11 @@
 	<mapping resource="me/gteam/logman/domain/SalaryType.hbm.xml" />
 	<mapping resource="me/gteam/logman/domain/SecondAuthority.hbm.xml" />
 	<mapping resource="me/gteam/logman/domain/SettleSalary.hbm.xml" />
-	<mapping resource="me/gteam/logman/domain/ShouldReceivepay.hbm.xml" />
 	<mapping resource="me/gteam/logman/domain/Staff.hbm.xml" />
 	<mapping resource="me/gteam/logman/domain/StorageIn.hbm.xml" />
+	<mapping resource="me/gteam/logman/domain/StorageInDetail.hbm.xml" />
 	<mapping resource="me/gteam/logman/domain/Storageofofficesupplies.hbm.xml" />
+	<mapping resource="me/gteam/logman/domain/StorageOutDetail.hbm.xml" />
 	<mapping resource="me/gteam/logman/domain/StoreageOut.hbm.xml" />
 	<mapping resource="me/gteam/logman/domain/StoreDetail.hbm.xml" />
 	<mapping resource="me/gteam/logman/domain/Storehouse.hbm.xml" />

@@ -53,6 +53,7 @@ public class BaseDaoImpl<T> implements BaseDao<T>{
 	public void updateEntry(T t) {
 		// TODO Auto-generated method stub
 		this.hibernateTemplate.update(t);
+		System.out.println("dao---update");
 	}
 
 	public void deleteEntry(Serializable id) {

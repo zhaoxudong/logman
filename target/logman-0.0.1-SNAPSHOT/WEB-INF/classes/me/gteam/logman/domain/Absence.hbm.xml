@@ -8,19 +8,16 @@
     <class name="me.gteam.logman.domain.Absence" table="absence" catalog="logman">
         <id name="absenceId" type="java.lang.Integer">
             <column name="ABSENCE_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
-        <many-to-one name="absencetype" class="me.gteam.logman.domain.Absencetype" fetch="select">
-            <column name="ABSENCETYPE_ID" />
-        </many-to-one>
-        <many-to-one name="staff" class="me.gteam.logman.domain.Staff" fetch="select">
-            <column name="STAFF_ID" />
-        </many-to-one>
         <property name="date" type="java.util.Date">
             <column name="DATE" length="10" />
         </property>
         <property name="name" type="java.lang.String">
             <column name="NAME" length="10" />
+        </property>
+        <property name="type" type="java.lang.String">
+            <column name="TYPE" length="30" />
         </property>
         <property name="duration" type="java.lang.Float">
             <column name="DURATION" precision="12" scale="0" />

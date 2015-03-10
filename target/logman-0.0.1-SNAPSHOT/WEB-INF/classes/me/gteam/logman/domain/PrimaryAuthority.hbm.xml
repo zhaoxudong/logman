@@ -8,12 +8,12 @@
     <class name="me.gteam.logman.domain.PrimaryAuthority" table="primary_authority" catalog="logman">
         <id name="priId" type="java.lang.Integer">
             <column name="PRI_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <property name="priAuthority" type="java.lang.String">
             <column name="PRI_AUTHORITY" length="20" />
         </property>
-        <set name="secondAuthorities" inverse="true">
+        <set name="secondAuthorities" sort="natural" inverse="true">
             <key>
                 <column name="BELONG_PRI_ID" />
             </key>

@@ -6,31 +6,30 @@
 -->
 <hibernate-mapping>
     <class name="me.gteam.logman.domain.Prereceive" table="prereceive" catalog="logman">
-        <composite-id name="id" class="me.gteam.logman.domain.PrereceiveId">
-            <key-property name="prereceiveId" type="java.lang.Integer">
-                <column name="PRERECEIVE_ID" />
-            </key-property>
-            <key-property name="date" type="java.util.Date">
-                <column name="DATE" length="10" />
-            </key-property>
-            <key-property name="unit" type="java.lang.String">
-                <column name="UNIT" length="50" />
-            </key-property>
-            <key-property name="prereceive" type="java.lang.Double">
-                <column name="PRERECEIVE" precision="22" scale="0" />
-            </key-property>
-            <key-property name="account" type="java.lang.Integer">
-                <column name="ACCOUNT" />
-            </key-property>
-            <key-property name="attn" type="java.lang.String">
-                <column name="ATTN" length="14" />
-            </key-property>
-            <key-property name="operator" type="java.lang.String">
-                <column name="OPERATOR" length="14" />
-            </key-property>
-            <key-property name="remark" type="java.lang.String">
-                <column name="REMARK" length="50" />
-            </key-property>
-        </composite-id>
+        <id name="prereceiveId" type="java.lang.Integer">
+            <column name="PRERECEIVE_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="date" type="java.util.Date">
+            <column name="DATE" length="10" />
+        </property>
+        <property name="unit" type="java.lang.String">
+            <column name="UNIT" length="50" />
+        </property>
+        <property name="prereceive" type="java.lang.Double">
+            <column name="PRERECEIVE" precision="22" scale="0" />
+        </property>
+        <property name="account" type="java.lang.String">
+            <column name="ACCOUNT" length="30" />
+        </property>
+        <property name="attn" type="java.lang.String">
+            <column name="ATTN" length="14" />
+        </property>
+        <property name="operator" type="java.lang.String">
+            <column name="OPERATOR" length="14" />
+        </property>
+        <property name="remark" type="java.lang.String">
+            <column name="REMARK" length="50" />
+        </property>
     </class>
 </hibernate-mapping>

@@ -8,16 +8,13 @@
     <class name="me.gteam.logman.domain.FittingPurchase" table="fitting_purchase" catalog="logman">
         <id name="purchaseId" type="java.lang.Integer">
             <column name="PURCHASE_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
-        <many-to-one name="account" class="me.gteam.logman.domain.Account" fetch="select">
-            <column name="ACCOUNT" />
-        </many-to-one>
-        <many-to-one name="supplier" class="me.gteam.logman.domain.Supplier" fetch="select">
-            <column name="SUPPLIER" />
-        </many-to-one>
         <property name="date" type="java.util.Date">
             <column name="DATE" length="10" />
+        </property>
+        <property name="supplier" type="java.lang.String">
+            <column name="SUPPLIER" length="30" />
         </property>
         <property name="buyer" type="java.lang.String">
             <column name="BUYER" length="14" />
@@ -27,6 +24,9 @@
         </property>
         <property name="cashpay" type="java.lang.Double">
             <column name="CASHPAY" precision="22" scale="0" />
+        </property>
+        <property name="account" type="java.lang.String">
+            <column name="ACCOUNT" length="30" />
         </property>
         <property name="remark" type="java.lang.String">
             <column name="REMARK" length="50" />

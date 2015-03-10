@@ -8,22 +8,22 @@
     <class name="me.gteam.logman.domain.TankRefuel" table="tank_refuel" catalog="logman">
         <id name="tankrefuelId" type="java.lang.Integer">
             <column name="TANKREFUEL_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
-        <many-to-one name="fuel" class="me.gteam.logman.domain.Fuel" fetch="select">
-            <column name="OIL_TYPE" />
-        </many-to-one>
-        <many-to-one name="vehicle" class="me.gteam.logman.domain.Vehicle" fetch="select">
-            <column name="VEHICLE" />
-        </many-to-one>
-        <many-to-one name="oiltank" class="me.gteam.logman.domain.Oiltank" fetch="select">
-            <column name="TANK" />
-        </many-to-one>
-        <many-to-one name="driver" class="me.gteam.logman.domain.Driver" fetch="select">
-            <column name="DRIVER" />
-        </many-to-one>
         <property name="refuelDate" type="java.util.Date">
             <column name="REFUEL_DATE" length="10" />
+        </property>
+        <property name="vehicle" type="java.lang.String">
+            <column name="VEHICLE" length="30" />
+        </property>
+        <property name="driver" type="java.lang.String">
+            <column name="DRIVER" length="30" />
+        </property>
+        <property name="oilTank" type="java.lang.String">
+            <column name="OIL_TANK" length="30" />
+        </property>
+        <property name="oilType" type="java.lang.String">
+            <column name="OIL_TYPE" length="30" />
         </property>
         <property name="unitPrice" type="java.lang.Double">
             <column name="UNIT_PRICE" precision="22" scale="0" />

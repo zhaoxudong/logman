@@ -8,16 +8,22 @@
     <class name="me.gteam.logman.domain.CardRefuel" table="card_refuel" catalog="logman">
         <id name="cardRefuelId" type="java.lang.Integer">
             <column name="CARD_REFUEL_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
-        <many-to-one name="fuel" class="me.gteam.logman.domain.Fuel" fetch="select">
-            <column name="OIL_TYPE" />
-        </many-to-one>
-        <many-to-one name="fulecard" class="me.gteam.logman.domain.Fulecard" fetch="select">
-            <column name="CARD_NO" />
-        </many-to-one>
         <property name="refuelDate" type="java.util.Date">
             <column name="REFUEL_DATE" length="10" />
+        </property>
+        <property name="vehicle" type="java.lang.String">
+            <column name="VEHICLE" length="30" />
+        </property>
+        <property name="driver" type="java.lang.String">
+            <column name="DRIVER" length="30" />
+        </property>
+        <property name="oilcard" type="java.lang.String">
+            <column name="OILCARD" length="30" />
+        </property>
+        <property name="oiltype" type="java.lang.String">
+            <column name="OILTYPE" length="30" />
         </property>
         <property name="unitPrice" type="java.lang.Double">
             <column name="UNIT_PRICE" precision="22" scale="0" />

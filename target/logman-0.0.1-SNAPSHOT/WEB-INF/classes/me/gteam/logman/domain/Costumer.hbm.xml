@@ -8,7 +8,7 @@
     <class name="me.gteam.logman.domain.Costumer" table="costumer" catalog="logman">
         <id name="cosumerId" type="java.lang.Integer">
             <column name="COSUMER_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <property name="costumerAbbr" type="java.lang.String">
             <column name="COSTUMER_ABBR" length="14" />
@@ -52,53 +52,17 @@
         <property name="remark" type="java.lang.String">
             <column name="REMARK" length="50" />
         </property>
-        <set name="loadLocations" inverse="true">
-            <key>
-                <column name="COSTUMER_ID" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.LoadLocation" />
-        </set>
         <set name="unloadLocations" inverse="true">
             <key>
-                <column name="COSTUMER_ID" />
+                <column name="COSUMER_ID" />
             </key>
             <one-to-many class="me.gteam.logman.domain.UnloadLocation" />
         </set>
-        <set name="storeDetails" inverse="true">
+        <set name="loadLocations" inverse="true">
             <key>
-                <column name="COSTUMER" />
+                <column name="COSUMER_ID" />
             </key>
-            <one-to-many class="me.gteam.logman.domain.StoreDetail" />
-        </set>
-        <set name="storageIns" inverse="true">
-            <key>
-                <column name="COSTUMER" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.StorageIn" />
-        </set>
-        <set name="storeageOuts" inverse="true">
-            <key>
-                <column name="COSTUMER" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.StoreageOut" />
-        </set>
-        <set name="freightNeedtoreceives" inverse="true">
-            <key>
-                <column name="COSTMER" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.FreightNeedtoreceive" />
-        </set>
-        <set name="ordersesForShipper" inverse="true">
-            <key>
-                <column name="SHIPPER" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.Orders" />
-        </set>
-        <set name="ordersesForConsignee" inverse="true">
-            <key>
-                <column name="CONSIGNEE" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.Orders" />
+            <one-to-many class="me.gteam.logman.domain.LoadLocation" />
         </set>
     </class>
 </hibernate-mapping>

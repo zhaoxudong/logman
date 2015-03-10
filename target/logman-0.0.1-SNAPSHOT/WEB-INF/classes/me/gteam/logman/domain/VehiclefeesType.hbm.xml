@@ -8,19 +8,10 @@
     <class name="me.gteam.logman.domain.VehiclefeesType" table="vehiclefees_type" catalog="logman">
         <id name="typeId" type="java.lang.Integer">
             <column name="TYPE_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <property name="name" type="java.lang.String">
             <column name="NAME" length="20" />
         </property>
-        <property name="mnemonic" type="java.lang.String">
-            <column name="MNEMONIC" length="20" />
-        </property>
-        <set name="vehicleFeeses" inverse="true">
-            <key>
-                <column name="FEE_TYPE" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.VehicleFees" />
-        </set>
     </class>
 </hibernate-mapping>

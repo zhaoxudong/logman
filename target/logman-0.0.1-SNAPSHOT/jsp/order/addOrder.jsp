@@ -34,7 +34,7 @@
   
   <body>
 	   		<br>
-	   		<form class="form-horizontal" role="form" action="orderAction_addOrder.action">
+	   		<form class="form-horizontal" role="form" action="orderAction_addOrders.action">
 			   <div class="form-group">
 			      <br>
 				  <div class="col-sm-12">

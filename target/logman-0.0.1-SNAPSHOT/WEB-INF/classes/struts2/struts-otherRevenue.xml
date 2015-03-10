@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<package name="otherRevenue" namespace="/" extends="struts-default">
+		<action name="otherrevenueAction_*"  method="{1}" class="me.gteam.logman.struts2.action.OtherRevenueAction">
+			<result name="addOtherrevenueUI">/jsp/otherRevenue/addOtherRevenue.jsp</result>
+			<result name="listOtherrevenueUI">/jsp/otherRevenue/listOtherRevenue.jsp</result>
+			<result name="manageOtherrevenueUI">/jsp/otherRevenue/ManageOtherRevenue.jsp</result>
+			<result name="success">/jsp/otherRevenue/addOtherRevenue.jsp</result>
+			
+		</action>
+	</package>
+</struts>

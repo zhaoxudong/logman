@@ -8,7 +8,7 @@
     <class name="me.gteam.logman.domain.Supplier" table="supplier" catalog="logman">
         <id name="supplierId" type="java.lang.Integer">
             <column name="SUPPLIER_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <property name="abbr" type="java.lang.String">
             <column name="ABBR" length="14" />
@@ -40,65 +40,5 @@
         <property name="remark" type="java.lang.String">
             <column name="REMARK" length="50" />
         </property>
-        <set name="fixpointRefuelings" inverse="true">
-            <key>
-                <column name="SUPPLIER_ID" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.FixpointRefueling" />
-        </set>
-        <set name="oilpurchaseNeedtopaySettles" inverse="true">
-            <key>
-                <column name="SUPPLIER" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.OilpurchaseNeedtopaySettle" />
-        </set>
-        <set name="fittingPurchases" inverse="true">
-            <key>
-                <column name="SUPPLIER" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.FittingPurchase" />
-        </set>
-        <set name="repairNeedtopaies" inverse="true">
-            <key>
-                <column name="FACTORY" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.RepairNeedtopay" />
-        </set>
-        <set name="oilProcurements" inverse="true">
-            <key>
-                <column name="SUPPLIER" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.OilProcurement" />
-        </set>
-        <set name="fittingNeedtopaySettles" inverse="true">
-            <key>
-                <column name="SUPPLIER" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.FittingNeedtopaySettle" />
-        </set>
-        <set name="repairs" inverse="true">
-            <key>
-                <column name="FACTORY" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.Repair" />
-        </set>
-        <set name="tireDates" inverse="true">
-            <key>
-                <column name="SUPPLIER" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.TireDate" />
-        </set>
-        <set name="maintenanceRecords" inverse="true">
-            <key>
-                <column name="LOCATION" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.MaintenanceRecord" />
-        </set>
-        <set name="addoilNeedtopaysettles" inverse="true">
-            <key>
-                <column name="SUPPLIER" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.AddoilNeedtopaysettle" />
-        </set>
     </class>
 </hibernate-mapping>

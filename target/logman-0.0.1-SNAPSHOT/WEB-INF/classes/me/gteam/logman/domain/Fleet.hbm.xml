@@ -8,7 +8,7 @@
     <class name="me.gteam.logman.domain.Fleet" table="fleet" catalog="logman">
         <id name="fleetId" type="java.lang.Integer">
             <column name="FLEET_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <property name="fleetName" type="java.lang.String">
             <column name="FLEET_NAME" length="40" />
@@ -40,17 +40,5 @@
         <property name="remarks" type="java.lang.String">
             <column name="REMARKS" length="50" />
         </property>
-        <set name="vehicles" inverse="true">
-            <key>
-                <column name="FLEET_ID" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.Vehicle" />
-        </set>
-        <set name="freightNeedtopaies" inverse="true">
-            <key>
-                <column name="CARRIER_UNIT" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.FreightNeedtopay" />
-        </set>
     </class>
 </hibernate-mapping>

@@ -8,16 +8,10 @@
     <class name="me.gteam.logman.domain.FulecardType" table="fulecard_type" catalog="logman">
         <id name="fulecardId" type="java.lang.Integer">
             <column name="FULECARD_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <property name="type" type="java.lang.String">
             <column name="TYPE" length="14" />
         </property>
-        <set name="fulecards" inverse="true">
-            <key>
-                <column name="TYPE" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.Fulecard" />
-        </set>
     </class>
 </hibernate-mapping>

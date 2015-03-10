@@ -8,7 +8,7 @@
     <class name="me.gteam.logman.domain.Route" table="route" catalog="logman">
         <id name="routeId" type="java.lang.Integer">
             <column name="ROUTE_ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <property name="routeName" type="java.lang.String">
             <column name="ROUTE_NAME" length="40" />
@@ -22,17 +22,5 @@
         <property name="mnemoric" type="java.lang.String">
             <column name="MNEMORIC" length="14" />
         </property>
-        <set name="orderses" inverse="true">
-            <key>
-                <column name="ROUTE_ID" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.Orders" />
-        </set>
-        <set name="routeTemplates" inverse="true">
-            <key>
-                <column name="ROUTE_ID" />
-            </key>
-            <one-to-many class="me.gteam.logman.domain.RouteTemplate" />
-        </set>
     </class>
 </hibernate-mapping>

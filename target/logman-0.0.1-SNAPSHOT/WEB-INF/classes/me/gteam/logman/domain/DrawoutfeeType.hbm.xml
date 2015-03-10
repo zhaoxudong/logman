@@ -6,16 +6,15 @@
 -->
 <hibernate-mapping>
     <class name="me.gteam.logman.domain.DrawoutfeeType" table="drawoutfee_type" catalog="logman">
-        <composite-id name="id" class="me.gteam.logman.domain.DrawoutfeeTypeId">
-            <key-property name="typeId" type="java.lang.Integer">
-                <column name="TYPE_ID" />
-            </key-property>
-            <key-property name="typeName" type="java.lang.String">
-                <column name="TYPE_NAME" length="20" />
-            </key-property>
-            <key-property name="iscash" type="java.lang.String">
-                <column name="ISCASH" length="6" />
-            </key-property>
-        </composite-id>
+        <id name="typeId" type="java.lang.Integer">
+            <column name="TYPE_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="typeName" type="java.lang.String">
+            <column name="TYPE_NAME" length="20" />
+        </property>
+        <property name="iscash" type="java.lang.String">
+            <column name="ISCASH" length="6" />
+        </property>
     </class>
 </hibernate-mapping>
